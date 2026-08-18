@@ -1,0 +1,6 @@
+{
+  "name": "SitePro 48h - Criação de Sites Profissionais",
+  "description": "Tenha seu site profissional no ar em até 48 horas. Sites modernos, rápidos e focados em conversão a partir de R$ 600.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
