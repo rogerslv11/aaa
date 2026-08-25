@@ -33,48 +33,48 @@ export default function Portfolio() {
     return () => ctx.revert();
   }, [activeCategory]);
 
-  const categories = ['Todos', 'Empresas', 'Serviços', 'Profissionais', 'Negócios locais', 'Landing Pages'];
+  const categories = ['All', 'Companies', 'Services', 'Professionals', 'Local Businesses', 'Landing Pages'];
 
   const projects = [
     {
       id: 1,
-      title: 'Soluções Corporativas',
-      category: 'Empresas',
+      title: 'Corporate Solutions',
+      category: 'Companies',
       imageUrl: corporateImg
     },
     {
       id: 2,
-      title: 'Agência Criativa',
-      category: 'Serviços',
+      title: 'Creative Agency',
+      category: 'Services',
       imageUrl: creativeImg
     },
     {
       id: 3,
-      title: 'Clínica HealthCare',
-      category: 'Profissionais',
+      title: 'HealthCare Clinic',
+      category: 'Professionals',
       imageUrl: medicalImg
     },
     {
       id: 4,
-      title: 'Consultoria Financeira',
-      category: 'Empresas',
+      title: 'Financial Consulting',
+      category: 'Companies',
       imageUrl: corporateImg
     },
     {
       id: 5,
-      title: 'E-commerce Local',
-      category: 'Negócios locais',
+      title: 'Local E-commerce',
+      category: 'Local Businesses',
       imageUrl: creativeImg
     },
     {
       id: 6,
-      title: 'Lançamento Imobiliário',
+      title: 'Real Estate Launch',
       category: 'Landing Pages',
       imageUrl: medicalImg
     }
   ];
 
-  const filteredProjects = activeCategory === 'Todos' 
+  const filteredProjects = activeCategory === 'All' 
     ? projects 
     : projects.filter(p => p.category === activeCategory);
 
@@ -84,15 +84,22 @@ export default function Portfolio() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
           <div className="max-w-3xl">
             <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
               className="text-5xl lg:text-7xl font-black text-black dark:text-white mb-6 tracking-tighter"
             >
-              Projetos que <br /> <span className="text-zinc-200 dark:text-zinc-800 italic font-serif font-light text-3xl sm:text-5xl lg:text-[100px]">definem padrões.</span>
+              Projects that <br /> <span className="text-zinc-200 dark:text-zinc-800 italic font-serif font-light text-3xl sm:text-5xl lg:text-[100px]">set standards.</span>
             </motion.h2>
           </div>
-          <div className="flex flex-nowrap overflow-x-auto pb-4 lg:pb-0 lg:flex-wrap gap-2 lg:mb-4 no-scrollbar">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-nowrap overflow-x-auto pb-4 lg:pb-0 lg:flex-wrap gap-2 lg:mb-4 no-scrollbar"
+          >
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -106,7 +113,7 @@ export default function Portfolio() {
                 {cat}
               </button>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

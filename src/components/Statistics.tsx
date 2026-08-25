@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function Statistics() {
   const stats = [
-    { value: 250, suffix: '+', label: 'Sites Entregues' },
-    { value: 48, suffix: 'h', label: 'Prazo Máximo' },
-    { value: 99, suffix: '%', label: 'Satisfação' },
-    { value: 24, suffix: '/7', label: 'Sites Online' },
+    { value: 250, suffix: '+', label: 'Sites Delivered' },
+    { value: 72, suffix: 'h', label: 'Max Deadline' },
+    { value: 99, suffix: '%', label: 'Satisfaction' },
+    { value: 24, suffix: '/7', label: 'Live Sites' },
   ];
 
   return (
@@ -61,10 +61,10 @@ function StatItem({ stat, index }: StatItemProps) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ delay: index * 0.1, duration: 0.8 }}
       className="text-center"
     >
       <div className="text-5xl lg:text-7xl font-black text-black dark:text-white mb-2 tracking-tighter tabular-nums">

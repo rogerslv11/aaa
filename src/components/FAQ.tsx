@@ -5,41 +5,41 @@ import { useState } from 'react';
 export default function FAQ() {
   const faqs = [
     {
-      category: 'Processo',
+      category: 'Process',
       items: [
         {
-          question: 'O site realmente fica pronto em 48 horas?',
-          answer: 'Sim! Nosso processo é otimizado para entrega rápida. O prazo de 48 horas começa a contar a partir do envio de todas as informações necessárias pelo cliente.'
+          question: 'Is the site really ready in 72 hours?',
+          answer: 'Yes! Our process is optimized for fast delivery. The 72-hour period starts after the client provides all necessary information.'
         },
         {
-          question: 'O que preciso enviar para começar?',
-          answer: 'Para começar, precisaremos do seu logotipo (se tiver), textos institucionais, imagens dos seus produtos/serviços e informações de contato (WhatsApp, Redes Sociais, Endereço).'
+          question: 'What do I need to send to get started?',
+          answer: "To get started, we'll need your logo (if you have one), institutional texts, images of your products/services, and contact information (WhatsApp, Social Media, Address)."
         }
       ]
     },
     {
-      category: 'Técnico',
+      category: 'Technical',
       items: [
         {
-          question: 'O domínio e hospedagem estão inclusos?',
-          answer: 'O registro do domínio e a hospedagem são serviços à parte pagos anualmente. Nós orientamos e realizamos todo o processo de configuração para você sem custos adicionais.'
+          question: 'Are the domain and hosting included?',
+          answer: 'Domain registration and hosting are separate services paid annually. We guide and perform the entire configuration process for you at no additional cost.'
         },
         {
-          question: 'O site aparece no Google?',
-          answer: 'Sim. Implementamos as melhores práticas de SEO (Search Engine Optimization) estrutural em todos os planos para garantir que seu negócio seja encontrado.'
+          question: 'Does the site appear on Google?',
+          answer: 'Yes. We implement the best structural SEO (Search Engine Optimization) practices in all plans to ensure your business is found.'
         }
       ]
     },
     {
-      category: 'Suporte',
+      category: 'Support',
       items: [
         {
-          question: 'Posso solicitar alterações após a entrega?',
-          answer: 'Sim! Após a entrega, você tem um período de revisão para solicitar ajustes e garantir que tudo esteja exatamente como você imaginou.'
+          question: 'Can I request changes after delivery?',
+          answer: 'Yes! After delivery, you have a review period to request adjustments and ensure everything is exactly as you imagined.'
         },
         {
-          question: 'Existe suporte técnico contínuo?',
-          answer: 'Oferecemos suporte técnico após a entrega para garantir que seu site continue funcionando perfeitamente e para tirar qualquer dúvida que surja.'
+          question: 'Is there continuous technical support?',
+          answer: 'We offer technical support after delivery to ensure your site continues to work perfectly and to answer any questions that arise.'
         }
       ]
     }
@@ -53,20 +53,21 @@ export default function FAQ() {
           {/* Header Column */}
           <div className="lg:col-span-5">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
               className="sticky top-32"
             >
               <div className="inline-block px-4 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 mb-8">
-                Centro de Ajuda
+                Help Center
               </div>
               <h2 className="text-5xl lg:text-7xl font-black text-black dark:text-white mb-8 tracking-tighter leading-none">
-                Respostas <br />
-                <span className="text-zinc-200 dark:text-zinc-800">Essenciais.</span>
+                Essential <br />
+                <span className="text-zinc-200 dark:text-zinc-800">Answers.</span>
               </h2>
               <p className="text-xl text-zinc-500 dark:text-zinc-400 max-w-sm mb-12 leading-relaxed">
-                Tudo o que você precisa saber sobre como levamos seu negócio ao próximo nível em tempo recorde.
+                Everything you need to know about how we take your business to the next level in record time.
               </p>
               
               <motion.a 
@@ -76,7 +77,7 @@ export default function FAQ() {
                 whileHover={{ x: 10 }}
                 className="group flex items-center gap-4 text-black dark:text-white font-black uppercase tracking-widest text-xs"
               >
-                Ainda tem dúvidas? Fale conosco
+                Still have questions? Contact us
                 <div className="w-12 h-12 rounded-full border border-zinc-200 dark:border-zinc-800 flex items-center justify-center group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all">
                   <ArrowUpRight size={20} />
                 </div>
@@ -91,8 +92,8 @@ export default function FAQ() {
                 key={group.category}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: groupIndex * 0.1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: groupIndex * 0.1, duration: 0.8 }}
               >
                 <div className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-300 dark:text-zinc-700 mb-8 flex items-center gap-4">
                   <span className="w-12 h-[1px] bg-zinc-100 dark:bg-zinc-900"></span>

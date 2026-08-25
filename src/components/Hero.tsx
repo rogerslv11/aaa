@@ -14,7 +14,7 @@ export default function Hero() {
   const mouseY = useMotionValue(0);
 
   // Typewriter words
-  const words = ['Autoridade', 'Resultados', 'Impacto', 'Conversão'];
+  const words = ['Authority', 'Results', 'Impact', 'Conversion'];
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -56,10 +56,10 @@ export default function Hero() {
   }, [mouseX, mouseY]);
 
   const trustIndicators = [
-    'Entrega em 48h',
-    'Design de Elite',
-    'SEO Avançado',
-    'Suporte VIP'
+    '72h Delivery',
+    'Elite Design',
+    'Advanced SEO',
+    'VIP Support'
   ];
 
   const magneticRef = useRef<HTMLAnchorElement>(null);
@@ -96,8 +96,8 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
             <motion.div 
@@ -107,7 +107,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 mb-8"
             >
               <span className="flex h-2 w-2 rounded-full bg-black dark:bg-white animate-pulse"></span>
-              Disponibilidade Imediata • Slot 03/05
+              Immediate Availability • Slot 03/05
             </motion.div>
             
             <h1 className="text-4xl sm:text-6xl lg:text-[100px] font-black tracking-tighter text-black dark:text-white mb-8 leading-[0.9] text-reveal">
@@ -117,9 +117,9 @@ export default function Hero() {
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                 className="inline-block"
               >
-                Crie sua <br />
+                Stop being <br />
                 <span ref={typewriterRef} className="text-zinc-200 dark:text-zinc-800"></span> <br />
-                Digital em <span className="italic font-serif font-light text-3xl sm:text-5xl lg:text-[100px]">48h</span>.
+                Sell more in <span className="italic font-serif font-light text-3xl sm:text-5xl lg:text-[100px]">72h</span>.
               </motion.span>
             </h1>
             
@@ -129,7 +129,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
               className="text-lg lg:text-xl text-zinc-500 dark:text-zinc-400 mb-12 leading-relaxed max-w-xl"
             >
-              Não apenas um site. Uma vantagem competitiva. Desenvolvemos interfaces de alta conversão para marcas que buscam o topo.
+              An amateur website is costing your business. We deliver the digital authority you need to dominate your niche and convert visitors into loyal customers.
             </motion.p>
 
             <motion.div 
@@ -145,7 +145,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.95 }}
                 className="w-full sm:w-auto bg-black dark:bg-white text-white dark:text-black px-12 py-6 rounded-2xl font-black text-xl flex items-center justify-center gap-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(255,255,255,0.08)]"
               >
-                Começar agora
+                Get Started
                 <ArrowRight size={24} strokeWidth={3} />
               </motion.a>
               <motion.a
@@ -153,7 +153,7 @@ export default function Hero() {
                 whileHover={{ x: 5 }}
                 className="group w-full sm:w-auto text-black dark:text-white px-8 py-6 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 transition-all"
               >
-                Ver Portfólio
+                View Portfolio
                 <div className="w-10 h-[1px] bg-zinc-200 dark:bg-zinc-800 group-hover:w-16 transition-all"></div>
               </motion.a>
             </motion.div>
@@ -185,7 +185,7 @@ export default function Hero() {
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 p-2">
               <img 
                 src={heroMockup} 
-                alt="Mockup do site profissional"
+                alt="Professional website mockup"
                 className="w-full h-auto rounded-[2rem] grayscale dark:grayscale-0 contrast-125 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
@@ -202,7 +202,7 @@ export default function Hero() {
                   <TrendingUp size={20} />
                 </div>
                 <div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Conversão</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Conversion</div>
                   <div className="text-xl font-black text-black dark:text-white">+142%</div>
                 </div>
               </div>
@@ -230,7 +230,7 @@ export default function Hero() {
               className="absolute top-1/2 -right-16 z-20 bg-white dark:bg-zinc-900 p-4 rounded-2xl shadow-xl border border-zinc-100 dark:border-zinc-800 hidden lg:flex items-center gap-3"
             >
               <ShieldCheck size={20} className="text-black dark:text-white" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-black dark:text-white">Garantia 48h</span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-black dark:text-white">72h Guarantee</span>
             </motion.div>
           </motion.div>
         </div>

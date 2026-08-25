@@ -5,55 +5,55 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: 'Ricardo Santos',
-      role: 'Proprietário',
+      name: 'Richard Santos',
+      role: 'Owner',
       company: 'Consultoria RS',
-      content: 'Precisava de um site rápido para lançar minha nova consultoria e o resultado superou todas as expectativas. Entrega pontual e design impecável.',
+      content: 'I needed a fast website to launch my new consultancy and the result exceeded all expectations. On-time delivery and impeccable design.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=ricardo'
     },
     {
       id: 2,
       name: 'Mariana Costa',
-      role: 'Dermatologista',
+      role: 'Dermatologist',
       company: 'Clínica BioPelle',
-      content: 'O processo foi muito simples. Enviei as fotos da clínica e em 2 dias meu site já estava no ar recebendo agendamentos pelo WhatsApp.',
+      content: 'The process was very simple. I sent the clinic photos and in 2 days my site was live and receiving appointments via WhatsApp.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=mariana'
     },
     {
       id: 3,
-      name: 'André Luiz',
+      name: 'Andrew Luiz',
       role: 'CEO',
       company: 'TechFlow Solutions',
-      content: 'A Landing Page que criaram para nosso produto teve uma taxa de conversão incrível desde o primeiro dia. Recomendo muito o trabalho.',
+      content: 'The Landing Page they created for our product had an incredible conversion rate from day one. I highly recommend their work.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=andre'
     },
     {
       id: 4,
       name: 'Carla Dias',
-      role: 'Arquiteta',
+      role: 'Architect',
       company: 'Studio Arq',
-      content: 'Apresentação visual é tudo na minha área. O site que recebi traduz exatamente o minimalismo que busco nos meus projetos.',
+      content: 'Visual presentation is everything in my field. The website I received translates exactly the minimalism I seek in my projects.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=carla'
     },
     {
       id: 5,
       name: 'Felipe Rocha',
-      role: 'Fundador',
+      role: 'Founder',
       company: 'Rocha Imóveis',
-      content: 'Estávamos perdendo clientes para a concorrência por falta de um site moderno. Em 48h mudamos nossa realidade digital.',
+      content: 'We were losing clients to the competition due to the lack of a modern website. In 72h we changed our digital reality.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=felipe'
     },
     {
       id: 6,
       name: 'Juliana Lima',
-      role: 'Nutricionista',
+      role: 'Nutritionist',
       company: 'Saúde & Vida',
-      content: 'Facilidade total. O botão de WhatsApp integrado no site aumentou meus agendamentos em mais de 40% no primeiro mês.',
+      content: 'Total ease. The WhatsApp button integrated into the site increased my appointments by more than 40% in the first month.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=juliana'
     }
@@ -67,12 +67,13 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="text-center">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
             className="text-4xl lg:text-5xl font-black text-black dark:text-white mb-6 tracking-tight"
           >
-            O que nossos <span className="text-zinc-300 dark:text-zinc-700">clientes dizem</span>
+            What our <span className="text-zinc-300 dark:text-zinc-700">clients say</span>
           </motion.h2>
         </div>
       </div>

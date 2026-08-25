@@ -4,70 +4,57 @@ import { Check, ArrowRight } from 'lucide-react';
 export default function Pricing() {
   const plans = [
     {
-      id: 'essencial',
-      name: 'Plano Essencial',
-      price: '600',
-      description: 'Ideal para quem precisa de uma presença profissional simples e rápida.',
+      id: 'essential',
+      name: 'Essential Plan',
+      price: '425',
+      description: 'Professional digital presence with ultra-fast delivery.',
       features: [
-        'Site profissional',
-        'Design responsivo',
-        'Até 5 seções',
-        'Página inicial',
-        'Seção de serviços',
-        'Seção sobre a empresa',
-        'Contato',
-        'Botão para WhatsApp',
-        'Integração com redes sociais',
-        'SEO básico',
-        'Otimização para celular',
-        'Publicação do site',
-        'Entrega em até 48 horas'
+        'High Performance Site',
+        '100% Responsive Design',
+        'Smart WhatsApp Button',
+        'Social Media Integration',
+        'Basic Structural SEO',
+        'SSL Certificate Included',
+        'Guaranteed 72h Delivery'
       ],
-      cta: 'Quero o Plano Essencial',
+      cta: 'Get Essential Plan',
       highlight: false
     },
     {
-      id: 'profissional',
-      name: 'Plano Profissional',
-      price: '1.200',
-      description: 'A solução completa com animações e recursos avançados de conversão.',
+      id: 'professional',
+      name: 'Professional Plan',
+      price: '785',
+      description: 'The definitive solution for conversion and digital authority.',
       features: [
-        'Tudo do Plano Essencial',
-        'Design personalizado',
-        'Até 10 seções',
-        'Animações profissionais',
-        'Galeria de imagens',
-        'Depoimentos',
-        'FAQ',
-        'Formulário de contato',
-        'Integrações adicionais',
-        'SEO avançado',
-        'Otimização de performance',
-        'Estrutura focada em conversão',
-        'Publicação do site',
-        'Entrega em até 48 horas'
+        'Premium Hosting (1 year)',
+        'Everything in Essential Plan',
+        'Custom Elite Design',
+        'Cinematic Animations',
+        'Advanced SEO (Top Google)',
+        'Sales-Focused Copywriting',
+        'VIP Leads Form',
+        'Priority Support',
+        'Guaranteed 72h Delivery'
       ],
-      cta: 'Quero o Plano Profissional',
+      cta: 'Get Professional Plan',
       highlight: true
     },
     {
       id: 'elite',
-      name: 'Plano Elite',
-      price: 'Sob Consulta',
-      description: 'Projetos complexos e sistemas sob medida para grandes marcas.',
+      name: 'Elite Plan',
+      price: 'Contact Us',
+      description: 'Custom systems and enterprise scale for major brands.',
       features: [
-        'Tudo do Plano Profissional',
-        'Consultoria Estratégica',
-        'Integrações via API',
-        'Layout 100% Exclusivo',
-        'Painel Administrativo',
-        'SEO Enterprise',
-        'Suporte Prioritário 24/7',
-        'Gestão de Conteúdo',
-        'Copywriting Profissional',
-        'Treinamento de Equipe'
+        'VIP Strategic Consulting',
+        'Everything in Professional Plan',
+        'API / Webhooks Integration',
+        'Exclusive Hand-crafted Layout',
+        'Custom Admin Panel',
+        'Dominant Enterprise SEO',
+        'Dedicated 24/7 Support',
+        'Active Content Management'
       ],
-      cta: 'Falar com Consultor',
+      cta: 'Speak with Consultant',
       highlight: false
     }
   ];
@@ -80,24 +67,32 @@ export default function Pricing() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-24">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 mb-6"
-          >
-            Tabela de Preços 2024
-          </motion.div>
-          <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="inline-block px-4 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 mb-6"
+          >
+            2024 Price Table
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="text-5xl lg:text-7xl font-black text-black dark:text-white mb-6 tracking-tighter"
           >
-            Investimento <span className="text-zinc-200 dark:text-zinc-800">Sob Medida</span>
+            Custom <span className="text-zinc-200 dark:text-zinc-800">Investment</span>
           </motion.h2>
-          <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-lg leading-relaxed">
-            Estruturas de preço transparentes projetadas para escalar com seu negócio. Sem letras miúdas, apenas resultados.
-          </p>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-lg leading-relaxed"
+          >
+            Transparent pricing structures designed to scale with your business. No fine print, just results.
+          </motion.p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
@@ -106,7 +101,8 @@ export default function Pricing() {
               key={plan.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: i * 0.1, duration: 0.8 }}
               whileHover={{ 
                 y: -15,
                 transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] }
@@ -133,7 +129,7 @@ export default function Pricing() {
               <div>
                 {plan.highlight && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-black dark:bg-white text-white dark:text-black text-[10px] font-black uppercase tracking-[0.2em] px-8 py-2.5 rounded-full border border-white/20 dark:border-black/20 shadow-xl">
-                    Escolha de Elite
+                    Elite Choice
                   </div>
                 )}
                 
@@ -141,8 +137,8 @@ export default function Pricing() {
                   <h3 className={`text-3xl font-black mb-6 tracking-tight ${plan.highlight ? 'text-white dark:text-black' : 'text-black dark:text-white'}`}>{plan.name}</h3>
                   <p className={`text-sm mb-12 leading-relaxed opacity-70 ${plan.highlight ? 'text-zinc-400 dark:text-zinc-500' : 'text-zinc-500 dark:text-zinc-400'}`}>{plan.description}</p>
                   <div className="flex items-baseline gap-2">
-                    {plan.price !== 'Sob Consulta' && (
-                      <span className={`text-2xl font-bold ${plan.highlight ? 'text-white dark:text-black' : 'text-black dark:text-white'}`}>R$</span>
+                    {plan.price !== 'Contact Us' && (
+                      <span className={`text-2xl font-bold ${plan.highlight ? 'text-white dark:text-black' : 'text-black dark:text-white'}`}>$</span>
                     )}
                     <span className={`text-5xl lg:text-7xl font-black tracking-tighter ${plan.highlight ? 'text-white dark:text-black' : 'text-black dark:text-white'}`}>{plan.price}</span>
                   </div>

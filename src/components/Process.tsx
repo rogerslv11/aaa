@@ -1,74 +1,108 @@
-import { motion } from 'motion/react';
+import { motion, useScroll, useSpring, useTransform } from 'motion/react';
+import { useRef } from 'react';
 
 export default function Process() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   const steps = [
     {
       number: '01',
-      title: 'Você escolhe o plano',
-      description: 'Escolha a opção que melhor atende seu negócio e objetivos atuais.'
+      title: 'Conversion Engineering',
+      description: "We map your audience's behavior to chart the fastest path to 'Yes'."
     },
     {
       number: '02',
-      title: 'Envie suas informações',
-      description: 'Envie logo, textos, imagens, contatos e informações chave do seu negócio.'
+      title: 'Authority Design',
+      description: 'We create an elite interface that communicates luxury and professionalism in every pixel.'
     },
     {
       number: '03',
-      title: 'Desenvolvemos seu site',
-      description: 'Nossa equipe cria o layout e desenvolve o projeto com foco em performance.'
+      title: 'Extreme Performance',
+      description: 'We develop with cutting-edge technology to ensure instant loading and Google dominance.'
     },
     {
       number: '04',
-      title: 'Site publicado',
-      description: 'Em até 48 horas seu site estará pronto para receber visitantes e gerar vendas.'
+      title: 'Market Dominance',
+      description: 'In 72h, you stop being invisible and take control of your digital authority.'
     }
   ];
 
   return (
-    <section id="process" className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-500 overflow-hidden">
+    <section id="process" className="py-32 bg-white dark:bg-zinc-950 transition-colors duration-500 overflow-hidden" ref={containerRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
-          <div className="max-w-2xl">
-            <motion.h2 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl lg:text-6xl font-black text-black dark:text-white tracking-tight"
-            >
-              Como <span className="text-zinc-300 dark:text-zinc-700">funciona</span>
-            </motion.h2>
-          </div>
-          <div className="lg:mb-3">
-            <p className="text-zinc-500 dark:text-zinc-400 font-medium max-w-sm">
-              Um processo simplificado para colocar seu negócio no mapa digital em tempo recorde.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
-          {/* Connector line for desktop */}
-          <div className="hidden lg:block absolute top-8 left-0 right-0 h-0.5 bg-zinc-100 dark:bg-zinc-900 -z-10"></div>
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
           
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="relative group"
-            >
-              <div className="mb-8 relative">
-                <div className="w-16 h-16 bg-white dark:bg-black border-2 border-black dark:border-white rounded-full flex items-center justify-center text-2xl font-black text-black dark:text-white group-hover:bg-black dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-black transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] group-hover:shadow-none group-hover:translate-x-1 group-hover:translate-y-1">
-                  {step.number}
+          {/* Header Column */}
+          <div className="lg:col-span-5">
+            <div className="sticky top-32">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="inline-block px-4 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 mb-8">
+                  Elite Workflow
                 </div>
-              </div>
-              <h3 className="text-2xl font-bold text-black dark:text-white mb-4">{step.title}</h3>
-              <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                {step.description}
-              </p>
-            </motion.div>
-          ))}
+                <h2 className="text-5xl lg:text-7xl font-black text-black dark:text-white mb-8 tracking-tighter leading-none">
+                  How we <br />
+                  <span className="text-zinc-200 dark:text-zinc-800">Scale.</span>
+                </h2>
+                <p className="text-xl text-zinc-500 dark:text-zinc-400 max-w-sm leading-relaxed">
+                  A surgical process designed to eliminate noise and deliver digital authority in record time.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Steps Column */}
+          <div className="lg:col-span-7 relative">
+            {/* Timeline Line */}
+            <div className="absolute left-[31px] top-4 bottom-4 w-[2px] bg-zinc-100 dark:bg-zinc-900 -z-10">
+              <motion.div 
+                style={{ scaleY, transformOrigin: 'top' }}
+                className="absolute inset-0 bg-black dark:bg-white w-full h-full"
+              />
+            </div>
+
+            <div className="space-y-24">
+              {steps.map((step, i) => (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  className="flex gap-12 group"
+                >
+                  <div className="flex-shrink-0 relative">
+                    <div className="w-16 h-16 rounded-full bg-white dark:bg-black border-2 border-zinc-100 dark:border-zinc-800 flex items-center justify-center text-xl font-black text-zinc-300 dark:text-zinc-700 group-hover:border-black dark:group-hover:border-white group-hover:text-black dark:group-hover:text-white transition-all duration-500 z-10 relative">
+                      {step.number}
+                    </div>
+                  </div>
+                  <div className="pt-3">
+                    <h3 className="text-3xl font-black text-black dark:text-white mb-4 tracking-tight group-hover:translate-x-2 transition-transform duration-500">
+                      {step.title}
+                    </h3>
+                    <p className="text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-lg">
+                      {step.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

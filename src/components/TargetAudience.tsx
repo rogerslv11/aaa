@@ -3,18 +3,18 @@ import { User, Briefcase, Stethoscope, Home, Utensils, GraduationCap, Gavel, Cam
 
 export default function TargetAudience({ isDarkMode }: { isDarkMode: boolean }) {
   const niches = [
-    { name: 'Prestadores de serviços', icon: <Briefcase size={24} /> },
-    { name: 'Profissionais autônomos', icon: <User size={24} /> },
-    { name: 'Pequenas empresas', icon: <Globe size={24} /> },
-    { name: 'Restaurantes', icon: <Utensils size={24} /> },
-    { name: 'Clínicas', icon: <Stethoscope size={24} /> },
-    { name: 'Escritórios', icon: <Gavel size={24} /> },
-    { name: 'Imobiliárias', icon: <Home size={24} /> },
-    { name: 'Academias', icon: <Dumbbell size={24} /> },
-    { name: 'Consultores', icon: <PenTool size={24} /> },
-    { name: 'Infoprodutores', icon: <GraduationCap size={24} /> },
-    { name: 'Lojas Locais', icon: <ShoppingBag size={24} /> },
-    { name: 'Fotógrafos', icon: <Camera size={24} /> },
+    { name: 'Service Providers', icon: <Briefcase size={24} /> },
+    { name: 'Freelancers', icon: <User size={24} /> },
+    { name: 'Small Businesses', icon: <Globe size={24} /> },
+    { name: 'Restaurants', icon: <Utensils size={24} /> },
+    { name: 'Clinics', icon: <Stethoscope size={24} /> },
+    { name: 'Offices', icon: <Gavel size={24} /> },
+    { name: 'Real Estate', icon: <Home size={24} /> },
+    { name: 'Gyms', icon: <Dumbbell size={24} /> },
+    { name: 'Consultants', icon: <PenTool size={24} /> },
+    { name: 'Infoproduct Creators', icon: <GraduationCap size={24} /> },
+    { name: 'Local Shops', icon: <ShoppingBag size={24} /> },
+    { name: 'Photographers', icon: <Camera size={24} /> },
   ];
 
   return (
@@ -22,26 +22,33 @@ export default function TargetAudience({ isDarkMode }: { isDarkMode: boolean }) 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
             className="text-4xl lg:text-5xl font-black text-black dark:text-white mb-6 tracking-tight"
           >
-            Se você tem um negócio, <span className="text-zinc-300 dark:text-zinc-700">podemos criar seu site.</span>
+            If you have a business, <span className="text-zinc-300 dark:text-zinc-700">we can build your website.</span>
           </motion.h2>
-          <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-lg">
-            Atendemos diversos nichos com soluções personalizadas para cada tipo de necessidade.
-          </p>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-lg"
+          >
+            We serve various niches with personalized solutions for every type of need.
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {niches.map((niche, i) => (
             <motion.div
               key={niche.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: i * 0.05, duration: 0.5 }}
               whileHover={{ scale: 1.05, backgroundColor: isDarkMode ? '#fff' : '#000', color: isDarkMode ? '#000' : '#fff' }}
               className="p-6 border border-zinc-100 dark:border-zinc-800 rounded-2xl flex flex-col items-center justify-center text-center gap-4 transition-all duration-300 group bg-zinc-50 dark:bg-zinc-900"
             >

@@ -1,110 +1,146 @@
 import { motion } from 'motion/react';
-import { Layout, Globe, ShoppingCart, Rocket, Zap, Search, Shield, Cpu } from 'lucide-react';
+import { Layout, Globe, ShoppingCart, Rocket, Zap, Search, Shield, Cpu, ArrowUpRight } from 'lucide-react';
 
 export default function ServicesBreakdown() {
   return (
-    <section className="py-32 bg-white dark:bg-zinc-950 transition-colors duration-500 overflow-hidden">
+    <section id="especialidades" className="py-32 bg-white dark:bg-zinc-950 transition-colors duration-500 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-20">
-          <motion.h2 
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="inline-block px-4 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 mb-6"
+            >
+              Our Expertise
+            </motion.div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-5xl lg:text-7xl font-black text-black dark:text-white leading-[0.9] tracking-tighter"
+            >
+              Expertise that <br /> <span className="text-zinc-200 dark:text-zinc-800 italic font-serif font-light text-3xl sm:text-5xl lg:text-[100px]">drives results.</span>
+            </motion.h2>
+          </div>
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl lg:text-7xl font-black text-black dark:text-white mb-6 tracking-tighter"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:mb-3"
           >
-            Nossas <span className="text-zinc-200 dark:text-zinc-800">Especialidades</span>
-          </motion.h2>
-          <p className="text-zinc-500 dark:text-zinc-400 text-xl max-w-2xl leading-relaxed">
-            Unimos design de vanguarda com engenharia de performance para criar experiências digitais que dominam o mercado.
-          </p>
+            <p className="text-zinc-500 dark:text-zinc-400 text-lg max-w-sm leading-relaxed">
+              We develop high-performance digital ecosystems where every pixel is designed to convert and every line of code is optimized for speed.
+            </p>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:auto-rows-[240px]">
-          {/* Main Bento Card */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:auto-rows-[300px]">
+          {/* Landing Pages - Primary Bento Card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="md:col-span-4 md:row-span-2 bg-zinc-50 dark:bg-zinc-900 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 border border-zinc-100 dark:border-zinc-800 flex flex-col justify-between group overflow-hidden relative min-h-[400px] md:min-h-0"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="md:col-span-8 md:row-span-2 bg-zinc-50 dark:bg-zinc-900 rounded-[3rem] p-10 lg:p-16 border border-zinc-100 dark:border-zinc-800 flex flex-col justify-between group overflow-hidden relative"
           >
             <div className="relative z-10">
-              <div className="w-16 h-16 bg-black dark:bg-white text-white dark:text-black rounded-2xl flex items-center justify-center mb-8">
-                <Rocket size={32} />
+              <div className="w-20 h-20 bg-black dark:bg-white text-white dark:text-black rounded-3xl flex items-center justify-center mb-10 group-hover:rotate-6 transition-transform duration-500">
+                <Rocket size={40} />
               </div>
-              <h3 className="text-3xl md:text-4xl font-black text-black dark:text-white mb-4 tracking-tighter">Landing Pages de Elite</h3>
-              <p className="text-zinc-500 dark:text-zinc-400 text-lg max-w-md leading-relaxed">
-                Máquinas de conversão otimizadas para tráfego pago. Entregamos design focado em resultados reais e carregamento instantâneo.
+              <h3 className="text-4xl lg:text-5xl font-black text-black dark:text-white mb-6 tracking-tighter">High-Conversion Landing Pages</h3>
+              <p className="text-zinc-500 dark:text-zinc-400 text-xl max-w-lg leading-relaxed mb-8">
+                Pages built with sales psychology and elite design. We don't just deliver beauty; we deliver the ROI your paid traffic deserves.
               </p>
+              <div className="flex flex-wrap gap-3">
+                {['Sales Psychology', 'ROI Focused', 'Mobile First'].map(tag => (
+                  <span key={tag} className="px-4 py-2 rounded-full bg-white dark:bg-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400 border border-zinc-100 dark:border-zinc-700">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-zinc-200 dark:bg-zinc-800/50 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700"></div>
+            {/* Abstract Background Element */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-zinc-200/20 dark:from-zinc-800/20 to-transparent pointer-events-none"></div>
+            <motion.div 
+              whileHover={{ scale: 1.1, rotate: 45 }}
+              className="absolute top-10 right-10 w-14 h-14 rounded-full border border-zinc-200 dark:border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all cursor-pointer"
+            >
+              <ArrowUpRight size={24} />
+            </motion.div>
           </motion.div>
 
-          {/* Secondary Cards */}
+          {/* E-commerce */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="md:col-span-2 md:row-span-1 bg-zinc-950 dark:bg-white rounded-[2rem] md:rounded-[2.5rem] p-8 flex flex-col justify-between group min-h-[200px] md:min-h-0"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.1, duration: 0.8 }}
+            className="md:col-span-4 md:row-span-1 bg-zinc-950 dark:bg-white rounded-[3rem] p-10 flex flex-col justify-between group overflow-hidden relative"
           >
-            <div className="text-white dark:text-black">
-              <ShoppingCart size={28} />
+            <div className="relative z-10 text-white dark:text-black">
+              <ShoppingCart size={32} />
+              <h3 className="text-2xl font-black mt-8 mb-3 tracking-tight">E-commerce</h3>
+              <p className="text-zinc-400 dark:text-zinc-500 text-sm leading-relaxed">Robust and scalable sales systems for operations that never stop.</p>
+            </div>
+            <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 dark:bg-black/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+          </motion.div>
+
+          {/* Institucional */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="md:col-span-4 md:row-span-1 bg-zinc-50 dark:bg-zinc-900 rounded-[3rem] p-10 border border-zinc-100 dark:border-zinc-800 flex flex-col justify-between group"
+          >
+            <div className="text-black dark:text-white group-hover:scale-110 transition-transform origin-left">
+              <Globe size={32} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white dark:text-black mb-2">E-commerce</h3>
-              <p className="text-zinc-400 dark:text-zinc-500 text-sm">Lojas robustas e escaláveis.</p>
+              <h3 className="text-2xl font-black text-black dark:text-white mb-3 tracking-tight">Institutional</h3>
+              <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">Brand positioning and digital authority for market-leading companies.</p>
             </div>
           </motion.div>
 
+          {/* Micro-Features Grid */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="md:col-span-2 md:row-span-1 bg-zinc-50 dark:bg-zinc-900 rounded-[2rem] md:rounded-[2.5rem] p-8 border border-zinc-100 dark:border-zinc-800 flex flex-col justify-between min-h-[200px] md:min-h-0"
-          >
-            <div className="text-black dark:text-white">
-              <Globe size={28} />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-black dark:text-white mb-2">Institucional</h3>
-              <p className="text-zinc-500 dark:text-zinc-400 text-sm">A autoridade da sua marca online.</p>
-            </div>
-          </motion.div>
-
-          {/* Feature Grid inside Bento */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="md:col-span-3 md:row-span-1 bg-zinc-50 dark:bg-zinc-900 rounded-[2rem] md:rounded-[2.5rem] p-8 border border-zinc-100 dark:border-zinc-800 grid grid-cols-3 gap-4 min-h-[160px] md:min-h-0"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="md:col-span-6 md:row-span-1 bg-zinc-50 dark:bg-zinc-900 rounded-[3rem] p-10 border border-zinc-100 dark:border-zinc-800 grid grid-cols-2 gap-6"
           >
             {[
-              { icon: <Zap size={20} />, label: 'SEO' },
-              { icon: <Shield size={20} />, label: 'Seguro' },
-              { icon: <Cpu size={20} />, label: 'IA' },
+              { icon: <Zap size={24} />, label: 'Structural SEO', desc: 'Immediate indexing.' },
+              { icon: <Cpu size={24} />, label: 'Core Optimization', desc: 'Extreme performance.' },
             ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center justify-center gap-2 bg-white dark:bg-zinc-800 rounded-2xl border border-zinc-100 dark:border-zinc-700 group hover:bg-black dark:hover:bg-white transition-colors duration-300">
-                <div className="text-zinc-400 group-hover:text-white dark:group-hover:text-black">{item.icon}</div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500 group-hover:text-white dark:group-hover:text-black">{item.label}</span>
+              <div key={i} className="flex flex-col justify-center">
+                <div className="text-zinc-400 mb-4">{item.icon}</div>
+                <h4 className="text-lg font-bold text-black dark:text-white mb-1">{item.label}</h4>
+                <p className="text-[10px] uppercase font-black tracking-widest text-zinc-500">{item.desc}</p>
               </div>
             ))}
           </motion.div>
 
+          {/* Contact / Portoflio Quick Link */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="md:col-span-3 md:row-span-1 bg-zinc-50 dark:bg-zinc-900 rounded-[2rem] md:rounded-[2.5rem] p-8 border border-zinc-100 dark:border-zinc-800 flex items-center justify-between group min-h-[160px] md:min-h-0"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="md:col-span-6 md:row-span-1 bg-zinc-50 dark:bg-zinc-900 rounded-[3rem] p-10 border border-zinc-100 dark:border-zinc-800 flex items-center justify-between group cursor-pointer hover:bg-white dark:hover:bg-zinc-950 transition-colors"
           >
-            <div className="max-w-[180px]">
-              <h3 className="text-xl font-bold text-black dark:text-white mb-2">Portfólio</h3>
-              <p className="text-zinc-500 dark:text-zinc-400 text-sm">Sua vitrine digital de alto nível.</p>
+            <div className="max-w-[240px]">
+              <h3 className="text-2xl font-black text-black dark:text-white mb-2 tracking-tight">Custom Projects</h3>
+              <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">Your vision, our technology. We develop custom-tailored solutions.</p>
             </div>
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-zinc-200 dark:bg-zinc-800 rounded-2xl flex items-center justify-center text-black dark:text-white group-hover:rotate-12 transition-transform duration-500">
-              <Layout size={28} />
+            <div className="w-20 h-20 bg-zinc-100 dark:bg-zinc-800 rounded-3xl flex items-center justify-center text-black dark:text-white group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all duration-500">
+              <ArrowUpRight size={32} />
             </div>
           </motion.div>
         </div>

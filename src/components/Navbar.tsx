@@ -29,10 +29,10 @@ export default function Navbar({ isDarkMode, toggleDarkMode }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { name: 'Por que nós?', href: '#benefits' },
-    { name: 'Como funciona', href: '#process' },
-    { name: 'Planos', href: '#pricing' },
-    { name: 'Portfólio', href: '#portfolio' },
+    { name: 'Why us?', href: '#benefits' },
+    { name: 'How it works', href: '#process' },
+    { name: 'Pricing', href: '#pricing' },
+    { name: 'Portfolio', href: '#portfolio' },
     { name: 'FAQ', href: '#faq' },
   ];
 
@@ -54,7 +54,7 @@ export default function Navbar({ isDarkMode, toggleDarkMode }: NavbarProps) {
               <span className={`font-bold text-xl leading-none ${isDarkMode ? 'text-black' : 'text-white'}`}>S</span>
             </div>
             <span className={`text-xl font-bold tracking-tighter uppercase transition-colors ${isDarkMode ? 'text-white' : 'text-black'}`}>
-              SitePro<span className="text-zinc-400">48h</span>
+              SitePro<span className="text-zinc-400">72h</span>
             </span>
           </motion.div>
 
@@ -96,7 +96,7 @@ export default function Navbar({ isDarkMode, toggleDarkMode }: NavbarProps) {
                 : 'bg-black text-white hover:bg-zinc-800 shadow-black/10'
               }`}
             >
-              Começar Agora
+              Get Started
             </motion.a>
           </div>
 
@@ -134,7 +134,7 @@ export default function Navbar({ isDarkMode, toggleDarkMode }: NavbarProps) {
                 <div className={`w-8 h-8 flex items-center justify-center rounded-sm ${isDarkMode ? 'bg-white' : 'bg-black'}`}>
                   <span className={`font-bold text-xl leading-none ${isDarkMode ? 'text-black' : 'text-white'}`}>S</span>
                 </div>
-                <span className="text-xl font-bold tracking-tighter uppercase">SitePro<span className="text-zinc-400">48h</span></span>
+                <span className="text-xl font-bold tracking-tighter uppercase">SitePro<span className="text-zinc-400">72h</span></span>
               </div>
               <button onClick={() => setIsOpen(false)} className="p-2">
                 <X size={32} />
@@ -170,10 +170,10 @@ export default function Navbar({ isDarkMode, toggleDarkMode }: NavbarProps) {
                   : 'bg-black text-white'
                 }`}
               >
-                Começar Agora
+                Get Started
               </motion.a>
               <p className="text-center mt-8 text-zinc-500 text-sm font-medium uppercase tracking-widest">
-                Site pronto em até 48 horas
+                Website ready in 72 hours
               </p>
             </div>
           </motion.div>
