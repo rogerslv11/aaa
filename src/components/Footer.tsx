@@ -17,12 +17,12 @@ export default function Footer() {
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
               <div className="w-8 h-8 bg-black dark:bg-white flex items-center justify-center rounded-sm">
-                <span className="text-white dark:text-black font-bold text-xl leading-none">S</span>
+                <span className="text-white dark:text-black font-bold text-xl leading-none">V</span>
               </div>
-              <span className="text-xl font-bold tracking-tighter uppercase dark:text-white">SitePro<span className="text-zinc-400 dark:text-zinc-600">72h</span></span>
+              <span className="text-xl font-bold tracking-tighter uppercase dark:text-white">Vanguard<span className="text-zinc-400 dark:text-zinc-600">Studio</span></span>
             </div>
-            <p className="text-zinc-500 dark:text-zinc-400 mb-8 max-w-xs">
-              We create professional, fast, and results-focused websites to boost your digital business in record time.
+            <p className="text-zinc-500 dark:text-zinc-400 mb-8 max-w-xs leading-relaxed">
+              Creamos páginas web profesionales, ultra rápidas y con enfoque quirúrgico en ventas para impulsar tu negocio en tiempo récord.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="w-10 h-10 bg-zinc-50 dark:bg-zinc-900 rounded-full flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all">
@@ -38,42 +38,42 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-black dark:text-white font-bold mb-6">Services</h4>
+            <h4 className="text-black dark:text-white font-bold mb-6">Servicios</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">Website Creation</a></li>
-              <li><a href="#" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">Landing Pages</a></li>
-              <li><a href="#" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">E-commerce</a></li>
-              <li><a href="#" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">SEO & Performance</a></li>
+              <li><a href="#especialidades" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">Creación de Páginas Web</a></li>
+              <li><a href="#especialidades" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">Landing Pages de Conversión</a></li>
+              <li><a href="#especialidades" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">E-commerce & Tiendas Online</a></li>
+              <li><a href="#especialidades" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">SEO y Rendimiento Extremo</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-black dark:text-white font-bold mb-6">Company</h4>
+            <h4 className="text-black dark:text-white font-bold mb-6">Empresa</h4>
             <ul className="space-y-4">
-              <li><a href="#benefits" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">Why us?</a></li>
-              <li><a href="#process" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">How it works</a></li>
-              <li><a href="#pricing" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">Plans</a></li>
-              <li><a href="#portfolio" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">Portfolio</a></li>
+              <li><a href="#benefits" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">¿Por qué nosotros?</a></li>
+              <li><a href="#process" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">Cómo funciona</a></li>
+              <li><a href="#pricing" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">Planes y Precios</a></li>
+              <li><a href="#portfolio" className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">Portafolio</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-black dark:text-white font-bold mb-6">Contact</h4>
+            <h4 className="text-black dark:text-white font-bold mb-6">Contacto</h4>
             <ul className="space-y-4">
-              <li className="text-zinc-500 dark:text-zinc-400">contact@sitepro72h.com</li>
-              <li className="text-zinc-500 dark:text-zinc-400">(11) 99999-9999</li>
-              <li className="text-zinc-500 dark:text-zinc-400">São Paulo, SP</li>
+              <li className="text-zinc-500 dark:text-zinc-400">contacto@vanguardstudio.com</li>
+              <li className="text-zinc-500 dark:text-zinc-400">+34 900 720 800</li>
+              <li className="text-zinc-500 dark:text-zinc-400">Atención Internacional 24/7</li>
             </ul>
           </div>
         </div>
 
         <div className="pt-12 border-t border-zinc-100 dark:border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-zinc-400 dark:text-zinc-500 text-sm">
-            © {currentYear} SitePro72h. All rights reserved.
+            © {currentYear} Vanguard Studio. Todos los derechos reservados.
           </p>
           <div className="flex gap-8">
-            <a href="#" className="text-zinc-400 dark:text-zinc-500 hover:text-black dark:hover:text-white text-sm">Privacy</a>
-            <a href="#" className="text-zinc-400 dark:text-zinc-500 hover:text-black dark:hover:text-white text-sm">Terms of Use</a>
+            <a href="#" className="text-zinc-400 dark:text-zinc-500 hover:text-black dark:hover:text-white text-sm">Privacidad</a>
+            <a href="#" className="text-zinc-400 dark:text-zinc-500 hover:text-black dark:hover:text-white text-sm">Términos de Uso</a>
           </div>
         </div>
       </div>

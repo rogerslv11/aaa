@@ -5,55 +5,55 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: 'Richard Santos',
-      role: 'Owner',
-      company: 'Consultoria RS',
-      content: 'I needed a fast website to launch my new consultancy and the result exceeded all expectations. On-time delivery and impeccable design.',
+      name: 'Ricardo Santos',
+      role: 'Fundador',
+      company: 'Consultoría RS',
+      content: 'Necesitaba una web urgente para lanzar mi consultoría y el resultado superó todas mis expectativas. Entrega exacta en 72 horas y un diseño que transmite confianza al instante.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=ricardo'
     },
     {
       id: 2,
-      name: 'Mariana Costa',
-      role: 'Dermatologist',
+      name: 'Dra. Mariana Costa',
+      role: 'Dermatóloga',
       company: 'Clínica BioPelle',
-      content: 'The process was very simple. I sent the clinic photos and in 2 days my site was live and receiving appointments via WhatsApp.',
+      content: 'El proceso fue súper ágil. Envié la información y en 2 días mi web ya estaba online y captando solicitudes de citas por WhatsApp de forma continua.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=mariana'
     },
     {
       id: 3,
-      name: 'Andrew Luiz',
-      role: 'CEO',
+      name: 'Andrés Ruiz',
+      role: 'Director General',
       company: 'TechFlow Solutions',
-      content: 'The Landing Page they created for our product had an incredible conversion rate from day one. I highly recommend their work.',
+      content: 'La Landing Page que crearon para nuestro servicio tuvo una tasa de conversión impresionante desde el primer día. La inversión se pagó sola en la primera semana.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=andre'
     },
     {
       id: 4,
-      name: 'Carla Dias',
-      role: 'Architect',
+      name: 'Carla Díaz',
+      role: 'Arquitecta Principal',
       company: 'Studio Arq',
-      content: 'Visual presentation is everything in my field. The website I received translates exactly the minimalism I seek in my projects.',
+      content: 'La imagen visual lo es todo en mi profesión. La página web refleja a la perfección el nivel de sofisticación y minimalismo que exigen mis clientes.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=carla'
     },
     {
       id: 5,
       name: 'Felipe Rocha',
-      role: 'Founder',
-      company: 'Rocha Imóveis',
-      content: 'We were losing clients to the competition due to the lack of a modern website. In 72h we changed our digital reality.',
+      role: 'Director Comercial',
+      company: 'Rocha Inmobiliaria',
+      content: 'Estábamos perdiendo prospectos frente a la competencia por tener una web obsoleta. En 72 horas transformamos nuestra presencia y las consultas aumentaron.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=felipe'
     },
     {
       id: 6,
-      name: 'Juliana Lima',
-      role: 'Nutritionist',
-      company: 'Saúde & Vida',
-      content: 'Total ease. The WhatsApp button integrated into the site increased my appointments by more than 40% in the first month.',
+      name: 'Juliana Morales',
+      role: 'Nutricionista Clínica',
+      company: 'Salud & Vida',
+      content: 'Facilidad total y atención personalizada. El botón inteligente de WhatsApp y la rapidez del sitio aumentaron mis reservas en más de un 40% el primer mes.',
       rating: 5,
       avatar: 'https://i.pravatar.cc/150?u=juliana'
     }
@@ -73,7 +73,7 @@ export default function Testimonials() {
             transition={{ duration: 0.8 }}
             className="text-4xl lg:text-5xl font-black text-black dark:text-white mb-6 tracking-tight"
           >
-            What our <span className="text-zinc-300 dark:text-zinc-700">clients say</span>
+            Lo que dicen <span className="text-zinc-300 dark:text-zinc-700">nuestros clientes</span>
           </motion.h2>
         </div>
       </div>

@@ -3,14 +3,14 @@ import { Zap, Palette, Smartphone, Rocket, Search, MessageSquare, ShieldCheck, T
 
 export default function Differentials() {
   const items = [
-    { title: 'Record Speed', icon: <Zap size={24} />, description: 'Your brand live in 72h. Don\'t waste any more time waiting.' },
-    { title: 'Elite Aesthetics', icon: <Palette size={24} />, description: 'Premium design that positions your brand at the top of the market.' },
-    { title: 'Impeccable Mobile', icon: <Smartphone size={24} />, description: 'Perfect experience on smartphones, where your customers are.' },
-    { title: 'Extreme Performance', icon: <Rocket size={24} />, description: 'Instant loading so you don\'t miss a click.' },
-    { title: 'Google Dominance', icon: <Search size={24} />, description: 'Optimized structure so you are the first choice.' },
-    { title: 'Armored Support', icon: <MessageSquare size={24} />, description: 'Humanized service focused on your peace of mind.' },
-    { title: 'Secure Code', icon: <ShieldCheck size={24} />, description: 'Cutting-edge technology to protect your data and customers.' },
-    { title: 'Profit Focused', icon: <TrendingUp size={24} />, description: 'The entire structure designed to maximize your conversion.' },
+    { title: 'Velocidad Récord', icon: <Zap size={24} />, description: 'Tu marca online y facturando en 72h. No pierdas semanas esperando agencias tradicionales.' },
+    { title: 'Estética de Élite', icon: <Palette size={24} />, description: 'Diseño premium exclusivo que posiciona tu marca en la cima de tu sector.' },
+    { title: 'Experiencia Móvil', icon: <Smartphone size={24} />, description: 'Navegación perfecta y rápida en smartphones, donde compran el 80% de tus clientes.' },
+    { title: 'Rendimiento Extremo', icon: <Rocket size={24} />, description: 'Carga instantánea en milisegundos para no perder ninguna oportunidad de venta.' },
+    { title: 'Dominio en Google', icon: <Search size={24} />, description: 'Estructura SEO optimizada para que seas la primera elección cuando busquen tu servicio.' },
+    { title: 'Soporte VIP Humano', icon: <MessageSquare size={24} />, description: 'Atención directa y personalizada enfocada en tu tranquilidad y éxito.' },
+    { title: 'Código Blindado', icon: <ShieldCheck size={24} />, description: 'Tecnología moderna y segura para proteger tus datos y a tus clientes.' },
+    { title: 'Enfoque en Conversión', icon: <TrendingUp size={24} />, description: 'Toda la arquitectura y textos diseñados con el único objetivo de vender más.' },
   ];
 
   return (
@@ -24,7 +24,7 @@ export default function Differentials() {
             transition={{ duration: 0.8 }}
             className="text-4xl lg:text-5xl font-black mb-4 tracking-tight"
           >
-            Why hire <span className="text-zinc-600 dark:text-zinc-800">our service?</span>
+            ¿Por qué elegir <span className="text-zinc-600 dark:text-zinc-800">nuestro servicio?</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ export default function Differentials() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-zinc-400 dark:text-zinc-500 text-lg max-w-xl"
           >
-            We combine speed, aesthetics, and technique to deliver the best result for your business.
+            Combinamos velocidad récord, diseño de lujo e ingeniería de conversión para entregar el mejor resultado para tu negocio.
           </motion.p>
         </div>
 

@@ -3,18 +3,18 @@ import { User, Briefcase, Stethoscope, Home, Utensils, GraduationCap, Gavel, Cam
 
 export default function TargetAudience({ isDarkMode }: { isDarkMode: boolean }) {
   const niches = [
-    { name: 'Service Providers', icon: <Briefcase size={24} /> },
-    { name: 'Freelancers', icon: <User size={24} /> },
-    { name: 'Small Businesses', icon: <Globe size={24} /> },
-    { name: 'Restaurants', icon: <Utensils size={24} /> },
-    { name: 'Clinics', icon: <Stethoscope size={24} /> },
-    { name: 'Offices', icon: <Gavel size={24} /> },
-    { name: 'Real Estate', icon: <Home size={24} /> },
-    { name: 'Gyms', icon: <Dumbbell size={24} /> },
-    { name: 'Consultants', icon: <PenTool size={24} /> },
-    { name: 'Infoproduct Creators', icon: <GraduationCap size={24} /> },
-    { name: 'Local Shops', icon: <ShoppingBag size={24} /> },
-    { name: 'Photographers', icon: <Camera size={24} /> },
+    { name: 'Proveedores de Servicios', icon: <Briefcase size={24} /> },
+    { name: 'Profesionales Independientes', icon: <User size={24} /> },
+    { name: 'Pequeñas y Medianas Empresas', icon: <Globe size={24} /> },
+    { name: 'Restaurantes y Cafés', icon: <Utensils size={24} /> },
+    { name: 'Clínicas y Salud', icon: <Stethoscope size={24} /> },
+    { name: 'Despachos y Abogados', icon: <Gavel size={24} /> },
+    { name: 'Inmobiliarias y Bienes Raíces', icon: <Home size={24} /> },
+    { name: 'Gimnasios y Fitness', icon: <Dumbbell size={24} /> },
+    { name: 'Consultores y Coaches', icon: <PenTool size={24} /> },
+    { name: 'Creadores e Infoproductos', icon: <GraduationCap size={24} /> },
+    { name: 'Tiendas y Comercio Local', icon: <ShoppingBag size={24} /> },
+    { name: 'Fotógrafos y Creativos', icon: <Camera size={24} /> },
   ];
 
   return (
@@ -28,7 +28,7 @@ export default function TargetAudience({ isDarkMode }: { isDarkMode: boolean }) 
             transition={{ duration: 0.8 }}
             className="text-4xl lg:text-5xl font-black text-black dark:text-white mb-6 tracking-tight"
           >
-            If you have a business, <span className="text-zinc-300 dark:text-zinc-700">we can build your website.</span>
+            Si tienes un negocio, <span className="text-zinc-300 dark:text-zinc-700">creamos la web que necesitas para vender.</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export default function TargetAudience({ isDarkMode }: { isDarkMode: boolean }) 
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-lg"
           >
-            We serve various niches with personalized solutions for every type of need.
+            Atendemos múltiples nichos con soluciones estratégicas personalizadas según tu tipo de cliente y modelo de negocio.
           </motion.p>
         </div>
 

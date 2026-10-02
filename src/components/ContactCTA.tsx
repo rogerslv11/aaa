@@ -1,7 +1,11 @@
 import { motion } from 'motion/react';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 
-export default function ContactCTA() {
+interface ContactCTAProps {
+  onOpenBriefing?: () => void;
+}
+
+export default function ContactCTA({ onOpenBriefing }: ContactCTAProps) {
   return (
     <section className="py-24 bg-black dark:bg-zinc-950 transition-colors duration-500 overflow-hidden relative">
       {/* Decorative background elements */}
@@ -17,23 +21,30 @@ export default function ContactCTA() {
           className="max-w-3xl mx-auto"
         >
           <h2 className="text-4xl lg:text-7xl font-black text-white dark:text-zinc-100 mb-8 tracking-tighter leading-[0.9]">
-            Ready to stop <br />
-            <span className="text-zinc-500">losing money?</span>
+            ¿Listo para dejar de <br />
+            <span className="text-zinc-500">perder clientes?</span>
           </h2>
           <p className="text-xl text-zinc-400 dark:text-zinc-500 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Every day without an elite site is a day handing over clients to the competition. Secure your spot today and receive your project in 72 hours.
+            Cada día que pasa sin una presencia digital de élite le estás regalando ventas a tu competencia. Asegura tu lugar hoy y recibe tu sitio web facturando en 72 horas.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <motion.a
-              href="#pricing"
+            <motion.button
+              type="button"
+              onClick={() => {
+                if (onOpenBriefing) {
+                  onOpenBriefing();
+                } else {
+                  window.location.hash = '#/briefing';
+                }
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto bg-white dark:bg-white text-black dark:text-black px-10 py-5 rounded-full font-bold text-xl flex items-center justify-center gap-3"
+              className="w-full sm:w-auto bg-white dark:bg-white text-black dark:text-black px-10 py-5 rounded-full font-bold text-xl flex items-center justify-center gap-3 cursor-pointer"
             >
-              I want my site in 72 hours
+              Quiero mi web en 72 horas
               <ArrowRight size={24} />
-            </motion.a>
+            </motion.button>
             
             <motion.a
               href="https://wa.me/5500000000000"
@@ -44,13 +55,13 @@ export default function ContactCTA() {
               className="w-full sm:w-auto bg-zinc-900 dark:bg-zinc-800 text-white dark:text-zinc-300 border border-zinc-700 dark:border-zinc-700 px-10 py-5 rounded-full font-bold text-xl flex items-center justify-center gap-3"
             >
               <MessageCircle size={24} />
-              Talk via WhatsApp
+              Hablar por WhatsApp
             </motion.a>
           </div>
 
           <div className="mt-12 inline-block px-6 py-2 bg-zinc-900 dark:bg-zinc-900 border border-zinc-800 dark:border-zinc-800 rounded-full">
-            <span className="text-zinc-500 dark:text-zinc-600 font-medium">Plans starting at</span>
-            <span className="text-white dark:text-zinc-200 font-bold ml-2">$425</span>
+            <span className="text-zinc-500 dark:text-zinc-600 font-medium">Planes desde</span>
+            <span className="text-white dark:text-zinc-200 font-bold ml-2">425€</span>
           </div>
         </motion.div>
       </div>

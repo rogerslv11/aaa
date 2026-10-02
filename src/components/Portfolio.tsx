@@ -33,48 +33,48 @@ export default function Portfolio() {
     return () => ctx.revert();
   }, [activeCategory]);
 
-  const categories = ['All', 'Companies', 'Services', 'Professionals', 'Local Businesses', 'Landing Pages'];
+  const categories = ['Todos', 'Empresas', 'Servicios', 'Profesionales', 'Negocios Locales', 'Landing Pages'];
 
   const projects = [
     {
       id: 1,
-      title: 'Corporate Solutions',
-      category: 'Companies',
+      title: 'Soluciones Corporativas',
+      category: 'Empresas',
       imageUrl: corporateImg
     },
     {
       id: 2,
-      title: 'Creative Agency',
-      category: 'Services',
+      title: 'Agencia Creativa',
+      category: 'Servicios',
       imageUrl: creativeImg
     },
     {
       id: 3,
-      title: 'HealthCare Clinic',
-      category: 'Professionals',
+      title: 'Clínica Médica Especializada',
+      category: 'Profesionales',
       imageUrl: medicalImg
     },
     {
       id: 4,
-      title: 'Financial Consulting',
-      category: 'Companies',
+      title: 'Consultoría Financiera',
+      category: 'Empresas',
       imageUrl: corporateImg
     },
     {
       id: 5,
-      title: 'Local E-commerce',
-      category: 'Local Businesses',
+      title: 'E-commerce & Tienda Gourmet',
+      category: 'Negocios Locales',
       imageUrl: creativeImg
     },
     {
       id: 6,
-      title: 'Real Estate Launch',
+      title: 'Lanzamiento Inmobiliario',
       category: 'Landing Pages',
       imageUrl: medicalImg
     }
   ];
 
-  const filteredProjects = activeCategory === 'All' 
+  const filteredProjects = activeCategory === 'Todos' 
     ? projects 
     : projects.filter(p => p.category === activeCategory);
 
@@ -90,7 +90,7 @@ export default function Portfolio() {
               transition={{ duration: 0.8 }}
               className="text-5xl lg:text-7xl font-black text-black dark:text-white mb-6 tracking-tighter"
             >
-              Projects that <br /> <span className="text-zinc-200 dark:text-zinc-800 italic font-serif font-light text-3xl sm:text-5xl lg:text-[100px]">set standards.</span>
+              Proyectos que <br /> <span className="text-zinc-200 dark:text-zinc-800 italic font-serif font-light text-3xl sm:text-5xl lg:text-[100px]">marcan la pauta.</span>
             </motion.h2>
           </div>
           <motion.div 

@@ -4,23 +4,23 @@ import { ShieldCheck, Headphones, ThumbsUp, HeartHandshake } from 'lucide-react'
 export default function Guarantee() {
   const points = [
     {
-      title: 'Satisfaction Guaranteed',
-      description: 'We work until you are 100% satisfied with the final result of your project.',
+      title: 'Satisfacción Garantizada',
+      description: 'Trabajamos y pulimos los detalles hasta que estés 100% satisfecho con el resultado final de tu proyecto.',
       icon: <ThumbsUp size={32} />
     },
     {
-      title: 'Humanized Support',
-      description: "We don't talk with robots. You'll have a direct channel with our team for any questions.",
+      title: 'Soporte 100% Humano',
+      description: "Nada de robots ni respuestas frías. Tendrás contacto directo por WhatsApp con nuestro equipo para lo que necesites.",
       icon: <Headphones size={32} />
     },
     {
-      title: 'Total Security',
-      description: 'Your site is developed following the highest standards of security and privacy.',
+      title: 'Seguridad Blindada',
+      description: 'Tu web es construida bajo los más altos estándares de rendimiento, protección de datos y certificado SSL.',
       icon: <ShieldCheck size={32} />
     },
     {
-      title: '72h Commitment',
-      description: "If we don't deliver within the agreed time, you get your investment back.",
+      title: 'Compromiso 72h',
+      description: "Si no entregamos en el plazo de 72 horas acordado tras recibir tu información, te devolvemos el 100% de tu dinero.",
       icon: <HeartHandshake size={32} />
     }
   ];
@@ -36,7 +36,7 @@ export default function Guarantee() {
             transition={{ duration: 0.8 }}
             className="inline-block px-4 py-1 rounded-full bg-zinc-800 dark:bg-zinc-900 text-zinc-400 dark:text-zinc-500 text-xs font-bold uppercase tracking-widest mb-4"
           >
-            Peace of Mind
+            Tranquilidad Absoluta
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -45,7 +45,7 @@ export default function Guarantee() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl lg:text-5xl font-black mb-6 tracking-tight"
           >
-            Our commitment is to <span className="text-zinc-600 dark:text-zinc-700">your success.</span>
+            Nuestro compromiso es con <span className="text-zinc-600 dark:text-zinc-700">tu éxito comercial.</span>
           </motion.h2>
         </div>
 

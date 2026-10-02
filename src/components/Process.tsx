@@ -17,23 +17,23 @@ export default function Process() {
   const steps = [
     {
       number: '01',
-      title: 'Conversion Engineering',
-      description: "We map your audience's behavior to chart the fastest path to 'Yes'."
+      title: 'Ingeniería de Conversión',
+      description: "Analizamos el comportamiento de tus clientes ideales para trazar la ruta más directa y persuasiva hacia la compra."
     },
     {
       number: '02',
-      title: 'Authority Design',
-      description: 'We create an elite interface that communicates luxury and professionalism in every pixel.'
+      title: 'Diseño de Élite & Copywriting',
+      description: 'Creamos una interfaz visual imponente con textos persuasivos que comunican prestigio y confianza en cada píxel.'
     },
     {
       number: '03',
-      title: 'Extreme Performance',
-      description: 'We develop with cutting-edge technology to ensure instant loading and Google dominance.'
+      title: 'Rendimiento Extremo',
+      description: 'Programamos con tecnología de vanguardia para garantizar carga en milisegundos y dominio en Google.'
     },
     {
       number: '04',
-      title: 'Market Dominance',
-      description: 'In 72h, you stop being invisible and take control of your digital authority.'
+      title: 'Lanzamiento y Dominio en 72h',
+      description: 'En solo 72 horas tu web está lista para captar prospectos calificados, cerrar ventas y superar a tu competencia.'
     }
   ];
 
@@ -52,14 +52,14 @@ export default function Process() {
                 transition={{ duration: 0.8 }}
               >
                 <div className="inline-block px-4 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 mb-8">
-                  Elite Workflow
+                  Metodología de Élite
                 </div>
                 <h2 className="text-5xl lg:text-7xl font-black text-black dark:text-white mb-8 tracking-tighter leading-none">
-                  How we <br />
-                  <span className="text-zinc-200 dark:text-zinc-800">Scale.</span>
+                  Cómo <br />
+                  <span className="text-zinc-200 dark:text-zinc-800">Escalamos.</span>
                 </h2>
                 <p className="text-xl text-zinc-500 dark:text-zinc-400 max-w-sm leading-relaxed">
-                  A surgical process designed to eliminate noise and deliver digital authority in record time.
+                  Un proceso quirúrgico diseñado para eliminar la fricción y entregar autoridad digital en tiempo récord.
                 </p>
               </motion.div>
             </div>

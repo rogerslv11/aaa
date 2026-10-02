@@ -5,9 +5,10 @@ import { useState, useEffect } from 'react';
 interface NavbarProps {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
+  onOpenBriefing?: () => void;
 }
 
-export default function Navbar({ isDarkMode, toggleDarkMode }: NavbarProps) {
+export default function Navbar({ isDarkMode, toggleDarkMode, onOpenBriefing }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
@@ -29,11 +30,11 @@ export default function Navbar({ isDarkMode, toggleDarkMode }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { name: 'Why us?', href: '#benefits' },
-    { name: 'How it works', href: '#process' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'FAQ', href: '#faq' },
+    { name: '¿Por qué nosotros?', href: '#benefits' },
+    { name: 'Cómo funciona', href: '#process' },
+    { name: 'Planes', href: '#pricing' },
+    { name: 'Portafolio', href: '#portfolio' },
+    { name: 'Preguntas', href: '#faq' },
   ];
 
   return (
@@ -51,10 +52,10 @@ export default function Navbar({ isDarkMode, toggleDarkMode }: NavbarProps) {
             className="flex items-center gap-2"
           >
             <div className={`w-8 h-8 flex items-center justify-center rounded-sm transition-colors ${isDarkMode ? 'bg-white' : 'bg-black'}`}>
-              <span className={`font-bold text-xl leading-none ${isDarkMode ? 'text-black' : 'text-white'}`}>S</span>
+              <span className={`font-bold text-xl leading-none ${isDarkMode ? 'text-black' : 'text-white'}`}>V</span>
             </div>
             <span className={`text-xl font-bold tracking-tighter uppercase transition-colors ${isDarkMode ? 'text-white' : 'text-black'}`}>
-              SitePro<span className="text-zinc-400">72h</span>
+              Vanguard<span className="text-zinc-400">Studio</span>
             </span>
           </motion.div>
 
@@ -84,20 +85,27 @@ export default function Navbar({ isDarkMode, toggleDarkMode }: NavbarProps) {
               {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
-            <motion.a
-              href="#pricing"
+            <motion.button
+              type="button"
+              onClick={() => {
+                if (onOpenBriefing) {
+                  onOpenBriefing();
+                } else {
+                  window.location.hash = '#/briefing';
+                }
+              }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg ${
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg cursor-pointer ${
                 isDarkMode 
                 ? 'bg-white text-black hover:bg-zinc-200 shadow-white/5' 
                 : 'bg-black text-white hover:bg-zinc-800 shadow-black/10'
               }`}
             >
-              Get Started
-            </motion.a>
+              Comenzar Ahora
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -132,9 +140,9 @@ export default function Navbar({ isDarkMode, toggleDarkMode }: NavbarProps) {
             <div className="flex justify-between items-center mb-16">
               <div className="flex items-center gap-2">
                 <div className={`w-8 h-8 flex items-center justify-center rounded-sm ${isDarkMode ? 'bg-white' : 'bg-black'}`}>
-                  <span className={`font-bold text-xl leading-none ${isDarkMode ? 'text-black' : 'text-white'}`}>S</span>
+                  <span className={`font-bold text-xl leading-none ${isDarkMode ? 'text-black' : 'text-white'}`}>V</span>
                 </div>
-                <span className="text-xl font-bold tracking-tighter uppercase">SitePro<span className="text-zinc-400">72h</span></span>
+                <span className="text-xl font-bold tracking-tighter uppercase">Vanguard<span className="text-zinc-400">Studio</span></span>
               </div>
               <button onClick={() => setIsOpen(false)} className="p-2">
                 <X size={32} />
@@ -158,22 +166,29 @@ export default function Navbar({ isDarkMode, toggleDarkMode }: NavbarProps) {
             </div>
 
             <div className="mt-auto">
-              <motion.a
-                href="#pricing"
+              <motion.button
+                type="button"
+                onClick={() => {
+                  setIsOpen(false);
+                  if (onOpenBriefing) {
+                    onOpenBriefing();
+                  } else {
+                    window.location.hash = '#/briefing';
+                  }
+                }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                onClick={() => setIsOpen(false)}
-                className={`w-full py-6 rounded-2xl text-center font-black text-2xl shadow-2xl transition-all ${
+                className={`w-full py-6 rounded-2xl text-center font-black text-2xl shadow-2xl transition-all cursor-pointer ${
                   isDarkMode 
                   ? 'bg-white text-black' 
                   : 'bg-black text-white'
                 }`}
               >
-                Get Started
-              </motion.a>
+                Comenzar Ahora
+              </motion.button>
               <p className="text-center mt-8 text-zinc-500 text-sm font-medium uppercase tracking-widest">
-                Website ready in 72 hours
+                Tu sitio web listo en 72 horas
               </p>
             </div>
           </motion.div>

@@ -3,10 +3,10 @@ import { Cpu, Wind, Code2, Cloud, Zap } from 'lucide-react';
 
 export default function TechStack() {
   const techs = [
-    { name: 'React 19', icon: <Code2 size={24} />, detail: 'Ultra-fast interfaces' },
-    { name: 'Vite', icon: <Zap size={24} />, detail: 'Instant build' },
-    { name: 'Tailwind CSS', icon: <Wind size={24} />, detail: 'Optimized styling' },
-    { name: 'Cloud Native', icon: <Cloud size={24} />, detail: 'Elite hosting' },
+    { name: 'React 19', icon: <Code2 size={24} />, detail: 'Interfaces ultra rápidas' },
+    { name: 'Vite', icon: <Zap size={24} />, detail: 'Carga instantánea' },
+    { name: 'Tailwind CSS', icon: <Wind size={24} />, detail: 'Estilo ligero y moderno' },
+    { name: 'Cloud Native', icon: <Cloud size={24} />, detail: 'Hosting de élite y CDN' },
   ];
 
   return (
@@ -20,23 +20,23 @@ export default function TechStack() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl lg:text-5xl font-black text-black dark:text-white mb-8 tracking-tight">
-              Cutting-edge technology for <span className="text-zinc-300 dark:text-zinc-700">maximum performance.</span>
+              Tecnología de vanguardia para un <span className="text-zinc-300 dark:text-zinc-700">rendimiento superior.</span>
             </h2>
             <p className="text-zinc-500 dark:text-zinc-400 text-lg mb-8 leading-relaxed">
-              We don't use ready-made templates or slow tools. We use the same technologies as the world's largest companies (Meta, Netflix, Airbnb) to ensure your site is the fastest on the market.
+              No usamos plantillas sobrecargadas ni herramientas lentas. Usamos el mismo stack tecnológico de las compañías más grandes del mundo (Meta, Netflix, Airbnb) para garantizar que tu sitio sea el más rápido del mercado.
             </p>
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-black dark:text-white font-bold">
                 <div className="w-1.5 h-1.5 bg-black dark:bg-white rounded-full"></div>
-                Clean and optimized code
+                Código limpio, semántico y optimizado
               </li>
               <li className="flex items-center gap-3 text-black dark:text-white font-bold">
                 <div className="w-1.5 h-1.5 bg-black dark:bg-white rounded-full"></div>
-                Zero unnecessary dependencies
+                Cero dependencias innecesarias o plugins pesados
               </li>
               <li className="flex items-center gap-3 text-black dark:text-white font-bold">
                 <div className="w-1.5 h-1.5 bg-black dark:bg-white rounded-full"></div>
-                Scalable infrastructure
+                Infraestructura en la nube con alta disponibilidad
               </li>
             </ul>
           </motion.div>

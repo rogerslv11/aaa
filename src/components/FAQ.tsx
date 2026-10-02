@@ -5,41 +5,41 @@ import { useState } from 'react';
 export default function FAQ() {
   const faqs = [
     {
-      category: 'Process',
+      category: 'Proceso y Entrega',
       items: [
         {
-          question: 'Is the site really ready in 72 hours?',
-          answer: 'Yes! Our process is optimized for fast delivery. The 72-hour period starts after the client provides all necessary information.'
+          question: '¿El sitio web realmente está listo en 72 horas?',
+          answer: '¡Sí, 100% garantizado! Nuestro proceso de desarrollo está minuciosamente optimizado. El plazo de 72 horas comienza a contar en cuanto nos envías la información básica de tu negocio.'
         },
         {
-          question: 'What do I need to send to get started?',
-          answer: "To get started, we'll need your logo (if you have one), institutional texts, images of your products/services, and contact information (WhatsApp, Social Media, Address)."
+          question: '¿Qué información necesito enviar para comenzar?',
+          answer: 'Solo necesitamos tu logotipo (si cuentas con uno), descripción básica de tus servicios o productos, fotos que desees mostrar y tus vías de contacto (WhatsApp, redes sociales, ubicación).'
         }
       ]
     },
     {
-      category: 'Technical',
+      category: 'Aspectos Técnicos',
       items: [
         {
-          question: 'Are the domain and hosting included?',
-          answer: 'Domain registration and hosting are separate services paid annually. We guide and perform the entire configuration process for you at no additional cost.'
+          question: '¿El dominio y el hosting están incluidos?',
+          answer: 'El Plan Profesional incluye 1 año de alojamiento premium ultra rápido. Para el dominio o configuraciones personalizadas, te asesoramos y realizamos toda la integración técnica sin coste extra.'
         },
         {
-          question: 'Does the site appear on Google?',
-          answer: 'Yes. We implement the best structural SEO (Search Engine Optimization) practices in all plans to ensure your business is found.'
+          question: '¿Mi página web aparecerá en Google?',
+          answer: 'Sí. Implementamos las mejores directrices de SEO estructural (Search Engine Optimization), velocidad de carga y metadatos para que Google indexe tu web en las mejores posiciones.'
         }
       ]
     },
     {
-      category: 'Support',
+      category: 'Soporte y Garantías',
       items: [
         {
-          question: 'Can I request changes after delivery?',
-          answer: 'Yes! After delivery, you have a review period to request adjustments and ensure everything is exactly as you imagined.'
+          question: '¿Puedo solicitar cambios tras la entrega?',
+          answer: '¡Por supuesto! Tras la entrega cuentas con un periodo de revisión para solicitar ajustes y asegurarnos de que todo quede exactamente como lo soñaste antes del despliegue final.'
         },
         {
-          question: 'Is there continuous technical support?',
-          answer: 'We offer technical support after delivery to ensure your site continues to work perfectly and to answer any questions that arise.'
+          question: '¿Tengo soporte técnico post-entrega?',
+          answer: 'Sí, cuentas con soporte técnico humano y directo para asegurarnos de que tu sitio funcione a la perfección las 24 horas y resolver cualquier inquietud que surja.'
         }
       ]
     }
@@ -60,14 +60,14 @@ export default function FAQ() {
               className="sticky top-32"
             >
               <div className="inline-block px-4 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 mb-8">
-                Help Center
+                Centro de Preguntas
               </div>
               <h2 className="text-5xl lg:text-7xl font-black text-black dark:text-white mb-8 tracking-tighter leading-none">
-                Essential <br />
-                <span className="text-zinc-200 dark:text-zinc-800">Answers.</span>
+                Respuestas <br />
+                <span className="text-zinc-200 dark:text-zinc-800">Claras.</span>
               </h2>
               <p className="text-xl text-zinc-500 dark:text-zinc-400 max-w-sm mb-12 leading-relaxed">
-                Everything you need to know about how we take your business to the next level in record time.
+                Todo lo que necesitas saber sobre cómo transformamos la presencia digital de tu negocio en tiempo récord.
               </p>
               
               <motion.a 
@@ -77,7 +77,7 @@ export default function FAQ() {
                 whileHover={{ x: 10 }}
                 className="group flex items-center gap-4 text-black dark:text-white font-black uppercase tracking-widest text-xs"
               >
-                Still have questions? Contact us
+                ¿Aún tienes dudas? Escríbenos
                 <div className="w-12 h-12 rounded-full border border-zinc-200 dark:border-zinc-800 flex items-center justify-center group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all">
                   <ArrowUpRight size={20} />
                 </div>

@@ -7,14 +7,18 @@ import heroMockup from '../assets/images/hero_mockup_modern_web_design_178698807
 
 gsap.registerPlugin(TextPlugin);
 
-export default function Hero() {
+interface HeroProps {
+  onOpenBriefing?: () => void;
+}
+
+export default function Hero({ onOpenBriefing }: HeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const typewriterRef = useRef<HTMLSpanElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
   // Typewriter words
-  const words = ['Authority', 'Results', 'Impact', 'Conversion'];
+  const words = ['Autoridad', 'Resultados', 'Impacto', 'Conversión'];
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -56,10 +60,10 @@ export default function Hero() {
   }, [mouseX, mouseY]);
 
   const trustIndicators = [
-    '72h Delivery',
-    'Elite Design',
-    'Advanced SEO',
-    'VIP Support'
+    'Entrega en 72h',
+    'Diseño de Élite',
+    'SEO para Google',
+    'Soporte VIP 1 a 1'
   ];
 
   const magneticRef = useRef<HTMLAnchorElement>(null);
@@ -107,7 +111,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 mb-8"
             >
               <span className="flex h-2 w-2 rounded-full bg-black dark:bg-white animate-pulse"></span>
-              Immediate Availability • Slot 03/05
+              Disponibilidad Inmediata • Cupos 03/05 esta semana
             </motion.div>
             
             <h1 className="text-4xl sm:text-6xl lg:text-[100px] font-black tracking-tighter text-black dark:text-white mb-8 leading-[0.9] text-reveal">
@@ -117,9 +121,9 @@ export default function Hero() {
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                 className="inline-block"
               >
-                Stop being <br />
+                Genera más <br />
                 <span ref={typewriterRef} className="text-zinc-200 dark:text-zinc-800"></span> <br />
-                Sell more in <span className="italic font-serif font-light text-3xl sm:text-5xl lg:text-[100px]">72h</span>.
+                Vende más en <span className="italic font-serif font-light text-3xl sm:text-5xl lg:text-[100px]">72h</span>.
               </motion.span>
             </h1>
             
@@ -129,7 +133,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
               className="text-lg lg:text-xl text-zinc-500 dark:text-zinc-400 mb-12 leading-relaxed max-w-xl"
             >
-              An amateur website is costing your business. We deliver the digital authority you need to dominate your niche and convert visitors into loyal customers.
+              Una web amateur o anticuada le está costando dinero a tu negocio. Creamos páginas de alto impacto y velocidad extrema diseñadas para convertir visitantes en clientes de alto valor.
             </motion.p>
 
             <motion.div 
@@ -138,22 +142,29 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex flex-col sm:flex-row items-center gap-5 mb-16"
             >
-              <motion.a
-                ref={magneticRef}
-                href="#pricing"
+              <motion.button
+                ref={magneticRef as any}
+                type="button"
+                onClick={() => {
+                  if (onOpenBriefing) {
+                    onOpenBriefing();
+                  } else {
+                    window.location.hash = '#/briefing';
+                  }
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto bg-black dark:bg-white text-white dark:text-black px-12 py-6 rounded-2xl font-black text-xl flex items-center justify-center gap-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(255,255,255,0.08)]"
+                className="w-full sm:w-auto bg-black dark:bg-white text-white dark:text-black px-12 py-6 rounded-2xl font-black text-xl flex items-center justify-center gap-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(255,255,255,0.08)] cursor-pointer"
               >
-                Get Started
+                Quiero mi Web en 72h
                 <ArrowRight size={24} strokeWidth={3} />
-              </motion.a>
+              </motion.button>
               <motion.a
                 href="#portfolio"
                 whileHover={{ x: 5 }}
                 className="group w-full sm:w-auto text-black dark:text-white px-8 py-6 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 transition-all"
               >
-                View Portfolio
+                Ver Portafolio
                 <div className="w-10 h-[1px] bg-zinc-200 dark:bg-zinc-800 group-hover:w-16 transition-all"></div>
               </motion.a>
             </motion.div>
@@ -185,7 +196,7 @@ export default function Hero() {
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 p-2">
               <img 
                 src={heroMockup} 
-                alt="Professional website mockup"
+                alt="Mockup de sitio web profesional"
                 className="w-full h-auto rounded-[2rem] grayscale dark:grayscale-0 contrast-125 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
@@ -202,7 +213,7 @@ export default function Hero() {
                   <TrendingUp size={20} />
                 </div>
                 <div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Conversion</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Conversión</div>
                   <div className="text-xl font-black text-black dark:text-white">+142%</div>
                 </div>
               </div>
@@ -218,7 +229,7 @@ export default function Hero() {
                   <Zap size={20} />
                 </div>
                 <div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Performance</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Rendimiento</div>
                   <div className="text-xl font-black text-white dark:text-black">99/100</div>
                 </div>
               </div>
@@ -230,7 +241,7 @@ export default function Hero() {
               className="absolute top-1/2 -right-16 z-20 bg-white dark:bg-zinc-900 p-4 rounded-2xl shadow-xl border border-zinc-100 dark:border-zinc-800 hidden lg:flex items-center gap-3"
             >
               <ShieldCheck size={20} className="text-black dark:text-white" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-black dark:text-white">72h Guarantee</span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-black dark:text-white">Garantía 72h</span>
             </motion.div>
           </motion.div>
         </div>

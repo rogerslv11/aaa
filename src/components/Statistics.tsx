@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function Statistics() {
   const stats = [
-    { value: 250, suffix: '+', label: 'Sites Delivered' },
-    { value: 72, suffix: 'h', label: 'Max Deadline' },
-    { value: 99, suffix: '%', label: 'Satisfaction' },
-    { value: 24, suffix: '/7', label: 'Live Sites' },
+    { value: 250, suffix: '+', label: 'Sitios Lanzados' },
+    { value: 72, suffix: 'h', label: 'Plazo Máximo' },
+    { value: 99, suffix: '%', label: 'Satisfacción Total' },
+    { value: 24, suffix: '/7', label: 'Máquina de Ventas' },
   ];
 
   return (
