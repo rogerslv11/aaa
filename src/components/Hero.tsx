@@ -1,149 +1,56 @@
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'motion/react';
-import { ArrowRight, CheckCircle2, Zap, TrendingUp, ShieldCheck } from 'lucide-react';
-import { useRef, useEffect, useState } from 'react';
-import gsap from 'gsap';
-import { TextPlugin } from 'gsap/TextPlugin';
+import { ArrowRight, Zap, TrendingUp, ShieldCheck, Star, Clock } from 'lucide-react';
 import heroMockup from '../assets/images/hero_mockup_modern_web_design_1786988074777.jpg';
-
-gsap.registerPlugin(TextPlugin);
 
 interface HeroProps {
   onOpenBriefing?: () => void;
 }
 
 export default function Hero({ onOpenBriefing }: HeroProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const typewriterRef = useRef<HTMLSpanElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  // Typewriter words
-  const words = ['Autoridad', 'Resultados', 'Impacto', 'Conversión'];
-
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      const tl = gsap.timeline({ repeat: -1 });
-      words.forEach((word) => {
-        tl.to(typewriterRef.current, {
-          duration: 1.5,
-          text: word,
-          ease: "none",
-        })
-        .to({}, { duration: 1.5 }) // wait
-        .to(typewriterRef.current, {
-          duration: 1,
-          text: "",
-          ease: "none",
-        });
-      });
-    });
-    return () => ctx.revert();
-  }, []);
-
-  // Smooth spring for mouse parallax
-  const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
-  const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
-
-  const moveX = useTransform(springX, [-500, 500], [-20, 20]);
-  const moveY = useTransform(springY, [-500, 500], [-20, 20]);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      mouseX.set(clientX - innerWidth / 2);
-      mouseY.set(clientY - innerHeight / 2);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [mouseX, mouseY]);
-
   const trustIndicators = [
-    'Entrega en 72h',
-    'Diseño de Élite',
-    'SEO para Google',
-    'Soporte VIP 1 a 1'
+    { label: '72-Hour Delivery', highlight: 'Guaranteed' },
+    { label: 'Bespoke Elite Design', highlight: 'Zero Templates' },
+    { label: 'Google Score 99+', highlight: '0.28s Load Speed' },
+    { label: 'Dedicated VIP Support', highlight: '1-on-1 Direct' }
   ];
 
-  const magneticRef = useRef<HTMLAnchorElement>(null);
-
-  useEffect(() => {
-    const btn = magneticRef.current;
-    if (!btn) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const { left, top, width, height } = btn.getBoundingClientRect();
-      const x = (clientX - (left + width / 2)) * 0.3;
-      const y = (clientY - (top + height / 2)) * 0.3;
-      gsap.to(btn, { x, y, duration: 0.3, ease: "power2.out" });
-    };
-
-    const handleMouseLeave = () => {
-      gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.3)" });
-    };
-
-    btn.addEventListener('mousemove', handleMouseMove);
-    btn.addEventListener('mouseleave', handleMouseLeave);
-    return () => {
-      btn.removeEventListener('mousemove', handleMouseMove);
-      btn.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, []);
-
   return (
-    <section ref={containerRef} className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden transition-colors duration-500 dark:bg-zinc-950">
-      {/* Background Aura */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-zinc-100 dark:bg-zinc-900/30 rounded-full blur-[120px] -z-10 pointer-events-none opacity-50"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 mb-8"
-            >
-              <span className="flex h-2 w-2 rounded-full bg-black dark:bg-white animate-pulse"></span>
-              Disponibilidad Inmediata • Cupos 03/05 esta semana
-            </motion.div>
-            
-            <h1 className="text-4xl sm:text-6xl lg:text-[100px] font-black tracking-tighter text-black dark:text-white mb-8 leading-[0.9] text-reveal">
-              <motion.span
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-                className="inline-block"
-              >
-                Genera más <br />
-                <span ref={typewriterRef} className="text-zinc-200 dark:text-zinc-800"></span> <br />
-                Vende más en <span className="italic font-serif font-light text-3xl sm:text-5xl lg:text-[100px]">72h</span>.
-              </motion.span>
-            </h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-              className="text-lg lg:text-xl text-zinc-500 dark:text-zinc-400 mb-12 leading-relaxed max-w-xl"
-            >
-              Una web amateur o anticuada le está costando dinero a tu negocio. Creamos páginas de alto impacto y velocidad extrema diseñadas para convertir visitantes en clientes de alto valor.
-            </motion.p>
+    <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden transition-colors duration-300 bg-zinc-950 text-white">
+      {/* Background Decorative Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-zinc-900/50 rounded-full blur-[140px] -z-10 pointer-events-none opacity-70" />
+      <div className="absolute top-10 right-10 w-72 h-72 bg-emerald-500/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="flex flex-col sm:flex-row items-center gap-5 mb-16"
-            >
-              <motion.button
-                ref={magneticRef as any}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Content Column */}
+          <div className="lg:col-span-7 space-y-8">
+            
+            {/* Live Availability Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-[11px] font-black uppercase tracking-wider text-zinc-300 shadow-xs">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+              </span>
+              <span>Immediate Availability • 02/05 Project Slots Remaining This Week</span>
+            </div>
+            
+            {/* Headline */}
+            <div className="space-y-3">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight text-white leading-[0.95] break-words">
+                Command authority. <br />
+                Sell more in{' '}
+                <span className="italic font-serif font-light text-zinc-500">
+                  72 hours
+                </span>.
+              </h1>
+              <p className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed max-w-2xl font-normal pt-2">
+                Slow, outdated websites cost your business valuable clients every day. We build high-impact digital experiences with conversion psychology, dominant Google SEO, and instant 0.28s loading speed.
+              </p>
+            </div>
+
+            {/* CTAs Action Row */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+              <button
                 type="button"
                 onClick={() => {
                   if (onOpenBriefing) {
@@ -152,98 +59,130 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
                     window.location.hash = '#/briefing';
                   }
                 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto bg-black dark:bg-white text-white dark:text-black px-12 py-6 rounded-2xl font-black text-xl flex items-center justify-center gap-3 shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(255,255,255,0.08)] cursor-pointer"
+                className="group px-9 py-5 rounded-2xl bg-white text-black font-black text-base sm:text-lg flex items-center justify-center gap-3 shadow-xl hover:bg-zinc-200 active:scale-[0.98] transition-all cursor-pointer"
               >
-                Quiero mi Web en 72h
-                <ArrowRight size={24} strokeWidth={3} />
-              </motion.button>
-              <motion.a
+                <span>Launch My Website in 72h</span>
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              
+              <a
                 href="#portfolio"
-                whileHover={{ x: 5 }}
-                className="group w-full sm:w-auto text-black dark:text-white px-8 py-6 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 transition-all"
+                className="px-8 py-5 rounded-2xl border border-zinc-800 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-zinc-900 transition-colors"
               >
-                Ver Portafolio
-                <div className="w-10 h-[1px] bg-zinc-200 dark:bg-zinc-800 group-hover:w-16 transition-all"></div>
-              </motion.a>
-            </motion.div>
-
-            <div className="flex flex-wrap gap-8">
-              {trustIndicators.map((item, i) => (
-                <motion.div 
-                  key={item}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.7 + (i * 0.1) }}
-                  className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-400 dark:text-zinc-600"
-                >
-                  <div className="w-1 h-1 bg-black dark:bg-white rounded-full" />
-                  {item}
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            style={{ x: moveX, y: moveY }}
-            initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative perspective-1000"
-          >
-            {/* Main Mockup */}
-            <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 p-2">
-              <img 
-                src={heroMockup} 
-                alt="Mockup de sitio web profesional"
-                className="w-full h-auto rounded-[2rem] grayscale dark:grayscale-0 contrast-125 transition-all duration-700"
-                referrerPolicy="no-referrer"
-              />
+                <span>View Case Studies</span>
+                <span className="text-xs text-zinc-500 font-normal">(250+ Delivered)</span>
+              </a>
             </div>
 
-            {/* Floating Metrics Cards */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-10 -left-10 z-20 bg-white dark:bg-zinc-900 p-6 rounded-3xl shadow-2xl border border-zinc-100 dark:border-zinc-800 hidden lg:block"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-green-50 dark:bg-green-900/30 text-green-600 rounded-xl flex items-center justify-center">
-                  <TrendingUp size={20} />
+            {/* Social Proof & Trust Badges */}
+            <div className="pt-4 border-t border-zinc-800/80 space-y-4">
+              <div className="flex flex-wrap items-center gap-y-3 gap-x-6">
+                {/* Review Rating Snippet */}
+                <div className="flex items-center gap-2">
+                  <div className="flex -space-x-2">
+                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://i.pravatar.cc/100?u=doc1" alt="Client" />
+                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://i.pravatar.cc/100?u=exec2" alt="Client" />
+                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://i.pravatar.cc/100?u=law3" alt="Client" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={12} className="fill-amber-400 text-amber-400" />
+                      ))}
+                      <span className="text-xs font-black text-white ml-1">4.98/5</span>
+                    </div>
+                    <span className="text-[10px] text-zinc-400 font-semibold">+250 businesses transformed</span>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Conversión</div>
-                  <div className="text-xl font-black text-black dark:text-white">+142%</div>
+
+                <div className="h-6 w-[1px] bg-zinc-800 hidden sm:block" />
+
+                {/* Guarantee Pill */}
+                <div className="flex items-center gap-2 text-xs font-bold text-emerald-400">
+                  <ShieldCheck size={16} />
+                  <span>72-Hour Delivery or 100% Full Refund Guarantee</span>
                 </div>
               </div>
-            </motion.div>
 
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-10 -right-10 z-20 bg-zinc-950 dark:bg-white p-6 rounded-3xl shadow-2xl border border-zinc-800 dark:border-zinc-200 hidden lg:block"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-white/10 dark:bg-black/5 text-white dark:text-black rounded-xl flex items-center justify-center">
-                  <Zap size={20} />
+              {/* 4 Feature Tags */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2">
+                {trustIndicators.map((item) => (
+                  <div 
+                    key={item.label}
+                    className="p-2.5 rounded-xl bg-zinc-900/60 border border-zinc-800/80 text-center"
+                  >
+                    <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">{item.highlight}</div>
+                    <div className="text-xs font-extrabold text-white truncate">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          {/* Right Visual Showcase Column */}
+          <div className="lg:col-span-5 relative">
+            
+            {/* Main Mockup Device Frame */}
+            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 bg-zinc-950 p-2.5">
+              {/* Browser Header Bar */}
+              <div className="flex items-center justify-between px-3 pb-2 pt-1 text-zinc-500 text-[10px] font-mono border-b border-zinc-800/80 mb-2">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-rose-500" />
+                  <span className="w-2 h-2 rounded-full bg-amber-500" />
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
                 </div>
-                <div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Rendimiento</div>
-                  <div className="text-xl font-black text-white dark:text-black">99/100</div>
+                <div className="px-3 py-0.5 rounded-md bg-zinc-900 text-zinc-400 text-[10px] flex items-center gap-1">
+                  <span>🔒 sitepro72h.com/preview</span>
+                </div>
+                <div className="flex items-center gap-1 text-emerald-400 font-bold text-[9px]">
+                  <Zap size={11} />
+                  <span>0.28s</span>
                 </div>
               </div>
-            </motion.div>
 
-            <motion.div
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-              className="absolute top-1/2 -right-16 z-20 bg-white dark:bg-zinc-900 p-4 rounded-2xl shadow-xl border border-zinc-100 dark:border-zinc-800 hidden lg:flex items-center gap-3"
-            >
-              <ShieldCheck size={20} className="text-black dark:text-white" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-black dark:text-white">Garantía 72h</span>
-            </motion.div>
-          </motion.div>
+              {/* Image Preview */}
+              <div className="relative overflow-hidden rounded-xl">
+                <img 
+                  src={heroMockup} 
+                  alt="High converting professional website mockup SitePro 72h"
+                  className="w-full h-auto object-cover rounded-xl grayscale-0 contrast-110 hover:scale-[1.02] transition-transform duration-500"
+                  loading="eager"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+            {/* Floating Top Metric Card */}
+            <div className="absolute -top-5 -left-5 z-20 bg-zinc-900 p-4 rounded-2xl shadow-2xl border border-zinc-800 hidden sm:flex items-center gap-3">
+              <div className="w-10 h-10 bg-emerald-950/60 text-emerald-400 rounded-xl flex items-center justify-center font-bold">
+                <TrendingUp size={20} />
+              </div>
+              <div>
+                <div className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Lead Conversion</div>
+                <div className="text-lg font-black text-white">+240% Direct Inquiries</div>
+              </div>
+            </div>
+
+            {/* Floating Bottom Metric Card */}
+            <div className="absolute -bottom-5 -right-5 z-20 bg-white text-black p-4 rounded-2xl shadow-2xl border border-zinc-200 hidden sm:flex items-center gap-3">
+              <div className="w-10 h-10 bg-black/10 text-black rounded-xl flex items-center justify-center font-bold">
+                <Zap size={20} />
+              </div>
+              <div>
+                <div className="text-[9px] font-black uppercase tracking-widest text-zinc-600">Google PageSpeed</div>
+                <div className="text-lg font-black text-emerald-600">Score 100 / 100</div>
+              </div>
+            </div>
+
+            {/* Floating Right SLA Badge */}
+            <div className="absolute top-1/2 -right-6 z-20 bg-zinc-900 px-3.5 py-2 rounded-xl shadow-xl border border-zinc-800 hidden lg:flex items-center gap-2">
+              <Clock size={16} className="text-amber-500" />
+              <span className="text-[11px] font-black uppercase tracking-wider text-white">72h SLA Delivery</span>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </section>

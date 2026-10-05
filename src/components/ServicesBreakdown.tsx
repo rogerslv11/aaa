@@ -1,149 +1,180 @@
-import { motion } from 'motion/react';
-import { Layout, Globe, ShoppingCart, Rocket, Zap, Search, Shield, Cpu, ArrowUpRight } from 'lucide-react';
+import { Rocket, ShoppingCart, Globe, Zap, Cpu, ArrowUpRight, CheckCircle2, Sparkles, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export default function ServicesBreakdown() {
   return (
-    <section id="especialidades" className="py-32 bg-white dark:bg-zinc-950 transition-colors duration-500 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
+    <section id="especialidades" className="py-20 lg:py-32 bg-zinc-950 text-white transition-colors duration-300 relative overflow-hidden">
+      {/* Background Decorative Glow */}
+      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-zinc-900/40 rounded-full blur-[140px] pointer-events-none -z-0" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 lg:mb-16 gap-6 sm:gap-8 pb-8 sm:pb-10 border-b border-zinc-800">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-              className="inline-block px-4 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 mb-6"
-            >
-              Nuestras Especialidades
-            </motion.div>
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-black text-black dark:text-white leading-[0.9] tracking-tighter"
-            >
-              Especialidades que <br /> <span className="text-zinc-200 dark:text-zinc-800 italic font-serif font-light text-3xl sm:text-5xl lg:text-[100px]">generan ventas.</span>
-            </motion.h2>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4 shadow-xs">
+              <Sparkles size={12} className="text-amber-400" />
+              Specialties & Sales Engineering
+            </div>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-[0.95] tracking-tight">
+              Digital specialties that <br className="hidden sm:inline" />
+              <span className="text-zinc-500">turn website clicks into signed contracts.</span>
+            </h2>
           </div>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:mb-3"
-          >
-            <p className="text-zinc-500 dark:text-zinc-400 text-lg max-w-sm leading-relaxed">
-              Desarrollamos ecosistemas digitales de alto rendimiento donde cada píxel está diseñado para convertir y cada línea de código optimizada para velocidad extrema.
+
+          <div className="lg:max-w-sm space-y-3">
+            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+              We design digital ecosystems where every visual asset communicates supreme authority and every line of code is optimized for instant speed.
             </p>
-          </motion.div>
+            <div className="flex items-center gap-2 text-xs font-bold text-emerald-400">
+              <CheckCircle2 size={15} />
+              <span>Guaranteed 72-hour delivery backed by contract</span>
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:auto-rows-[300px]">
-          {/* Landing Pages - Primary Bento Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="md:col-span-8 md:row-span-2 bg-zinc-50 dark:bg-zinc-900 rounded-[3rem] p-10 lg:p-16 border border-zinc-100 dark:border-zinc-800 flex flex-col justify-between group overflow-hidden relative"
-          >
+        {/* Master Bento Grid - Fully Responsive */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+          
+          {/* Card 1: Landing Pages - Primary Bento Hero (8 cols on desktop) */}
+          <div className="md:col-span-12 lg:col-span-8 bg-zinc-900/50 rounded-3xl p-6 sm:p-10 lg:p-12 border border-zinc-800 flex flex-col justify-between group overflow-hidden relative shadow-xs hover:border-zinc-600 transition-all">
+            
+            {/* Top Row inside Card */}
             <div className="relative z-10">
-              <div className="w-20 h-20 bg-black dark:bg-white text-white dark:text-black rounded-3xl flex items-center justify-center mb-10 group-hover:rotate-6 transition-transform duration-500">
-                <Rocket size={40} />
+              <div className="flex items-center justify-between mb-6 sm:mb-8">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white text-black rounded-2xl flex items-center justify-center shadow-md">
+                  <Rocket size={26} />
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-950/60 text-emerald-300 border border-emerald-800">
+                  +240% Average Conversion
+                </span>
               </div>
-              <h3 className="text-4xl lg:text-5xl font-black text-black dark:text-white mb-6 tracking-tighter">Landing Pages de Alta Conversión</h3>
-              <p className="text-zinc-500 dark:text-zinc-400 text-xl max-w-lg leading-relaxed mb-8">
-                Páginas creadas con psicología de ventas y diseño de élite. No solo entregamos belleza estética; entregamos el retorno que tu inversión publicitaria merece.
+
+              <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 block mb-1">
+                Engineered for Paid Ads & Product Launches
+              </span>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4 tracking-tight">
+                High-Converting Landing Pages
+              </h3>
+              <p className="text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed mb-6 sm:mb-8">
+                Pages built with behavioral purchase psychology, high-urgency triggers, and luxury aesthetic polish. We deliver real financial ROI on your advertising spend, not just visual appeal.
               </p>
-              <div className="flex flex-wrap gap-3">
-                {['Psicología de Ventas', 'Enfoque en ROI', '100% Móvil'].map(tag => (
-                  <span key={tag} className="px-4 py-2 rounded-full bg-white dark:bg-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400 border border-zinc-100 dark:border-zinc-700">
+
+              {/* Tag Pills */}
+              <div className="flex flex-wrap gap-2 pt-2">
+                {[
+                  'Conversion Psychology',
+                  'Direct WhatsApp Funnel',
+                  'Google PageSpeed 100',
+                  'Fluid Mobile-First UX',
+                  '72h Delivery Guarantee'
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1.5 rounded-full bg-zinc-800 text-[10px] sm:text-[11px] font-bold text-zinc-300 border border-zinc-700 shadow-2xs"
+                  >
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
-            {/* Abstract Background Element */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-zinc-200/20 dark:from-zinc-800/20 to-transparent pointer-events-none"></div>
-            <motion.div 
-              whileHover={{ scale: 1.1, rotate: 45 }}
-              className="absolute top-10 right-10 w-14 h-14 rounded-full border border-zinc-200 dark:border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all cursor-pointer"
-            >
-              <ArrowUpRight size={24} />
-            </motion.div>
-          </motion.div>
 
-          {/* E-commerce */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.1, duration: 0.8 }}
-            className="md:col-span-4 md:row-span-1 bg-zinc-950 dark:bg-white rounded-[3rem] p-10 flex flex-col justify-between group overflow-hidden relative"
-          >
-            <div className="relative z-10 text-white dark:text-black">
-              <ShoppingCart size={32} />
-              <h3 className="text-2xl font-black mt-8 mb-3 tracking-tight">E-commerce</h3>
-              <p className="text-zinc-400 dark:text-zinc-500 text-sm leading-relaxed">Sistemas de venta online rápidos, seguros y escalables para facturar sin interrupciones.</p>
+            {/* Bottom Card Action */}
+            <div className="pt-6 sm:pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-6">
+              <span className="text-xs font-bold text-zinc-400">
+                Ideal for: Paid media traffic, high-ticket services & flagship product launches
+              </span>
+              <a 
+                href="#pricing"
+                className="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors self-end sm:self-auto"
+              >
+                <ArrowUpRight size={18} />
+              </a>
             </div>
-            <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 dark:bg-black/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-          </motion.div>
+          </div>
 
-          {/* Institucional */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="md:col-span-4 md:row-span-1 bg-zinc-50 dark:bg-zinc-900 rounded-[3rem] p-10 border border-zinc-100 dark:border-zinc-800 flex flex-col justify-between group"
-          >
-            <div className="text-black dark:text-white group-hover:scale-110 transition-transform origin-left">
-              <Globe size={32} />
-            </div>
-            <div>
-              <h3 className="text-2xl font-black text-black dark:text-white mb-3 tracking-tight">Webs Institucionales</h3>
-              <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">Posicionamiento de marca y máxima autoridad para empresas y profesionales líderes.</p>
-            </div>
-          </motion.div>
-
-          {/* Micro-Features Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="md:col-span-6 md:row-span-1 bg-zinc-50 dark:bg-zinc-900 rounded-[3rem] p-10 border border-zinc-100 dark:border-zinc-800 grid grid-cols-2 gap-6"
-          >
-            {[
-              { icon: <Zap size={24} />, label: 'SEO Estructural', desc: 'Indexación inmediata en Google.' },
-              { icon: <Cpu size={24} />, label: 'Optimización Core', desc: 'Rendimiento ultra-rápido.' },
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col justify-center">
-                <div className="text-zinc-400 mb-4">{item.icon}</div>
-                <h4 className="text-lg font-bold text-black dark:text-white mb-1">{item.label}</h4>
-                <p className="text-[10px] uppercase font-black tracking-widest text-zinc-500">{item.desc}</p>
+          {/* Right Column Grid for Cards 2 and 3 */}
+          <div className="md:col-span-12 lg:col-span-4 flex flex-col gap-6">
+            {/* Card 2: Corporate Sites */}
+            <div className="bg-zinc-950 text-white rounded-3xl p-6 sm:p-8 border border-zinc-800 flex flex-col justify-between group shadow-xs hover:border-zinc-600 transition-all flex-1 min-h-[220px]">
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center">
+                  <Globe size={20} />
+                </div>
+                <span className="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">
+                  Maximum Authority
+                </span>
               </div>
-            ))}
-          </motion.div>
 
-          {/* Contact / Portoflio Quick Link */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="md:col-span-6 md:row-span-1 bg-zinc-50 dark:bg-zinc-900 rounded-[3rem] p-10 border border-zinc-100 dark:border-zinc-800 flex items-center justify-between group cursor-pointer hover:bg-white dark:hover:bg-zinc-950 transition-colors"
+              <div>
+                <h3 className="text-lg sm:text-xl font-black text-white mb-2 tracking-tight">Corporate Websites</h3>
+                <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                  Imposing brand positioning for enterprise businesses, medical clinics, and elite law practices.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3: E-commerce & Catalogs */}
+            <div className="bg-zinc-900/50 rounded-3xl p-6 sm:p-8 border border-zinc-800 flex flex-col justify-between shadow-xs hover:border-zinc-600 transition-all group flex-1 min-h-[220px]">
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-10 h-10 rounded-xl bg-zinc-800 text-white flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <ShoppingCart size={20} />
+                </div>
+                <span className="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">
+                  Frictionless Checkout
+                </span>
+              </div>
+
+              <div>
+                <h3 className="text-lg sm:text-xl font-black text-white mb-2 tracking-tight">E-commerce & Catalogs</h3>
+                <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                  Fast, modern product displays with 4K imagery and frictionless checkout for high conversions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 4: Micro-Features Tech (6 cols) */}
+          <div className="md:col-span-12 lg:col-span-6 bg-zinc-900/50 rounded-3xl p-6 sm:p-8 border border-zinc-800 grid grid-cols-1 sm:grid-cols-2 gap-6 shadow-xs">
+            <div className="flex flex-col justify-center sm:pr-4 sm:border-r border-zinc-800">
+              <div className="w-9 h-9 rounded-lg bg-amber-950/60 text-amber-400 flex items-center justify-center mb-3">
+                <Zap size={18} />
+              </div>
+              <h4 className="text-base font-black text-white mb-1">Structural SEO</h4>
+              <p className="text-xs text-zinc-400 leading-relaxed">Schema.org metadata and semantic markup to dominate Google search results.</p>
+            </div>
+
+            <div className="flex flex-col justify-center sm:pl-4 pt-4 sm:pt-0 border-t sm:border-t-0 border-zinc-800">
+              <div className="w-9 h-9 rounded-lg bg-blue-950/60 text-blue-400 flex items-center justify-center mb-3">
+                <Cpu size={18} />
+              </div>
+              <h4 className="text-base font-black text-white mb-1">Extreme Performance</h4>
+              <p className="text-xs text-zinc-400 leading-relaxed">Sub-0.28s loading speed without the weight of slow third-party plugins.</p>
+            </div>
+          </div>
+
+          {/* Card 5: Custom Projects / Briefing CTA (6 cols) */}
+          <a
+            href="#/briefing"
+            className="md:col-span-12 lg:col-span-6 bg-zinc-900/70 rounded-3xl p-6 sm:p-8 border border-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group hover:border-zinc-600 transition-all shadow-xs cursor-pointer"
           >
-            <div className="max-w-[240px]">
-              <h3 className="text-2xl font-black text-black dark:text-white mb-2 tracking-tight">Proyectos a Medida</h3>
-              <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">Tu visión, nuestra tecnología. Desarrollamos soluciones hechas a tu medida.</p>
+            <div className="max-w-sm space-y-1">
+              <div className="text-[10px] font-black uppercase tracking-widest text-emerald-400 flex items-center gap-1">
+                <ShieldCheck size={12} />
+                <span>Custom Engineering</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-black text-white tracking-tight">Tailored Architecture</h3>
+              <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                Have specific integrations or custom requirements? We architect custom solutions in 72 hours.
+              </p>
             </div>
-            <div className="w-20 h-20 bg-zinc-100 dark:bg-zinc-800 rounded-3xl flex items-center justify-center text-black dark:text-white group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all duration-500">
-              <ArrowUpRight size={32} />
+            
+            <div className="w-12 h-12 bg-white text-black rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-md flex-shrink-0 self-end sm:self-auto">
+              <ArrowRight size={20} />
             </div>
-          </motion.div>
+          </a>
+
         </div>
+
       </div>
     </section>
   );

@@ -1,25 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { 
   ArrowLeft, ArrowRight, CheckCircle2, Shield, Lock, CreditCard, 
   Sparkles, Clock, Globe, MessageSquare, Palette, Layout, 
-  HelpCircle, Copy, Check, ExternalLink, Zap, Phone, Mail, Building,
-  Star, ChevronRight, AlertCircle, ShoppingBag, RefreshCw, Layers,
-  Server, Smartphone, Gauge, Sliders, CheckSquare, Search, FileText,
-  Tag, Award, Eye, Flame, ShieldCheck, CheckCheck, RefreshCcw, Download
+  Copy, Check, Zap, Phone, Mail, Building,
+  Star, AlertCircle, RefreshCw, Layers,
+  Gauge, CheckSquare, Search,
+  Tag, ShieldCheck, CheckCheck
 } from 'lucide-react';
 import { BriefingData } from '../types';
 
 interface BriefingCheckoutPageProps {
   initialPlan?: 'essential' | 'professional' | 'elite';
   onBackToHome: () => void;
-  isDarkMode: boolean;
 }
 
 export default function BriefingCheckoutPage({ 
   initialPlan = 'professional', 
   onBackToHome,
-  isDarkMode 
 }: BriefingCheckoutPageProps) {
   const [currentStep, setCurrentStep] = useState(1);
   const totalSteps = 6;
@@ -45,12 +42,12 @@ export default function BriefingCheckoutPage({
       contactName: '',
       email: '',
       phone: '',
-      industry: 'Servicios Profesionales',
+      industry: 'Serviços Profissionais',
       cityCountry: '',
       projectType: 'full_redesign',
       currentWebsite: '',
       currentPlatform: 'WordPress / Elementor',
-      currentWebsiteAge: '1 a 3 años',
+      currentWebsiteAge: '1 a 3 anos',
 
       currentPainPoints: [
         'design_outdated',
@@ -77,21 +74,21 @@ export default function BriefingCheckoutPage({
         'brand_authority',
         'speed_score95'
       ],
-      brandTone: 'Moderno y Minimalista',
+      brandTone: 'Moderno e Minimalista',
       colorPaletteChoice: 'dark_luxury',
       hasLogo: 'yes',
       competitorWebsites: '',
       referenceWebsites: '',
 
       desiredSections: [
-        'Portada Hero Rediseñada de Alto Impacto',
-        'Comparativa de Transformación / Casos de Éxito',
-        'Matriz de Servicios Reestructurada',
-        'Sobre Nosotros y Autoridad de Marca',
-        'Muro de Testimonios y Reseñas Verificadas',
-        'Botón Flotante Inteligente de WhatsApp',
-        'Formulario VIP de Presupuesto Directo',
-        'Preguntas Frecuentes (FAQ Derribo de Objeciones)'
+        'Hero de Alto Impacto e Conversão',
+        'Comparativo de Transformação / Casos de Sucesso',
+        'Matriz de Serviços Reestruturada',
+        'Sobre Nós e Autoridade de Marca',
+        'Mural de Depoimentos & Avaliações Verificadas',
+        'Botão Flutuante Inteligente de WhatsApp',
+        'Formulário VIP de Contato e Orçamento',
+        'Perguntas Frequentes (Quebra de Objeções)'
       ],
       specialIntegrations: [
         'whatsapp_floating',
@@ -121,7 +118,6 @@ export default function BriefingCheckoutPage({
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [orderNumber] = useState(() => `VS72-${Math.floor(10000 + Math.random() * 90000)}`);
-  const [copiedBizum, setCopiedBizum] = useState(false);
   const [copiedSummary, setCopiedSummary] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [validationError, setValidationError] = useState('');
@@ -134,7 +130,7 @@ export default function BriefingCheckoutPage({
   }, [formData]);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' as any });
     setValidationError('');
   }, [currentStep, isSubmitted]);
 
@@ -171,16 +167,16 @@ export default function BriefingCheckoutPage({
   const handleApplyCoupon = (e: React.FormEvent) => {
     e.preventDefault();
     const clean = couponCode.trim().toUpperCase();
-    if (clean === 'VANGUARD50' || clean === 'DESCONTO50' || clean === 'REESTRUCTURA50') {
+    if (clean === 'VANGUARD50' || clean === 'DESCONTO50' || clean === 'REESTRUTURA50') {
       setAppliedDiscount(50);
-      setCouponSuccess('¡Cupón aplicado con éxito! -50€ de descuento.');
+      setCouponSuccess('Cupom aplicado com sucesso! Desconto de -50€ concedido.');
       setCouponError('');
     } else if (clean === 'VIP100') {
       setAppliedDiscount(100);
-      setCouponSuccess('¡Cupón VIP aplicado! -100€ de descuento.');
+      setCouponSuccess('Cupom VIP aplicado! Desconto especial de -100€ concedido.');
       setCouponError('');
     } else {
-      setCouponError('Código de cupón inválido o expirado.');
+      setCouponError('Código de cupom inválido ou expirado.');
       setCouponSuccess('');
     }
   };
@@ -191,50 +187,50 @@ export default function BriefingCheckoutPage({
     setTimeout(() => {
       setIsAnalyzingUrl(false);
       setUrlAnalyzed(true);
-    }, 900);
+    }, 400);
   };
 
   const fillExampleBusiness = () => {
     setFormData(prev => ({
       ...prev,
-      businessDescription: 'Somos un estudio boutique de servicios premium. Ofrecemos 3 paquetes principales de alto valor con atención personalizada.',
-      targetAudience: 'Empresarios y directores que valoran la excelencia, rapidez y quieren proyectar estatus de líder.',
-      competitiveDifferential: 'Entrega garantizada en 72h, trato 1 a 1 directo sin intermediarios y código a medida ultra optimizado.',
-      biggestFrustration: 'Nuestra web actual tarda 5 segundos en cargar, el diseño se ve anticuado y los clientes nos piden rebajas porque no transmite autoridad.'
+      businessDescription: 'Somos um estúdio de serviços especializados de alto padrão. Atendemos clientes B2B e B2C com atendimento individualizado e foco total em entregar resultados rápidos.',
+      targetAudience: 'Empresários, diretores e profissionais que valorizam excelência, pontualidade e querem transmitir uma imagem de autoridade indiscutível no mercado.',
+      competitiveDifferential: 'Entrega ágil em 72 horas com garantia contratual, sem intermediários, arquitetura de conversão sob medida e código de alta performance.',
+      biggestFrustration: 'Nosso site atual demora mais de 4 segundos para carregar, tem um visual ultrapassado e quase nenhum visitante entra em contato pelo WhatsApp.'
     }));
   };
 
   const handleNextStep = () => {
     if (currentStep === 1) {
       if (!formData.companyName.trim()) {
-        setValidationError('Por favor, indica el nombre de tu empresa o marca.');
+        setValidationError('Por favor, informe o nome da sua empresa ou marca.');
         return;
       }
       if (!formData.contactName.trim()) {
-        setValidationError('Por favor, indica el nombre de la persona responsable del proyecto.');
+        setValidationError('Por favor, informe o nome do responsável pelo projeto.');
         return;
       }
       if (!formData.email.trim() || !formData.email.includes('@')) {
-        setValidationError('Por favor, introduce un correo electrónico válido.');
+        setValidationError('Por favor, insira um e-mail de contato válido.');
         return;
       }
       if (!formData.phone.trim()) {
-        setValidationError('Por favor, introduce tu número de WhatsApp para contacto directo.');
+        setValidationError('Por favor, insira o número de WhatsApp para alinhamento direto.');
         return;
       }
       if (formData.projectType !== 'new_site' && !formData.currentWebsite.trim()) {
-        setValidationError('Por favor, introduce la URL de tu sitio web actual a rediseñar (o selecciona "Crear Web Desde Cero").');
+        setValidationError('Por favor, insira a URL do site atual a ser reestruturado (ou marque "Criar Site do Zero").');
         return;
       }
     }
 
     if (currentStep === 2) {
       if (!formData.businessDescription.trim()) {
-        setValidationError('Por favor, describe brevemente qué servicios o productos ofreces.');
+        setValidationError('Por favor, descreva brevemente o que sua empresa oferece.');
         return;
       }
       if (formData.currentPainPoints.length === 0) {
-        setValidationError('Por favor, selecciona al menos un problema o frustración de tu web actual.');
+        setValidationError('Por favor, selecione ao menos um ponto de melhoria no site atual.');
         return;
       }
     }
@@ -260,7 +256,7 @@ export default function BriefingCheckoutPage({
     setTimeout(() => {
       setIsProcessing(false);
       setIsSubmitted(true);
-    }, 1400);
+    }, 800);
   };
 
   const togglePainPoint = (point: string) => {
@@ -309,58 +305,58 @@ export default function BriefingCheckoutPage({
   };
 
   const generateWhatsAppMessage = () => {
-    const planName = formData.selectedPlan === 'essential' ? 'Plan Rediseño Esencial (425€)' : formData.selectedPlan === 'professional' ? 'Plan Reestructuración Pro (785€)' : 'Plan Rediseño Elite (1.450€)';
+    const planName = formData.selectedPlan === 'essential' ? 'Plano Redesign Essencial (425€)' : formData.selectedPlan === 'professional' ? 'Plano Reestruturação Pro (785€)' : 'Plano Redesign Elite (1.450€)';
     
     const painPointsMap: Record<string, string> = {
-      design_outdated: 'Diseño anticuado y poco profesional',
-      slow_speed: 'Carga muy lenta / Penalización en Google',
-      low_conversion: 'Baja conversión (pocas ventas/contactos)',
-      broken_mobile: 'Mala experiencia o rota en móviles',
-      confusing_structure: 'Estructura caótica y navegación confusa',
-      hard_to_edit: 'Plataforma difícil de mantener o actualizar',
-      no_seo: 'No aparece en Google / SEO nulo',
-      insecure: 'Caídas constantes o problemas técnicos'
+      design_outdated: 'Design desatualizado e pouco profissional',
+      slow_speed: 'Carregamento lento / Penalização no Google',
+      low_conversion: 'Baixa conversão (poucos contatos e vendas)',
+      broken_mobile: 'Experiência ruim ou desconfigurada no celular',
+      confusing_structure: 'Estrutura confusa e navegação difícil',
+      hard_to_edit: 'Plataforma complexa de manter ou atualizar',
+      no_seo: 'Não aparece bem posicionado no Google',
+      insecure: 'Instabilidade técnica ou vulnerabilidades'
     };
 
-    const text = `💎 *SOLICITUD DE REDISEÑO & BRIEFING VANGUARD STUDIO (Ref: ${orderNumber})*
+    const text = `💎 *SOLICITAÇÃO DE REDESIGN & BRIEFING VANGUARD STUDIO (Ref: ${orderNumber})*
     
-*1. DIAGNÓSTICO & DATOS DE LA WEB:*
+*1. DIAGNÓSTICO & DADOS DO NEGÓCIO:*
 • Empresa: ${formData.companyName}
-• Responsable: ${formData.contactName}
+• Responsável: ${formData.contactName}
 • WhatsApp: ${formData.phone}
-• Email: ${formData.email}
-• Sector: ${formData.industry}
-• Tipo de Proyecto: ${formData.projectType.toUpperCase()}
-• Web Actual: ${formData.currentWebsite || 'No tiene / Crear desde cero'}
-• CMS Actual: ${formData.currentPlatform}
-• Antigüedad: ${formData.currentWebsiteAge}
-• Satisfacción actual: ${formData.satisfactionRating}/5 ⭐
+• E-mail: ${formData.email}
+• Segmento: ${formData.industry}
+• Tipo de Projeto: ${formData.projectType.toUpperCase()}
+• Site Atual: ${formData.currentWebsite || 'Não possui / Criar do zero'}
+• Plataforma Atual: ${formData.currentPlatform}
+• Tempo de Atividade: ${formData.currentWebsiteAge}
+• Nível de Satisfação Atual: ${formData.satisfactionRating}/5 ⭐
 
-*2. PRINCIPALES PROBLEMAS A CORREGIR:*
+*2. PRINCIPAIS DORES E PONTOS A CORRIGIR:*
 ${formData.currentPainPoints.map(p => `• ${painPointsMap[p] || p}`).join('\n')}
-${formData.biggestFrustration ? `• Mayor Frustración: ${formData.biggestFrustration}` : ''}
+${formData.biggestFrustration ? `• Maior Frustração: ${formData.biggestFrustration}` : ''}
 
-*3. QUÉ MANTENER & REESTRUCTURACIÓN:*
-• Conservar: ${formData.assetsToKeep.join(', ')}
-• Accesos Técnicos: ${formData.technicalAccessStatus}
-• Arquitectura Deseada: ${formData.restructuringArchitecture}
+*3. O QUE MANTER & ARQUITETURA:*
+• Ativos a Manter: ${formData.assetsToKeep.join(', ')}
+• Acessos Técnicos: ${formData.technicalAccessStatus}
+• Arquitetura Desejada: ${formData.restructuringArchitecture}
 
-*4. OBJETIVOS DEL REDISEÑO:*
+*4. OBJETIVOS DO REDESIGN:*
 • Metas: ${formData.redesignGoals.join(', ')}
-• Tono de Marca: ${formData.brandTone}
-• Paleta de Color: ${formData.colorPaletteChoice}
-• Logotipo: ${formData.hasLogo === 'yes' ? 'Listo en alta calidad' : formData.hasLogo === 'no' ? 'Crear logotipo nuevo' : 'Requiere rediseño'}
-• Referencias / Competencia: ${formData.competitorWebsites || formData.referenceWebsites || 'Criterio técnico de la agencia'}
+• Tom da Marca: ${formData.brandTone}
+• Paleta de Cores: ${formData.colorPaletteChoice}
+• Logotipo: ${formData.hasLogo === 'yes' ? 'Pronto em alta qualidade' : formData.hasLogo === 'no' ? 'Criar novo logotipo' : 'Precisa de vetorização/ajuste'}
+• Referências / Concorrentes: ${formData.competitorWebsites || formData.referenceWebsites || 'Critério técnico da agência'}
 
-*5. PLAN SELECCIONADO & INVERSIÓN:*
-• Plan: ${planName}
-• Total a Pagar: ${calculateTotal()}€ ${appliedDiscount > 0 ? `(Descuento de -${appliedDiscount}€ aplicado)` : ''}
-• Método de Pago: ${formData.paymentMethod.toUpperCase()}
+*5. PLANO SELECIONADO & INVESTIMENTO:*
+• Plano: ${planName}
+• Total a Pagar: ${calculateTotal()}€ ${appliedDiscount > 0 ? `(Desconto de -${appliedDiscount}€ aplicado)` : ''}
+• Forma de Pagamento: ${formData.paymentMethod.toUpperCase()}
 
-*6. SECCIONES REESTRUCTURADAS:*
+*6. SEÇÕES REESTRUTURADAS:*
 ${formData.desiredSections.map(s => `• ${s}`).join('\n')}
 
-¡Hola equipo Vanguard Studio! Acabo de completar el briefing técnico para el rediseño de mi sitio web. Quedo a la espera para iniciar el desarrollo prioritario en 72 horas.`;
+Olá equipe SitePro 72h! Concluí o preenchimento do briefing técnico para o redesign do meu site. Aguardo para iniciarmos o ciclo de desenvolvimento em 72 horas.`;
 
     return encodeURIComponent(text);
   };
@@ -369,38 +365,38 @@ ${formData.desiredSections.map(s => `• ${s}`).join('\n')}
     const rawText = decodeURIComponent(generateWhatsAppMessage());
     navigator.clipboard.writeText(rawText);
     setCopiedSummary(true);
-    setTimeout(() => setCopiedSummary(false), 2500);
+    setTimeout(() => setCopiedSummary(false), 2000);
   };
 
   const colorPalettes = [
     { 
       id: 'dark_luxury', 
-      name: 'Dark Luxury & Carbón', 
-      desc: 'Negro Profundo, Blanco Puro & Acentos Grafito',
+      name: 'Dark Luxury & Carbono', 
+      desc: 'Preto Profundo, Branco Puro & Grafite Refinado',
       bgClass: 'bg-zinc-950 text-white',
       accentColor: '#ffffff',
       colors: ['#09090b', '#27272a', '#ffffff'] 
     },
     { 
       id: 'tech_blue', 
-      name: 'Tech Navy & Zafiro', 
-      desc: 'Azul Élite Corporativo & Blanco Nieve',
+      name: 'Tech Navy & Safira', 
+      desc: 'Azul Corporativo de Elite & Branco Neve',
       bgClass: 'bg-slate-900 text-blue-400',
       accentColor: '#3b82f6',
       colors: ['#0f172a', '#2563eb', '#f8fafc'] 
     },
     { 
       id: 'emerald_growth', 
-      name: 'Esmeralda & Oro Imperial', 
-      desc: 'Finanzas, Salud, Estética & Estatus',
+      name: 'Esmeralda & Ouro Imperial', 
+      desc: 'Autoridade para Clínicas, Finanças & Alto Padrão',
       bgClass: 'bg-emerald-950 text-emerald-300',
       accentColor: '#10b981',
       colors: ['#064e3b', '#10b981', '#fef3c7'] 
     },
     { 
       id: 'warm_minimal', 
-      name: 'Minimal Cálido & Editorial', 
-      desc: 'Arena Suizo, Terracota & Ébano',
+      name: 'Minimalista Quente & Editorial', 
+      desc: 'Tons Areia, Âmbar & Tipografia Sofisticada',
       bgClass: 'bg-stone-900 text-amber-200',
       accentColor: '#d97706',
       colors: ['#1c1917', '#d97706', '#f5f5f4'] 
@@ -410,1590 +406,1452 @@ ${formData.desiredSections.map(s => `• ${s}`).join('\n')}
   const currentPaletteObj = colorPalettes.find(p => p.id === formData.colorPaletteChoice) || colorPalettes[0];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-500 pb-24">
+    <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-200 pb-24">
       {/* Top Header */}
-      <header className="sticky top-0 z-40 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-zinc-100 dark:border-zinc-800 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      <header className="sticky top-0 z-40 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 shadow-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
           <button
+            type="button"
             onClick={onBackToHome}
-            className="inline-flex items-center gap-2 text-sm font-bold text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors group cursor-pointer"
+            className="inline-flex items-center gap-2 text-sm font-bold text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
           >
-            <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-            <span className="hidden sm:inline">Volver a la página principal</span>
-            <span className="sm:hidden">Volver</span>
+            <ArrowLeft size={18} />
+            <span className="hidden sm:inline">Voltar para a página inicial</span>
+            <span className="sm:hidden">Voltar</span>
           </button>
 
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 flex items-center justify-center rounded-sm bg-black dark:bg-white text-white dark:text-black font-bold text-lg shadow-sm">
-              V
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-white text-black font-black text-lg shadow-xs">
+              S
             </div>
-            <span className="font-extrabold tracking-tighter uppercase text-lg">
-              Vanguard<span className="text-zinc-400">Studio</span>
-            </span>
+            <div className="flex items-baseline gap-1">
+              <span className="font-extrabold tracking-tight uppercase text-lg text-white">
+                SitePro
+              </span>
+              <span className="text-xs font-black px-1.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                72h
+              </span>
+            </div>
           </div>
 
           <div className="flex items-center gap-3">
             <div className="hidden md:flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1.5 rounded-full border border-emerald-200 dark:border-emerald-800">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Garantía 72h Activa</span>
-            </div>
-            <div className="text-xs font-bold text-zinc-400 hidden sm:block">
-              Auto-guardado ✓
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span>Garantia 72h Ativa</span>
             </div>
           </div>
         </div>
       </header>
 
       {/* Main Container */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-8 sm:pt-10">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
         {!isSubmitted ? (
           <div>
-            {/* Stepper Header Navigation */}
-            <div className="mb-10">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 text-xs font-black uppercase tracking-wider mb-2 border border-zinc-200 dark:border-zinc-800">
-                    <RefreshCw size={13} className="animate-spin-slow text-black dark:text-white" />
-                    <span>Briefing Técnico de Rediseño & Reestructuración</span>
-                  </div>
-                  <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-black dark:text-white">
-                    {currentStep === 1 && '1. Diagnóstico del Sitio Web & Contacto'}
-                    {currentStep === 2 && '2. Auditoría de Frustraciones & Problemas'}
-                    {currentStep === 3 && '3. Alcance, Preservación & Arquitectura'}
-                    {currentStep === 4 && '4. Identidad Visual & Referencias Top'}
-                    {currentStep === 5 && '5. Secciones & Módulos de Conversión'}
-                    {currentStep === 6 && '6. Plan de Rediseño & Checkout Seguro'}
-                  </h1>
-                </div>
+            {/* Header Title and Step Progress */}
+            <div className="mb-8 text-center max-w-3xl mx-auto">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-[11px] font-black uppercase tracking-widest text-zinc-600 dark:text-zinc-400 mb-3">
+                <Sparkles size={13} className="text-amber-500" />
+                Briefing Estratégico & Engenharia de Conversão
+              </div>
+              <h1 className="text-3xl sm:text-5xl font-black text-black dark:text-white tracking-tight leading-tight mb-2">
+                Redesign & Reestruturação em 72h
+              </h1>
+              <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base max-w-xl mx-auto">
+                Preencha o diagnóstico técnico abaixo para planejarmos a nova arquitetura do seu site.
+              </p>
+            </div>
 
-                {/* Progress quick indicator */}
-                <div className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-900 p-3 rounded-2xl border border-zinc-200 dark:border-zinc-800 self-start md:self-auto">
-                  <div className="text-right">
-                    <div className="text-[10px] font-black uppercase tracking-wider text-zinc-400">Paso actual</div>
-                    <div className="text-sm font-black text-black dark:text-white">{currentStep} de {totalSteps}</div>
-                  </div>
-                  <div className="w-10 h-10 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center font-black text-sm shadow-md">
-                    {Math.round((currentStep / totalSteps) * 100)}%
-                  </div>
-                </div>
+            {/* Stepper Progress Bar */}
+            <div className="mb-10 max-w-4xl mx-auto">
+              <div className="grid grid-cols-6 gap-2 sm:gap-3 relative">
+                {[
+                  { step: 1, title: 'Diagnóstico Web', icon: <Globe size={15} /> },
+                  { step: 2, title: 'Dores & Auditoria', icon: <AlertCircle size={15} /> },
+                  { step: 3, title: 'Arquitetura', icon: <Layers size={15} /> },
+                  { step: 4, title: 'Identidade & Metas', icon: <Palette size={15} /> },
+                  { step: 5, title: 'Seções & Módulos', icon: <Layout size={15} /> },
+                  { step: 6, title: 'Plano & Checkout', icon: <CreditCard size={15} /> }
+                ].map((s) => {
+                  const isDone = currentStep > s.step;
+                  const isCurrent = currentStep === s.step;
+                  return (
+                    <button
+                      key={s.step}
+                      type="button"
+                      onClick={() => {
+                        if (s.step < currentStep) setCurrentStep(s.step);
+                      }}
+                      disabled={s.step > currentStep}
+                      className={`flex flex-col items-center text-center cursor-pointer transition-all ${
+                        s.step > currentStep ? 'opacity-40 cursor-not-allowed' : ''
+                      }`}
+                    >
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center font-bold text-xs sm:text-sm mb-1.5 transition-colors ${
+                        isDone
+                          ? 'bg-emerald-500 text-white'
+                          : isCurrent
+                          ? 'bg-black dark:bg-white text-white dark:text-black font-extrabold'
+                          : 'bg-zinc-100 dark:bg-zinc-900 text-zinc-400 border border-zinc-200 dark:border-zinc-800'
+                      }`}>
+                        {isDone ? <Check size={16} strokeWidth={3} /> : s.icon}
+                      </div>
+                      <span className={`text-[10px] sm:text-xs font-bold leading-tight line-clamp-1 ${
+                        isCurrent ? 'text-black dark:text-white font-extrabold' : 'text-zinc-500'
+                      }`}>
+                        <span className="hidden sm:inline">Etapa {s.step}: </span>{s.title}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
 
-              {/* Progress bar */}
-              <div className="w-full bg-zinc-100 dark:bg-zinc-900 h-2 rounded-full overflow-hidden mb-4">
-                <motion.div 
-                  className="h-full bg-black dark:bg-white rounded-full transition-all duration-500 ease-out"
+              {/* Progress Line */}
+              <div className="w-full bg-zinc-200 dark:bg-zinc-800 h-1.5 rounded-full mt-3 overflow-hidden">
+                <div 
+                  className="bg-black dark:bg-white h-full transition-all duration-200"
                   style={{ width: `${(currentStep / totalSteps) * 100}%` }}
                 />
               </div>
-
-              {/* Interactive Step Pills */}
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 text-xs font-bold text-center">
-                {[
-                  { step: 1, name: 'Diagnóstico' },
-                  { step: 2, name: 'Auditoría' },
-                  { step: 3, name: 'Alcance' },
-                  { step: 4, name: 'Estilo' },
-                  { step: 5, name: 'Módulos' },
-                  { step: 6, name: 'Checkout' }
-                ].map(item => (
-                  <button
-                    key={item.step}
-                    type="button"
-                    onClick={() => {
-                      if (item.step < currentStep) setCurrentStep(item.step);
-                    }}
-                    disabled={item.step > currentStep}
-                    className={`py-2.5 px-2 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
-                      currentStep === item.step
-                        ? 'bg-black dark:bg-white text-white dark:text-black shadow-md font-black'
-                        : item.step < currentStep
-                        ? 'bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-200'
-                        : 'bg-transparent text-zinc-400 opacity-60 cursor-not-allowed'
-                    }`}
-                  >
-                    {item.step < currentStep ? (
-                      <Check size={12} strokeWidth={3} className="text-emerald-500" />
-                    ) : (
-                      <span className="text-[10px] opacity-70">{item.step}.</span>
-                    )}
-                    <span className="truncate">{item.name}</span>
-                  </button>
-                ))}
-              </div>
             </div>
 
-            {/* Error banner */}
-            <AnimatePresence>
-              {validationError && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  className="mb-8 p-4 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900/60 rounded-2xl flex items-center gap-3 text-red-600 dark:text-red-400 text-sm font-semibold"
-                >
-                  <AlertCircle size={20} className="shrink-0" />
-                  <span>{validationError}</span>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {/* Validation Banner */}
+            {validationError && (
+              <div className="max-w-4xl mx-auto mb-6 p-4 rounded-2xl bg-rose-50 dark:bg-rose-950/50 border border-rose-200 dark:border-rose-900 text-rose-800 dark:text-rose-300 flex items-center gap-3 text-sm font-semibold">
+                <AlertCircle size={20} className="flex-shrink-0 text-rose-500" />
+                <span>{validationError}</span>
+              </div>
+            )}
 
-            {/* Form & Live Summary Grid Layout */}
+            {/* Form Split Layout: Left Form / Right Live Preview & Cart Deck */}
             <div className="grid lg:grid-cols-12 gap-8 items-start">
               
-              {/* Form Column (Left: 8 cols) */}
-              <div className="lg:col-span-8 space-y-6">
-
-                {/* STEP 1: Diagnóstico de la Web Actual & Contacto */}
+              {/* Left Column: Multi-step Form Content */}
+              <div className="lg:col-span-8 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+                
+                {/* STEP 1: Diagnóstico e Dados de Contato */}
                 {currentStep === 1 && (
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="space-y-6"
-                  >
-                    <div className="bg-zinc-50 dark:bg-zinc-900/60 p-6 sm:p-10 rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 space-y-6">
-                      
-                      {/* Tipo de Proyecto */}
-                      <div>
-                        <div className="flex items-center justify-between mb-3">
-                          <label className="text-xs font-black uppercase tracking-wider text-zinc-500">
-                            Tipo de Proyecto de Rediseño *
-                          </label>
-                          <span className="text-[11px] text-zinc-400">Selecciona el enfoque principal</span>
-                        </div>
-
-                        <div className="grid sm:grid-cols-2 gap-3">
-                          {[
-                            { 
-                              id: 'full_redesign', 
-                              title: 'Rediseño Completo 360°', 
-                              desc: 'Nueva estética premium, código React 19 ultrarrápido y textos de venta.',
-                              badge: 'Más Solicitado'
-                            },
-                            { 
-                              id: 'ux_restructuring', 
-                              title: 'Reestructuración UX & Embudo', 
-                              desc: 'Optimización de navegación, simplificación de menús y subida de conversiones.',
-                              badge: 'Alto ROI'
-                            },
-                            { 
-                              id: 'mobile_speed_upgrade', 
-                              title: 'Velocidad Extrema & Móvil', 
-                              desc: 'Migrar de web lenta a tecnología instantánea (< 0.8s en móviles).',
-                              badge: 'Core Web Vitals'
-                            },
-                            { 
-                              id: 'cms_migration', 
-                              title: 'Migración WordPress/Wix', 
-                              desc: 'Dejar plugins pesados y pasar a arquitectura moderna sin caídas.',
-                              badge: 'Cero Mantenimiento'
-                            },
-                            { 
-                              id: 'new_site', 
-                              title: 'Crear Web Desde Cero', 
-                              desc: 'No tengo sitio web previo o deseo partir de una hoja en blanco.',
-                              badge: 'Lanzamiento 72h'
-                            }
-                          ].map(type => (
-                            <div
-                              key={type.id}
-                              onClick={() => setFormData({ ...formData, projectType: type.id as any })}
-                              className={`p-4 rounded-2xl border transition-all cursor-pointer select-none relative ${
-                                formData.projectType === type.id
-                                  ? 'bg-black dark:bg-white text-white dark:text-black border-transparent shadow-lg scale-[1.01]'
-                                  : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-zinc-400'
-                              }`}
-                            >
-                              <div className="flex items-center justify-between mb-1">
-                                <div className="font-black text-xs">{type.title}</div>
-                                <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-full ${
-                                  formData.projectType === type.id
-                                    ? 'bg-white/20 text-white dark:bg-black/20 dark:text-black'
-                                    : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500'
-                                }`}>
-                                  {type.badge}
-                                </span>
-                              </div>
-                              <div className={`text-[11px] leading-tight ${formData.projectType === type.id ? 'text-zinc-200 dark:text-zinc-700' : 'text-zinc-500'}`}>
-                                {type.desc}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
+                  <div className="space-y-6">
+                    <div>
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1">
+                        <span>Etapa 1 de 6</span> • <span>Diagnóstico do Projeto</span>
                       </div>
-
-                      {/* URL Web Actual con Auto-Diagnóstico */}
-                      <div className="pt-2">
-                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                          URL de tu Sitio Web Actual a Rediseñar *
-                        </label>
-                        <div className="flex flex-col sm:flex-row gap-2">
-                          <div className="relative flex-1">
-                            <Globe size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" />
-                            <input 
-                              type="url"
-                              placeholder="https://tuwebactual.com"
-                              value={formData.currentWebsite}
-                              onChange={e => {
-                                setFormData({ ...formData, currentWebsite: e.target.value });
-                                setUrlAnalyzed(false);
-                              }}
-                              className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium"
-                            />
-                          </div>
-                          <button
-                            type="button"
-                            onClick={handleSimulateUrlAudit}
-                            disabled={!formData.currentWebsite.trim() || isAnalyzingUrl}
-                            className="px-5 py-4 rounded-2xl bg-zinc-200 dark:bg-zinc-800 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-xs font-black uppercase tracking-wider transition-all disabled:opacity-40 cursor-pointer flex items-center justify-center gap-2"
-                          >
-                            {isAnalyzingUrl ? <RefreshCw size={14} className="animate-spin" /> : <Gauge size={14} />}
-                            <span>{isAnalyzingUrl ? 'Analizando...' : 'Verificar'}</span>
-                          </button>
-                        </div>
-
-                        {urlAnalyzed && (
-                          <motion.div 
-                            initial={{ opacity: 0, y: -5 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="mt-3 p-3.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 flex items-center justify-between text-xs text-emerald-800 dark:text-emerald-300"
-                          >
-                            <div className="flex items-center gap-2 font-bold">
-                              <CheckCircle2 size={16} className="text-emerald-600" />
-                              <span>Sitio detectado correctamente para análisis de arquitectura</span>
-                            </div>
-                            <span className="font-mono text-[11px] bg-emerald-200/60 dark:bg-emerald-800/60 px-2 py-0.5 rounded font-bold">
-                              Auditoría 72h Lista
-                            </span>
-                          </motion.div>
-                        )}
-                      </div>
-
-                      {/* CMS Actual y Antigüedad */}
-                      <div className="grid sm:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            Plataforma / CMS Actual
-                          </label>
-                          <select 
-                            value={formData.currentPlatform}
-                            onChange={e => setFormData({ ...formData, currentPlatform: e.target.value })}
-                            className="w-full px-4 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium cursor-pointer"
-                          >
-                            <option value="WordPress / Elementor">WordPress / Elementor</option>
-                            <option value="Wix / Squarespace">Wix / Squarespace</option>
-                            <option value="Shopify / Tienda Online">Shopify / Tienda Online</option>
-                            <option value="Webflow">Webflow</option>
-                            <option value="HTML / PHP Antiguo">HTML / PHP Antiguo</option>
-                            <option value="No lo sé / Hecho a medida">No lo sé / Hecho a medida</option>
-                            <option value="No tengo web actual">No tengo web actual</option>
-                          </select>
-                        </div>
-
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            Antigüedad del Sitio Actual
-                          </label>
-                          <select 
-                            value={formData.currentWebsiteAge}
-                            onChange={e => setFormData({ ...formData, currentWebsiteAge: e.target.value })}
-                            className="w-full px-4 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium cursor-pointer"
-                          >
-                            <option value="Menos de 1 año">Menos de 1 año</option>
-                            <option value="1 a 3 años">1 a 3 años</option>
-                            <option value="3 a 5 años">3 a 5 años</option>
-                            <option value="Más de 5 años">Más de 5 años (Muy Desactualizada)</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      {/* Datos del Cliente y Empresa */}
-                      <div className="grid sm:grid-cols-2 gap-6 pt-2 border-t border-zinc-200 dark:border-zinc-800">
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            Nombre de la Empresa / Marca *
-                          </label>
-                          <input 
-                            type="text"
-                            placeholder="Ej: Estudio Jurídico Morales & Asoc."
-                            value={formData.companyName}
-                            onChange={e => setFormData({ ...formData, companyName: e.target.value })}
-                            className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium"
-                            required
-                          />
-                        </div>
-
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            Persona Responsable / Contacto *
-                          </label>
-                          <input 
-                            type="text"
-                            placeholder="Ej: Laura Morales"
-                            value={formData.contactName}
-                            onChange={e => setFormData({ ...formData, contactName: e.target.value })}
-                            className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <div className="grid sm:grid-cols-3 gap-6">
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            Email Corporativo *
-                          </label>
-                          <input 
-                            type="email"
-                            placeholder="laura@empresa.com"
-                            value={formData.email}
-                            onChange={e => setFormData({ ...formData, email: e.target.value })}
-                            className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium"
-                            required
-                          />
-                        </div>
-
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            WhatsApp Directo *
-                          </label>
-                          <input 
-                            type="tel"
-                            placeholder="+34 600 000 000"
-                            value={formData.phone}
-                            onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                            className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium"
-                            required
-                          />
-                        </div>
-
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            Sector / Nicho
-                          </label>
-                          <select 
-                            value={formData.industry}
-                            onChange={e => setFormData({ ...formData, industry: e.target.value })}
-                            className="w-full px-4 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium cursor-pointer"
-                          >
-                            <option value="Servicios Profesionales">Servicios Profesionales</option>
-                            <option value="Salud y Clínicas">Salud, Estética y Clínicas</option>
-                            <option value="Inmobiliaria y Arquitectura">Inmobiliaria y Arquitectura</option>
-                            <option value="Abogados y Asesorías">Abogados y Asesorías</option>
-                            <option value="Restaurantes y Gastronomía">Restaurantes y Gastronomía</option>
-                            <option value="E-commerce y Retail">E-commerce y Retail</option>
-                            <option value="Fitness y Gimnasios">Fitness y Gimnasios</option>
-                            <option value="Consultoría e Infoproductos">Consultoría e Infoproductos</option>
-                            <option value="Tecnología y B2B">Tecnología y B2B</option>
-                            <option value="Otro Sector">Otro Sector</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* STEP 2: Auditoría de Problemas & Frustraciones */}
-                {currentStep === 2 && (
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="space-y-6"
-                  >
-                    <div className="bg-zinc-50 dark:bg-zinc-900/60 p-6 sm:p-10 rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 space-y-6">
-                      
-                      {/* Calificación interactiva de satisfacción */}
-                      <div>
-                        <div className="flex items-center justify-between mb-3">
-                          <label className="text-xs font-black uppercase tracking-wider text-zinc-500">
-                            Nivel de Satisfacción con tu Web Actual *
-                          </label>
-                          <span className="text-xs font-bold text-amber-500">
-                            {formData.satisfactionRating === 1 && '🚨 Urgencia Crítica (Pierde Ventas)'}
-                            {formData.satisfactionRating === 2 && '⚠️ Mala Imagen / Desactualizada'}
-                            {formData.satisfactionRating === 3 && '⚡ Necesita Reestructuración Urgente'}
-                            {formData.satisfactionRating === 4 && '👍 Aceptable pero sin ventas'}
-                            {formData.satisfactionRating === 5 && '🌟 Buena pero requiere modernización'}
-                          </span>
-                        </div>
-                        
-                        <div className="grid grid-cols-5 gap-2">
-                          {[1, 2, 3, 4, 5].map(rating => (
-                            <button
-                              key={rating}
-                              type="button"
-                              onClick={() => setFormData({ ...formData, satisfactionRating: rating })}
-                              className={`py-3.5 rounded-2xl border flex flex-col items-center justify-center gap-1 transition-all cursor-pointer ${
-                                formData.satisfactionRating === rating
-                                  ? 'bg-black dark:bg-white text-white dark:text-black border-transparent shadow-lg scale-105 font-black'
-                                  : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-500 hover:border-zinc-400'
-                              }`}
-                            >
-                              <div className="flex items-center">
-                                <Star size={16} fill={formData.satisfactionRating >= rating ? 'currentColor' : 'none'} />
-                              </div>
-                              <span className="text-[11px] font-bold">{rating} ⭐</span>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Problemas detectados */}
-                      <div>
-                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-3">
-                          ¿Qué problemas críticos presenta tu web actual? (Selecciona los que apliquen) *
-                        </label>
-                        <div className="grid sm:grid-cols-2 gap-3">
-                          {[
-                            { 
-                              id: 'design_outdated', 
-                              label: 'Diseño anticuado y poco profesional', 
-                              desc: 'Da mala impresión y no refleja la calidad real de mis servicios.',
-                              icon: <Palette size={18} />
-                            },
-                            { 
-                              id: 'slow_speed', 
-                              label: 'Carga extremadamente lenta (> 4s)', 
-                              desc: 'Los clientes se cansan de esperar y se van a la competencia.',
-                              icon: <Gauge size={18} />
-                            },
-                            { 
-                              id: 'low_conversion', 
-                              label: 'Baja conversión (Nadie escribe al WhatsApp)', 
-                              desc: 'Recibe visitas pero no genera llamadas, citas ni ventas.',
-                              icon: <MessageSquare size={18} />
-                            },
-                            { 
-                              id: 'broken_mobile', 
-                              label: 'Mala experiencia en teléfonos móviles', 
-                              desc: 'Diseño desalineado, botones difíciles de pulsar y textos cortados.',
-                              icon: <Smartphone size={18} />
-                            },
-                            { 
-                              id: 'confusing_structure', 
-                              label: 'Estructura caótica y navegación confusa', 
-                              desc: 'El usuario no comprende en 5 segundos qué vendemos.',
-                              icon: <Layout size={18} />
-                            },
-                            { 
-                              id: 'hard_to_edit', 
-                              label: 'Plataforma difícil o costosa de mantener', 
-                              desc: 'Dependencia de programadores lentos o plugins que se rompen.',
-                              icon: <Sliders size={18} />
-                            },
-                            { 
-                              id: 'no_seo', 
-                              label: 'Invisible en Google (Cero posicionamiento SEO)', 
-                              desc: 'No aparecemos cuando buscan nuestros servicios en la ciudad.',
-                              icon: <Search size={18} />
-                            },
-                            { 
-                              id: 'insecure', 
-                              label: 'Caídas del servidor o problemas de seguridad', 
-                              desc: 'Web caída frecuentemente o advertencias de seguridad SSL.',
-                              icon: <Server size={18} />
-                            }
-                          ].map(point => (
-                            <div
-                              key={point.id}
-                              onClick={() => togglePainPoint(point.id)}
-                              className={`p-4 rounded-2xl border transition-all cursor-pointer select-none flex items-start gap-3 ${
-                                formData.currentPainPoints.includes(point.id)
-                                  ? 'bg-black dark:bg-white text-white dark:text-black border-transparent shadow-md'
-                                  : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-zinc-400'
-                              }`}
-                            >
-                              <div className={`mt-0.5 shrink-0 ${formData.currentPainPoints.includes(point.id) ? 'text-white dark:text-black' : 'text-zinc-400'}`}>
-                                {point.icon}
-                              </div>
-                              <div>
-                                <div className="text-xs font-black leading-snug">{point.label}</div>
-                                <div className={`text-[11px] mt-0.5 ${formData.currentPainPoints.includes(point.id) ? 'text-zinc-200 dark:text-zinc-700' : 'text-zinc-500'}`}>
-                                  {point.desc}
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Mayor Frustración con botón de ejemplo */}
-                      <div>
-                        <div className="flex items-center justify-between mb-2">
-                          <label className="text-xs font-black uppercase tracking-wider text-zinc-500">
-                            ¿Qué es lo que MÁS te frustra hoy al mostrar tu web a clientes?
-                          </label>
-                          <button
-                            type="button"
-                            onClick={fillExampleBusiness}
-                            className="text-[11px] font-bold text-zinc-500 hover:text-black dark:hover:text-white flex items-center gap-1 cursor-pointer"
-                          >
-                            <Sparkles size={12} />
-                            <span>Inspirarme con ejemplo</span>
-                          </button>
-                        </div>
-                        <textarea 
-                          rows={2}
-                          placeholder="Ej: Nos da vergüenza enviarle el link a clientes importantes porque parece un negocio aficionado y nos regatean presupuestos..."
-                          value={formData.biggestFrustration}
-                          onChange={e => setFormData({ ...formData, biggestFrustration: e.target.value })}
-                          className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium"
-                        />
-                      </div>
-
-                      {/* Servicios y Propuesta */}
-                      <div className="grid sm:grid-cols-2 gap-6 pt-2 border-t border-zinc-200 dark:border-zinc-800">
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            ¿Qué servicios o productos vendes exactamente? *
-                          </label>
-                          <textarea 
-                            rows={3}
-                            placeholder="Detalla tus servicios estrella, paquetes o soluciones que deben brillar en la nueva versión."
-                            value={formData.businessDescription}
-                            onChange={e => setFormData({ ...formData, businessDescription: e.target.value })}
-                            className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium"
-                            required
-                          />
-                        </div>
-
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            Cliente Ideal & Diferencial Competitivo
-                          </label>
-                          <textarea 
-                            rows={3}
-                            placeholder="Ej: Directores y clientes de alto poder adquisitivo. Nuestro diferencial es atención inmediata y 15 años de liderazgo."
-                            value={formData.targetAudience}
-                            onChange={e => setFormData({ ...formData, targetAudience: e.target.value })}
-                            className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium"
-                          />
-                        </div>
-                      </div>
-
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* STEP 3: Qué Mantener vs Reestructurar & Accesos */}
-                {currentStep === 3 && (
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="space-y-6"
-                  >
-                    <div className="bg-zinc-50 dark:bg-zinc-900/60 p-6 sm:p-10 rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 space-y-6">
-                      
-                      {/* Qué conservar */}
-                      <div>
-                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-3">
-                          ¿Qué elementos de tu web actual quieres CONSERVAR?
-                        </label>
-                        <div className="grid sm:grid-cols-2 gap-3">
-                          {[
-                            { id: 'domain_dns', label: 'Conservar mi dominio actual (.com / .es / .co)' },
-                            { id: 'existing_logo', label: 'Conservar mi logotipo actual tal cual está' },
-                            { id: 'seo_urls', label: 'Preservar posicionamiento SEO & URLs indexadas' },
-                            { id: 'current_copy', label: 'Mantener parte de los textos existentes' },
-                            { id: 'media_photos', label: 'Conservar fotos y vídeos de la empresa' },
-                            { id: 'start_fresh', label: 'Reestructuración 100% radical desde cero' }
-                          ].map(item => (
-                            <div
-                              key={item.id}
-                              onClick={() => toggleAssetToKeep(item.id)}
-                              className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-center justify-between select-none ${
-                                formData.assetsToKeep.includes(item.id)
-                                  ? 'bg-black dark:bg-white text-white dark:text-black border-transparent shadow-sm'
-                                  : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-zinc-400'
-                              }`}
-                            >
-                              <span className="text-xs font-bold">{item.label}</span>
-                              <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${
-                                formData.assetsToKeep.includes(item.id)
-                                  ? 'bg-white dark:bg-black text-black dark:text-white'
-                                  : 'border border-zinc-300 dark:border-zinc-700'
-                              }`}>
-                                {formData.assetsToKeep.includes(item.id) && <Check size={12} strokeWidth={3} />}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Accesos Técnicos */}
-                      <div>
-                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-3">
-                          Estado de los Accesos Técnicos (Dominio / Hosting)
-                        </label>
-                        <div className="grid sm:grid-cols-3 gap-3">
-                          {[
-                            { 
-                              id: 'has_all_access', 
-                              label: 'Tengo todos los accesos', 
-                              desc: 'Facilitaré DNS o cPanel para apuntar la nueva web.' 
-                            },
-                            { 
-                              id: 'needs_migration_help', 
-                              label: 'Necesito ayuda técnica', 
-                              desc: 'Vuestro equipo me asistirá paso a paso para la migración.' 
-                            },
-                            { 
-                              id: 'start_from_scratch', 
-                              label: 'Quiero servidor nuevo', 
-                              desc: 'Prefiero que registréis y configuréis toda la infraestructura.' 
-                            }
-                          ].map(acc => (
-                            <div
-                              key={acc.id}
-                              onClick={() => setFormData({ ...formData, technicalAccessStatus: acc.id as any })}
-                              className={`p-4 rounded-2xl border transition-all cursor-pointer select-none ${
-                                formData.technicalAccessStatus === acc.id
-                                  ? 'bg-black dark:bg-white text-white dark:text-black border-transparent shadow-md'
-                                  : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400'
-                              }`}
-                            >
-                              <div className="text-xs font-black mb-1">{acc.label}</div>
-                              <div className={`text-[11px] leading-tight ${formData.technicalAccessStatus === acc.id ? 'text-zinc-200 dark:text-zinc-700' : 'text-zinc-500'}`}>
-                                {acc.desc}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Formato de Arquitectura */}
-                      <div>
-                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-3">
-                          Arquitectura de Navegación Recomendada
-                        </label>
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          {[
-                            {
-                              id: 'one_page_funnel',
-                              title: 'One-Page de Máxima Conversión (Top ROI)',
-                              desc: 'Experiencia ultra fluida en una sola página: Hero, Servicios, Casos de Éxito, Testimonios y Cierre WhatsApp.'
-                            },
-                            {
-                              id: 'multi_page_corporate',
-                              title: 'Multi-Página Corporativa Estructurada',
-                              desc: 'Páginas dedicadas: Inicio, Nosotros, Catálogo de Servicios, Casos de Estudio y Contacto VIP.'
-                            },
-                            {
-                              id: 'lead_generation',
-                              title: 'Embudo para Anuncios (Google/Meta Ads)',
-                              desc: 'Página quirúrgica sin puntos de fuga, enfocada 100% en captar leads y citas directas.'
-                            },
-                            {
-                              id: 'catalog_ecommerce',
-                              title: 'Catálogo Interactivo de Productos',
-                              desc: 'Listado con filtros, fichas detalladas y botón de pedido o contratación directa.'
-                            }
-                          ].map(arch => (
-                            <div
-                              key={arch.id}
-                              onClick={() => setFormData({ ...formData, restructuringArchitecture: arch.id as any })}
-                              className={`p-5 rounded-2xl border transition-all cursor-pointer select-none ${
-                                formData.restructuringArchitecture === arch.id
-                                  ? 'bg-black dark:bg-white text-white dark:text-black border-transparent shadow-lg'
-                                  : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-zinc-400'
-                              }`}
-                            >
-                              <div className="text-xs font-black mb-1">{arch.title}</div>
-                              <div className={`text-[11px] leading-snug ${formData.restructuringArchitecture === arch.id ? 'text-zinc-200 dark:text-zinc-700' : 'text-zinc-500'}`}>
-                                {arch.desc}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* STEP 4: Objetivos del Rediseño, Identidad & Estilo */}
-                {currentStep === 4 && (
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="space-y-6"
-                  >
-                    <div className="bg-zinc-50 dark:bg-zinc-900/60 p-6 sm:p-10 rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 space-y-6">
-                      
-                      {/* Metas del Rediseño */}
-                      <div>
-                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-3">
-                          Objetivos que DEBE Conseguir la Nueva Web:
-                        </label>
-                        <div className="grid sm:grid-cols-2 gap-3">
-                          {[
-                            { id: 'leads_whatsapp', label: 'Multiplicar contactos y ventas por WhatsApp (+300%)', icon: <MessageSquare size={18} /> },
-                            { id: 'brand_authority', label: 'Transmitir máxima autoridad y estatus de élite', icon: <Shield size={18} /> },
-                            { id: 'speed_score95', label: 'Carga instantánea < 1s (Google PageSpeed 95+)', icon: <Zap size={18} /> },
-                            { id: 'booking_calendar', label: 'Agendamiento automático de citas o llamadas', icon: <Clock size={18} /> },
-                            { id: 'google_seo', label: 'Dominar primeras posiciones de Google orgánico', icon: <Globe size={18} /> },
-                            { id: 'easy_sales', label: 'Contratación directa de servicios online', icon: <ShoppingBag size={18} /> }
-                          ].map(goal => (
-                            <div
-                              key={goal.id}
-                              onClick={() => toggleGoal(goal.id)}
-                              className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-center gap-3 select-none ${
-                                formData.redesignGoals.includes(goal.id)
-                                  ? 'bg-black dark:bg-white text-white dark:text-black border-transparent shadow-md'
-                                  : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 hover:border-zinc-400'
-                              }`}
-                            >
-                              <div className={formData.redesignGoals.includes(goal.id) ? 'text-white dark:text-black' : 'text-zinc-400'}>
-                                {goal.icon}
-                              </div>
-                              <span className="text-xs font-bold leading-tight">{goal.label}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Paletas de Color con Live Feedback */}
-                      <div>
-                        <div className="flex items-center justify-between mb-3">
-                          <label className="text-xs font-black uppercase tracking-wider text-zinc-500">
-                            Paleta de Color & Dirección Visual Sugerida
-                          </label>
-                          <span className="text-[11px] text-zinc-400">Se actualiza en la vista previa ➜</span>
-                        </div>
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          {colorPalettes.map(palette => (
-                            <div
-                              key={palette.id}
-                              onClick={() => setFormData({ ...formData, colorPaletteChoice: palette.id })}
-                              className={`p-5 rounded-2xl border transition-all cursor-pointer select-none ${
-                                formData.colorPaletteChoice === palette.id
-                                  ? 'border-black dark:border-white bg-white dark:bg-zinc-950 shadow-lg ring-2 ring-black dark:ring-white'
-                                  : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 hover:border-zinc-400'
-                              }`}
-                            >
-                              <div className="flex items-center justify-between mb-2">
-                                <span className="text-xs font-black">{palette.name}</span>
-                                {formData.colorPaletteChoice === palette.id && (
-                                  <CheckCircle2 size={16} className="text-black dark:text-white" />
-                                )}
-                              </div>
-                              <p className="text-[11px] text-zinc-500 mb-3 leading-tight">{palette.desc}</p>
-                              <div className="flex gap-2">
-                                {palette.colors.map((c, i) => (
-                                  <div 
-                                    key={i} 
-                                    className="h-5 flex-1 rounded-md border border-zinc-200 dark:border-zinc-700 shadow-inner"
-                                    style={{ backgroundColor: c }}
-                                  />
-                                ))}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Logotipo & Tono */}
-                      <div className="grid sm:grid-cols-2 gap-6 pt-2 border-t border-zinc-200 dark:border-zinc-800">
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            Estado del Logotipo
-                          </label>
-                          <select 
-                            value={formData.hasLogo}
-                            onChange={e => setFormData({ ...formData, hasLogo: e.target.value as any })}
-                            className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium cursor-pointer"
-                          >
-                            <option value="yes">Tengo logotipo listo en buena calidad (Vector / PNG transparente)</option>
-                            <option value="needs_redesign">Tengo logotipo pero me gustaría modernizarlo</option>
-                            <option value="no">No tengo logotipo (crear logotipo tipográfico limpio)</option>
-                          </select>
-                        </div>
-
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            Tono de Comunicación
-                          </label>
-                          <select 
-                            value={formData.brandTone}
-                            onChange={e => setFormData({ ...formData, brandTone: e.target.value })}
-                            className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium cursor-pointer"
-                          >
-                            <option value="Moderno y Minimalista">Moderno, Minimalista & Sofisticado</option>
-                            <option value="Corporativo y Elegante">Corporativo, Institucional & Seguro</option>
-                            <option value="Directo y Enfocado en Ventas">Directo, Persuasivo & Alto Cierre</option>
-                            <option value="Cercano y Humano">Cercano, Cálido & Empático</option>
-                            <option value="Tecnológico y Futurista">Tecnológico, Vanguardista & Cyber</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      {/* Competencia & Referencias */}
-                      <div className="grid sm:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            Webs de Competidores que quieras Superar (URLs)
-                          </label>
-                          <input 
-                            type="text"
-                            placeholder="Ej: competidor1.com, rival2.es"
-                            value={formData.competitorWebsites}
-                            onChange={e => setFormData({ ...formData, competitorWebsites: e.target.value })}
-                            className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium"
-                          />
-                        </div>
-
-                        <div>
-                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                            Webs de Referencia de Diseño que te Encanten (URLs)
-                          </label>
-                          <input 
-                            type="text"
-                            placeholder="Ej: apple.com, stripe.com, linares.co"
-                            value={formData.referenceWebsites}
-                            onChange={e => setFormData({ ...formData, referenceWebsites: e.target.value })}
-                            className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium"
-                          />
-                        </div>
-                      </div>
-
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* STEP 5: Secciones & Módulos de Conversión */}
-                {currentStep === 5 && (
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="space-y-6"
-                  >
-                    <div className="bg-zinc-50 dark:bg-zinc-900/60 p-6 sm:p-10 rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 space-y-6">
-                      
-                      <div>
-                        <div className="flex items-center justify-between mb-3">
-                          <label className="text-xs font-black uppercase tracking-wider text-zinc-500">
-                            Secciones Reestructuradas a Medida
-                          </label>
-                          <span className="text-xs font-bold text-zinc-500">
-                            {formData.desiredSections.length} seleccionadas
-                          </span>
-                        </div>
-
-                        <div className="grid sm:grid-cols-2 gap-3">
-                          {[
-                            'Portada Hero Rediseñada de Alto Impacto',
-                            'Comparativa de Transformación / Casos de Éxito',
-                            'Matriz de Servicios Reestructurada',
-                            'Sobre Nosotros y Autoridad de Marca',
-                            'Muro de Testimonios y Reseñas Verificadas',
-                            'Botón Flotante Inteligente de WhatsApp',
-                            'Formulario VIP de Presupuesto Directo',
-                            'Tabla de Precios y Paquetes de Servicios',
-                            'Preguntas Frecuentes (FAQ Derribo de Objeciones)',
-                            'Sellos de Garantía Blindada y Confianza',
-                            'Mapa, Sede Física y Cobertura Geográfica',
-                            'Integración con Calendly para Reservas'
-                          ].map(section => (
-                            <div
-                              key={section}
-                              onClick={() => toggleSection(section)}
-                              className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-center justify-between select-none ${
-                                formData.desiredSections.includes(section)
-                                  ? 'bg-black dark:bg-white text-white dark:text-black border-transparent shadow-sm'
-                                  : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-zinc-400'
-                              }`}
-                            >
-                              <span className="text-xs font-bold">{section}</span>
-                              <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${
-                                formData.desiredSections.includes(section)
-                                  ? 'bg-white dark:bg-black text-black dark:text-white'
-                                  : 'border border-zinc-300 dark:border-zinc-700'
-                              }`}>
-                                {formData.desiredSections.includes(section) && <Check size={12} strokeWidth={3} />}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Integraciones */}
-                      <div>
-                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-3">
-                          Integraciones Técnicas & Analítica
-                        </label>
-                        <div className="grid sm:grid-cols-3 gap-3">
-                          {[
-                            { id: 'whatsapp_floating', label: 'WhatsApp CRM Directo' },
-                            { id: 'google_analytics4', label: 'Google Analytics 4' },
-                            { id: 'meta_pixel', label: 'Píxel Meta Ads (FB/IG)' },
-                            { id: 'calendly_booking', label: 'Agenda Calendly' },
-                            { id: 'stripe_checkout', label: 'Pasarela Stripe' },
-                            { id: 'multilanguage_es_en', label: 'Multidioma (ES / EN)' }
-                          ].map(integ => (
-                            <div
-                              key={integ.id}
-                              onClick={() => toggleIntegration(integ.id)}
-                              className={`p-3.5 rounded-2xl border text-center transition-all cursor-pointer select-none ${
-                                formData.specialIntegrations.includes(integ.id)
-                                  ? 'bg-black dark:bg-white text-white dark:text-black border-transparent font-bold shadow-md'
-                                  : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400'
-                              }`}
-                            >
-                              <span className="text-xs">{integ.label}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Requerimientos específicos */}
-                      <div>
-                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-500 mb-2">
-                          ¿Algún requerimiento especial o detalle adicional para la reestructuración? (Opcional)
-                        </label>
-                        <textarea 
-                          rows={3}
-                          placeholder="Ej: Destacar un vídeo de presentación corporativa en la cabecera, añadir un calculador de precios interactivo..."
-                          value={formData.specialFeaturesNotes}
-                          onChange={e => setFormData({ ...formData, specialFeaturesNotes: e.target.value })}
-                          className="w-full px-5 py-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all text-sm font-medium"
-                        />
-                      </div>
-
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* STEP 6: Plan de Rediseño, Add-ons & Checkout */}
-                {currentStep === 6 && (
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="space-y-8"
-                  >
-                    {/* Plan Cards */}
-                    <div className="grid md:grid-cols-3 gap-5">
-                      {/* Essential */}
-                      <div
-                        onClick={() => setFormData({ ...formData, selectedPlan: 'essential' })}
-                        className={`p-6 rounded-[2rem] border transition-all cursor-pointer relative flex flex-col justify-between ${
-                          formData.selectedPlan === 'essential'
-                            ? 'border-black dark:border-white bg-zinc-50 dark:bg-zinc-900 ring-2 ring-black dark:ring-white shadow-xl'
-                            : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 opacity-80 hover:opacity-100'
-                        }`}
-                      >
-                        <div>
-                          <h3 className="text-lg font-black mb-1">Rediseño Esencial</h3>
-                          <p className="text-xs text-zinc-500 mb-4">Modernización visual rápida.</p>
-                          <div className="text-3xl font-black mb-4">425€</div>
-                          <ul className="space-y-1.5 text-xs text-zinc-600 dark:text-zinc-400">
-                            <li className="flex items-center gap-2"><Check size={13} /> Rediseño Visual 100%</li>
-                            <li className="flex items-center gap-2"><Check size={13} /> Móvil Responsivo</li>
-                            <li className="flex items-center gap-2"><Check size={13} /> Botón WhatsApp Directo</li>
-                            <li className="flex items-center gap-2"><Check size={13} /> Carga Rápida Optimizada</li>
-                            <li className="flex items-center gap-2 font-bold text-black dark:text-white"><Check size={13} /> Entrega en 72 Horas</li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      {/* Professional (Featured) */}
-                      <div
-                        onClick={() => setFormData({ ...formData, selectedPlan: 'professional' })}
-                        className={`p-6 rounded-[2rem] border transition-all cursor-pointer relative flex flex-col justify-between ${
-                          formData.selectedPlan === 'professional'
-                            ? 'bg-black dark:bg-white text-white dark:text-black border-transparent shadow-2xl scale-[1.03] ring-2 ring-black dark:ring-white'
-                            : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 opacity-90 hover:opacity-100'
-                        }`}
-                      >
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest bg-white dark:bg-black text-black dark:text-white border shadow">
-                          Recomendado
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-black mb-1">Reestructuración Pro</h3>
-                          <p className={`text-xs mb-4 ${formData.selectedPlan === 'professional' ? 'text-zinc-300 dark:text-zinc-600' : 'text-zinc-500'}`}>
-                            UX/UI, ventas y máxima autoridad.
-                          </p>
-                          <div className="text-3xl font-black mb-4">785€</div>
-                          <ul className={`space-y-1.5 text-xs ${formData.selectedPlan === 'professional' ? 'text-zinc-200 dark:text-zinc-800' : 'text-zinc-600 dark:text-zinc-400'}`}>
-                            <li className="flex items-center gap-2 font-bold"><Check size={13} /> Hosting Premium (1 Año)</li>
-                            <li className="flex items-center gap-2"><Check size={13} /> Todo el Plan Esencial</li>
-                            <li className="flex items-center gap-2"><Check size={13} /> Copywriting de Conversión</li>
-                            <li className="flex items-center gap-2"><Check size={13} /> Animaciones Fluidas</li>
-                            <li className="flex items-center gap-2"><Check size={13} /> SEO Avanzado & Migración</li>
-                            <li className="flex items-center gap-2 font-bold"><Check size={13} /> Entrega en 72 Horas</li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      {/* Elite */}
-                      <div
-                        onClick={() => setFormData({ ...formData, selectedPlan: 'elite' })}
-                        className={`p-6 rounded-[2rem] border transition-all cursor-pointer relative flex flex-col justify-between ${
-                          formData.selectedPlan === 'elite'
-                            ? 'border-black dark:border-white bg-zinc-50 dark:bg-zinc-900 ring-2 ring-black dark:ring-white shadow-xl'
-                            : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 opacity-80 hover:opacity-100'
-                        }`}
-                      >
-                        <div>
-                          <h3 className="text-lg font-black mb-1">Rediseño Elite</h3>
-                          <p className="text-xs text-zinc-500 mb-4">Reingeniería integral a medida.</p>
-                          <div className="text-3xl font-black mb-4">1.450€</div>
-                          <ul className="space-y-1.5 text-xs text-zinc-600 dark:text-zinc-400">
-                            <li className="flex items-center gap-2 font-bold"><Check size={13} /> Consultoría VIP</li>
-                            <li className="flex items-center gap-2"><Check size={13} /> APIs & Webhooks</li>
-                            <li className="flex items-center gap-2"><Check size={13} /> CMS a Medida</li>
-                            <li className="flex items-center gap-2"><Check size={13} /> Soporte Dedicado 24/7</li>
-                          </ul>
-                        </div>
-                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-black text-black dark:text-white">
+                        Qual o foco do projeto e dados de contato?
+                      </h2>
+                      <p className="text-zinc-500 text-sm mt-1">
+                        Selecione o tipo de trabalho e informe seus canais para alinhamento prioritário.
+                      </p>
                     </div>
 
-                    {/* Add-ons Section */}
-                    <div className="bg-zinc-50 dark:bg-zinc-900/60 p-6 rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 space-y-4">
-                      <h4 className="text-xs font-black uppercase tracking-wider text-black dark:text-white mb-2">
-                        Complementos de Alto Rendimiento para tu Rediseño
-                      </h4>
-
+                    {/* Project Scope Selector */}
+                    <div>
+                      <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-2.5">
+                        Tipo de Escopo Principal *
+                      </label>
                       <div className="grid sm:grid-cols-2 gap-3">
                         {[
                           { 
-                            key: 'migrationSeoRedirects', 
-                            title: 'Migración Segura & Redirecciones 301', 
-                            desc: 'Protege tu posicionamiento SEO actual y enlaces indexados.', 
-                            price: '+65€' 
+                            id: 'full_redesign', 
+                            title: 'Redesign Completo 360°', 
+                            desc: 'Modernização visual total, nova identidade, textos de vendas e alta velocidade.',
+                            badge: 'Mais Escolhido',
+                            icon: <Sparkles size={18} className="text-amber-500" />
                           },
                           { 
-                            key: 'seoContentPackage', 
-                            title: 'Pack Copywriting & Reescritura Persuasiva', 
-                            desc: 'Reescribimos los textos para multiplicar el cierre de llamadas.', 
-                            price: '+95€' 
+                            id: 'ux_restructure', 
+                            title: 'Reestruturação de Vendas / Funil', 
+                            desc: 'Reorganização estratégica de seções para multiplicar contatos e leads qualificados.',
+                            badge: 'Foco em Vendas',
+                            icon: <Layers size={18} className="text-blue-500" />
                           },
                           { 
-                            key: 'speedOptimizationScore95', 
-                            title: 'Optimización de Velocidad Score 95+', 
-                            desc: 'Carga instantánea < 0.8s en Google PageSpeed Insights.', 
-                            price: '+75€' 
+                            id: 'speed_mobile_fix', 
+                            title: 'Otimização Mobile & Performance', 
+                            desc: 'Correção de visual quebrado no celular, carregamento ultrarrápido e SEO Google.',
+                            badge: 'Velocidade Extrema',
+                            icon: <Zap size={18} className="text-emerald-500" />
                           },
                           { 
-                            key: 'expressDelivery24h', 
-                            title: 'Entrega Prioritaria Ultrarrápida en 24-48h', 
-                            desc: 'Prioridad absoluta de desarrollo con entrega récord.', 
-                            price: '+120€' 
-                          },
-                          { 
-                            key: 'monthlyMaintenance', 
-                            title: 'Mantenimiento & Soporte VIP Mensual', 
-                            desc: 'Copias de seguridad semanales, actualizaciones y soporte continuo.', 
-                            price: '+45€/mes' 
-                          },
-                        ].map(addon => {
-                          const isSelected = formData.addons[addon.key as keyof typeof formData.addons];
-                          return (
-                            <div
-                              key={addon.key}
-                              onClick={() => setFormData({
-                                ...formData,
-                                addons: {
-                                  ...formData.addons,
-                                  [addon.key]: !isSelected
-                                }
-                              })}
-                              className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-center justify-between select-none ${
-                                isSelected
-                                  ? 'bg-white dark:bg-zinc-950 border-black dark:border-white shadow-md'
-                                  : 'bg-white/60 dark:bg-zinc-950/60 border-zinc-200 dark:border-zinc-800 hover:border-zinc-400'
-                              }`}
-                            >
-                              <div className="pr-3">
-                                <div className="text-xs font-black text-black dark:text-white">{addon.title}</div>
-                                <div className="text-[11px] text-zinc-500 leading-tight mt-0.5">{addon.desc}</div>
+                            id: 'new_site', 
+                            title: 'Criar Site Novo do Zero', 
+                            desc: 'Ainda não possuo site no ar e desejo lançar minha presença digital de elite em 72h.',
+                            badge: 'Novo Lançamento',
+                            icon: <Globe size={18} className="text-purple-500" />
+                          }
+                        ].map((item) => (
+                          <button
+                            key={item.id}
+                            type="button"
+                            onClick={() => setFormData({ ...formData, projectType: item.id as any })}
+                            className={`p-4 rounded-2xl text-left border transition-colors flex flex-col justify-between cursor-pointer ${
+                              formData.projectType === item.id
+                                ? 'border-black dark:border-white bg-zinc-50 dark:bg-zinc-800'
+                                : 'border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 bg-white dark:bg-zinc-900/50'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between mb-2">
+                              <div className="flex items-center gap-2">
+                                {item.icon}
+                                <span className="font-black text-sm text-black dark:text-white">{item.title}</span>
                               </div>
-                              <div className="text-right shrink-0">
-                                <span className="text-xs font-black text-black dark:text-white block">{addon.price}</span>
-                                <div className={`mt-1 inline-flex w-4 h-4 rounded-full items-center justify-center ${
-                                  isSelected ? 'bg-black dark:bg-white text-white dark:text-black' : 'border border-zinc-300 dark:border-zinc-700'
-                                }`}>
-                                  {isSelected && <Check size={10} strokeWidth={3} />}
-                                </div>
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-zinc-200 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-200">
+                                {item.badge}
+                              </span>
+                            </div>
+                            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                              {item.desc}
+                            </p>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Current Website URL & Instant Diagnostic */}
+                    {formData.projectType !== 'new_site' && (
+                      <div className="p-4 sm:p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-4">
+                        <div>
+                          <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1.5">
+                            URL do Site Atual a ser Reformulado *
+                          </label>
+                          <div className="flex gap-2">
+                            <div className="relative flex-1">
+                              <Globe className="absolute left-3.5 top-3.5 text-zinc-400" size={18} />
+                              <input
+                                type="text"
+                                placeholder="ex: https://meusiteantigo.com.br"
+                                value={formData.currentWebsite}
+                                onChange={(e) => {
+                                  setFormData({ ...formData, currentWebsite: e.target.value });
+                                  setUrlAnalyzed(false);
+                                }}
+                                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                              />
+                            </div>
+                            <button
+                              type="button"
+                              onClick={handleSimulateUrlAudit}
+                              disabled={!formData.currentWebsite.trim() || isAnalyzingUrl}
+                              className="px-4 py-2.5 rounded-xl bg-black dark:bg-white text-white dark:text-black text-xs font-bold flex items-center gap-1.5 hover:opacity-90 disabled:opacity-40 transition-opacity cursor-pointer flex-shrink-0"
+                            >
+                              {isAnalyzingUrl ? (
+                                <>
+                                  <RefreshCw size={14} className="animate-spin" />
+                                  <span>Verificando...</span>
+                                </>
+                              ) : (
+                                <>
+                                  <Search size={14} />
+                                  <span>Verificar URL</span>
+                                </>
+                              )}
+                            </button>
+                          </div>
+                        </div>
+
+                        {/* URL Diagnostic Feedback Box */}
+                        {urlAnalyzed && (
+                          <div className="p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-xs space-y-2">
+                            <div className="flex items-center justify-between font-bold text-amber-900 dark:text-amber-200">
+                              <span className="flex items-center gap-1.5">
+                                <Gauge size={15} />
+                                Diagnóstico do Site Atual:
+                              </span>
+                              <span className="px-2 py-0.5 rounded bg-amber-200 dark:bg-amber-900 text-amber-900 dark:text-amber-100 font-black">
+                                Potencial: +180% Conversão
+                              </span>
+                            </div>
+                            <div className="grid grid-cols-3 gap-2 text-center pt-1">
+                              <div className="p-2 rounded bg-white dark:bg-zinc-900 border border-amber-100 dark:border-amber-900">
+                                <span className="text-zinc-400 block text-[10px]">Carregamento Atual</span>
+                                <span className="font-black text-rose-500 text-xs sm:text-sm">3.8s (Lento)</span>
+                              </div>
+                              <div className="p-2 rounded bg-white dark:bg-zinc-900 border border-amber-100 dark:border-amber-900">
+                                <span className="text-zinc-400 block text-[10px]">Conversão Estimada</span>
+                                <span className="font-black text-amber-600 text-xs sm:text-sm">&lt; 1.2%</span>
+                              </div>
+                              <div className="p-2 rounded bg-white dark:bg-zinc-900 border border-amber-100 dark:border-amber-900">
+                                <span className="text-zinc-400 block text-[10px]">Alvo Vanguard</span>
+                                <span className="font-black text-emerald-600 text-xs sm:text-sm">0.3s & 99 Score</span>
                               </div>
                             </div>
+                          </div>
+                        )}
+
+                        <div className="grid sm:grid-cols-2 gap-3 pt-1">
+                          <div>
+                            <label className="block text-xs font-bold text-zinc-600 dark:text-zinc-400 mb-1">
+                              Plataforma ou CMS Atual
+                            </label>
+                            <select
+                              value={formData.currentPlatform}
+                              onChange={(e) => setFormData({ ...formData, currentPlatform: e.target.value })}
+                              className="w-full px-3 py-2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                            >
+                              <option value="WordPress / Elementor">WordPress / Elementor / Divi</option>
+                              <option value="Wix / Squarespace">Wix / Squarespace / Webflow</option>
+                              <option value="HTML / PHP Antigo">Código Próprio / HTML / PHP Antigo</option>
+                              <option value="Shopify / Loja Integrada">Shopify / WooCommerce / E-commerce</option>
+                              <option value="Outro / Não Tenho Certeza">Outro / Não tenho certeza</option>
+                            </select>
+                          </div>
+
+                          <div>
+                            <label className="block text-xs font-bold text-zinc-600 dark:text-zinc-400 mb-1">
+                              Idade do site atual
+                            </label>
+                            <select
+                              value={formData.currentWebsiteAge}
+                              onChange={(e) => setFormData({ ...formData, currentWebsiteAge: e.target.value })}
+                              className="w-full px-3 py-2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                            >
+                              <option value="Menos de 1 ano">Menos de 1 ano</option>
+                              <option value="1 a 3 anos">1 a 3 anos</option>
+                              <option value="3 a 6 anos">3 a 6 anos</option>
+                              <option value="Mais de 6 anos">Mais de 6 anos</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Contact & Business Basics */}
+                    <div className="grid sm:grid-cols-2 gap-3.5">
+                      <div>
+                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
+                          Nome da Empresa ou Marca *
+                        </label>
+                        <div className="relative">
+                          <Building className="absolute left-3 top-3 text-zinc-400" size={16} />
+                          <input
+                            type="text"
+                            placeholder="ex: Lumina Consultoria VIP"
+                            value={formData.companyName}
+                            onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
+                            className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
+                          Nome do Responsável *
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="ex: Carlos Albuquerque"
+                          value={formData.contactName}
+                          onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
+                          WhatsApp de Contato Direto *
+                        </label>
+                        <div className="relative">
+                          <Phone className="absolute left-3 top-3 text-zinc-400" size={16} />
+                          <input
+                            type="tel"
+                            placeholder="ex: +55 (11) 98765-4321"
+                            value={formData.phone}
+                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                            className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
+                          E-mail Corporativo *
+                        </label>
+                        <div className="relative">
+                          <Mail className="absolute left-3 top-3 text-zinc-400" size={16} />
+                          <input
+                            type="email"
+                            placeholder="ex: contato@suaempresa.com.br"
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
+                          Setor / Nicho de Atuação
+                        </label>
+                        <select
+                          value={formData.industry}
+                          onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                        >
+                          <option value="Serviços Profissionais">Serviços Profissionais & B2B</option>
+                          <option value="Clínicas, Médicos e Saúde">Clínicas, Médicos & Saúde</option>
+                          <option value="Advocacia e Jurídico">Advocacia & Escritórios Jurídicos</option>
+                          <option value="Imobiliárias e Corretores">Imobiliárias & Corretores</option>
+                          <option value="Arquitetura e Engenharia">Arquitetura, Design & Engenharia</option>
+                          <option value="Consultoria e Treinamentos">Consultoria, Cursos & Infoprodutos</option>
+                          <option value="Gastronomia e Restaurantes">Gastronomia & Restaurantes</option>
+                          <option value="Comércio e E-commerce">Comércio & E-commerce</option>
+                          <option value="Outro Segmento">Outro Segmento</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
+                          Cidade / País de Atuação
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="ex: São Paulo, Brasil (ou Global)"
+                          value={formData.cityCountry}
+                          onChange={(e) => setFormData({ ...formData, cityCountry: e.target.value })}
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* STEP 2: Dores, Auditoria & Posicionamento */}
+                {currentStep === 2 && (
+                  <div className="space-y-6">
+                    <div>
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1">
+                        <span>Etapa 2 de 6</span> • <span>Auditoria de Dores & Conteúdo</span>
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-black text-black dark:text-white">
+                        O que não está funcionando no site atual?
+                      </h2>
+                      <p className="text-zinc-500 text-sm mt-1">
+                        Mapeamos com precisão os gargalos que estão fazendo sua empresa perder vendas.
+                      </p>
+                    </div>
+
+                    {/* Satisfaction Rating */}
+                    <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
+                      <div className="flex items-center justify-between mb-2">
+                        <label className="text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
+                          Nível de satisfação com o site atual:
+                        </label>
+                        <span className="text-xs font-bold px-2 py-0.5 rounded bg-zinc-200 dark:bg-zinc-800">
+                          {formData.satisfactionRating} de 5 Estrelas
+                        </span>
+                      </div>
+                      <div className="flex gap-2">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <button
+                            key={star}
+                            type="button"
+                            onClick={() => setFormData({ ...formData, satisfactionRating: star })}
+                            className={`flex-1 py-2.5 rounded-xl flex items-center justify-center gap-1 border transition-colors cursor-pointer ${
+                              formData.satisfactionRating >= star
+                                ? 'bg-amber-400/15 border-amber-400 text-amber-500 font-bold'
+                                : 'bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-zinc-400'
+                            }`}
+                          >
+                            <Star size={16} className={formData.satisfactionRating >= star ? 'fill-amber-400 text-amber-400' : ''} />
+                            <span className="text-xs font-bold">{star}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Pain Points Multi-selector */}
+                    <div>
+                      <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-2.5">
+                        Quais os maiores problemas a corrigir? (Selecione todos que se aplicam) *
+                      </label>
+                      <div className="grid sm:grid-cols-2 gap-2.5">
+                        {[
+                          { id: 'design_outdated', label: 'Visual antigo e pouco profissional', desc: 'Não reflete a qualidade real e autoridade da empresa.' },
+                          { id: 'slow_speed', label: 'Carregamento lento e pesado', desc: 'Visitantes abandonam antes de ler a proposta.' },
+                          { id: 'low_conversion', label: 'Baixa conversão / Poucos leads', desc: 'Recebe visitas, mas ninguém clica no WhatsApp ou compra.' },
+                          { id: 'broken_mobile', label: 'Experiência desconfigurada no celular', desc: 'Botões fora de lugar e fontes desproporcionais.' },
+                          { id: 'confusing_structure', label: 'Estrutura confusa e difícil navegação', desc: 'Cliente se perde e não entende os planos ou serviços.' },
+                          { id: 'hard_to_edit', label: 'Plataforma difícil de atualizar', desc: 'Depende de terceiros para mudar um texto ou foto.' },
+                          { id: 'no_seo', label: 'Não é encontrado no Google', desc: 'Falta de otimização estrutural para ranqueamento local.' },
+                          { id: 'insecure', label: 'Instabilidade ou travamentos', desc: 'Site sai do ar com frequência ou apresenta erros.' }
+                        ].map((pain) => {
+                          const isSelected = formData.currentPainPoints.includes(pain.id);
+                          return (
+                            <button
+                              key={pain.id}
+                              type="button"
+                              onClick={() => togglePainPoint(pain.id)}
+                              className={`p-3 rounded-2xl text-left border transition-colors flex items-start gap-2.5 cursor-pointer ${
+                                isSelected
+                                  ? 'border-black dark:border-white bg-zinc-50 dark:bg-zinc-800/80 font-semibold'
+                                  : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40'
+                              }`}
+                            >
+                              <div className={`mt-0.5 w-4 h-4 rounded flex items-center justify-center flex-shrink-0 ${
+                                isSelected ? 'bg-black dark:bg-white text-white dark:text-black' : 'border border-zinc-300 dark:border-zinc-700'
+                              }`}>
+                                {isSelected && <Check size={12} strokeWidth={3} />}
+                              </div>
+                              <div>
+                                <h4 className="text-xs font-bold text-black dark:text-white leading-tight">{pain.label}</h4>
+                                <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">{pain.desc}</p>
+                              </div>
+                            </button>
                           );
                         })}
                       </div>
                     </div>
 
-                    {/* Payment Method Selector & Form */}
-                    <div className="bg-zinc-50 dark:bg-zinc-900/60 p-6 sm:p-8 rounded-[2.5rem] border border-zinc-100 dark:border-zinc-800 space-y-6">
+                    {/* Business Description & Value Proposition */}
+                    <div className="space-y-3.5">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-base font-black text-black dark:text-white">
-                          Método de Pago Seguro
-                        </h3>
-                        <div className="flex items-center gap-1.5 text-xs text-zinc-500 font-bold">
-                          <Lock size={14} className="text-emerald-500" />
-                          <span>Cifrado SSL 256-bit</span>
-                        </div>
+                        <label className="text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
+                          Resumo dos Serviços & Proposta de Valor *
+                        </label>
+                        <button
+                          type="button"
+                          onClick={fillExampleBusiness}
+                          className="text-[11px] font-bold text-zinc-500 hover:text-black dark:hover:text-white flex items-center gap-1 cursor-pointer underline"
+                        >
+                          <Sparkles size={12} className="text-amber-500" />
+                          Preencher exemplo rápido
+                        </button>
                       </div>
 
-                      {/* Payment Method Buttons */}
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      <textarea
+                        rows={3}
+                        placeholder="Quais serviços ou produtos principais você comercializa e qual a faixa de preço média?"
+                        value={formData.businessDescription}
+                        onChange={(e) => setFormData({ ...formData, businessDescription: e.target.value })}
+                        className="w-full p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                      />
+
+                      <div className="grid sm:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-bold text-zinc-500 dark:text-zinc-400 mb-1">
+                            Público-Alvo e Perfil do Cliente Ideal
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="ex: Médicos, advogados, investidores"
+                            value={formData.targetAudience}
+                            onChange={(e) => setFormData({ ...formData, targetAudience: e.target.value })}
+                            className="w-full px-3.5 py-2 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-xs font-bold text-zinc-500 dark:text-zinc-400 mb-1">
+                            Principal Diferencial sobre Concorrentes
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="ex: Atendimento no mesmo dia, 10 anos de mercado"
+                            value={formData.competitiveDifferential}
+                            onChange={(e) => setFormData({ ...formData, competitiveDifferential: e.target.value })}
+                            className="w-full px-3.5 py-2 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* STEP 3: O que Manter & Nova Arquitetura */}
+                {currentStep === 3 && (
+                  <div className="space-y-6">
+                    <div>
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1">
+                        <span>Etapa 3 de 6</span> • <span>Preservação de Ativos & Arquitetura</span>
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-black text-black dark:text-white">
+                        O que devemos preservar e qual a estrutura ideal?
+                      </h2>
+                      <p className="text-zinc-500 text-sm mt-1">
+                        Garantimos a preservação da sua autoridade de domínio, indexação no Google e elementos de marca.
+                      </p>
+                    </div>
+
+                    {/* Assets to keep */}
+                    <div>
+                      <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-2.5">
+                        Ativos do site atual que devemos manter:
+                      </label>
+                      <div className="grid sm:grid-cols-2 gap-2.5">
                         {[
-                          { id: 'card', label: 'Tarjeta Bancaria', icon: <CreditCard size={18} /> },
-                          { id: 'bizum', label: 'Bizum / Transf.', icon: <Zap size={18} /> },
-                          { id: 'paypal', label: 'PayPal', icon: <Globe size={18} /> },
-                          { id: 'whatsapp', label: 'WhatsApp Direct', icon: <MessageSquare size={18} /> },
-                        ].map(method => (
+                          { id: 'domain_dns', label: 'Domínio Atual (.com / .com.br)', desc: 'Mantemos o mesmo endereço na web sem interrupção de e-mails corporativos.' },
+                          { id: 'existing_logo', label: 'Logotipo & Identidade Visual', desc: 'Preservamos a logo atual e cores da sua marca.' },
+                          { id: 'seo_urls', label: 'URLs Antigas & SEO (Redirecionamento 301)', desc: 'Evita erro 404 e preserva autoridade acumulada no Google.' },
+                          { id: 'existing_copy', label: 'Textos & Descrições Atuais', desc: 'Aproveitaremos os textos existentes com melhorias de copywriting.' },
+                          { id: 'reviews_testimonials', label: 'Depoimentos & Avaliações Reais', desc: 'Migraremos suas provas sociais para o novo design de prestígio.' },
+                          { id: 'blog_articles', label: 'Artigos / Notícias do Blog', desc: 'Migração de conteúdo editorial relevante.' }
+                        ].map((asset) => {
+                          const isChecked = formData.assetsToKeep.includes(asset.id);
+                          return (
+                            <button
+                              key={asset.id}
+                              type="button"
+                              onClick={() => toggleAssetToKeep(asset.id)}
+                              className={`p-3 rounded-2xl text-left border transition-colors flex items-start gap-2.5 cursor-pointer ${
+                                isChecked
+                                  ? 'border-black dark:border-white bg-zinc-50 dark:bg-zinc-800 font-semibold'
+                                  : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40'
+                              }`}
+                            >
+                              <div className={`mt-0.5 w-4 h-4 rounded flex items-center justify-center flex-shrink-0 ${
+                                isChecked ? 'bg-black dark:bg-white text-white dark:text-black' : 'border border-zinc-300 dark:border-zinc-700'
+                              }`}>
+                                {isChecked && <Check size={12} strokeWidth={3} />}
+                              </div>
+                              <div>
+                                <h4 className="text-xs font-bold text-black dark:text-white leading-tight">{asset.label}</h4>
+                                <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">{asset.desc}</p>
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Architecture Selection */}
+                    <div>
+                      <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-2.5">
+                        Formato de Arquitetura Desejado:
+                      </label>
+                      <div className="grid sm:grid-cols-3 gap-2.5">
+                        {[
+                          {
+                            id: 'one_page_funnel',
+                            title: 'One-Page / Funil de Conversão',
+                            desc: 'Página única contínua de alta conversão, sem distrações, ideal para WhatsApp e anúncios.',
+                            tag: 'Maior Conversão'
+                          },
+                          {
+                            id: 'multi_page_corporate',
+                            title: 'Site Multi-Páginas Corporativo',
+                            desc: 'Início, Sobre, Serviços Detalhados, Portfólio, Depoimentos e Contato formal.',
+                            tag: 'Máxima Autoridade'
+                          },
+                          {
+                            id: 'catalog_ecommerce',
+                            title: 'Catálogo / E-commerce Rápido',
+                            desc: 'Vitrine de produtos com filtros instantâneos e checkout integrado.',
+                            tag: 'Para Vendas Diretas'
+                          }
+                        ].map((arch) => (
                           <button
-                            key={method.id}
+                            key={arch.id}
                             type="button"
-                            onClick={() => setFormData({ ...formData, paymentMethod: method.id as any })}
-                            className={`p-3.5 rounded-2xl border text-center flex flex-col items-center gap-1.5 transition-all cursor-pointer ${
-                              formData.paymentMethod === method.id
-                                ? 'bg-black dark:bg-white text-white dark:text-black border-transparent font-bold shadow-md'
-                                : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400'
+                            onClick={() => setFormData({ ...formData, restructuringArchitecture: arch.id as any })}
+                            className={`p-3.5 rounded-2xl text-left border transition-colors flex flex-col justify-between cursor-pointer ${
+                              formData.restructuringArchitecture === arch.id
+                                ? 'border-black dark:border-white bg-zinc-50 dark:bg-zinc-800'
+                                : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40'
                             }`}
                           >
-                            {method.icon}
-                            <span className="text-[11px] font-bold">{method.label}</span>
+                            <div>
+                              <span className="text-[10px] font-black px-2 py-0.5 rounded bg-zinc-200 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-200 inline-block mb-1.5">
+                                {arch.tag}
+                              </span>
+                              <h4 className="text-xs font-black text-black dark:text-white leading-snug">{arch.title}</h4>
+                              <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1 leading-relaxed">{arch.desc}</p>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* STEP 4: Identidade Visual & Objetivos de Redesign */}
+                {currentStep === 4 && (
+                  <div className="space-y-6">
+                    <div>
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1">
+                        <span>Etapa 4 de 6</span> • <span>Estética, Paleta & Metas</span>
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-black text-black dark:text-white">
+                        Qual a direção visual e objetivos principais?
+                      </h2>
+                      <p className="text-zinc-500 text-sm mt-1">
+                        Escolha o tom da sua marca e a paleta de cores para alinhamento instantâneo.
+                      </p>
+                    </div>
+
+                    {/* Redesign Goals */}
+                    <div>
+                      <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-2.5">
+                        Quais são os objetivos de negócios do redesign?
+                      </label>
+                      <div className="grid sm:grid-cols-3 gap-2">
+                        {[
+                          { id: 'leads_whatsapp', label: 'Multiplicar contatos no WhatsApp' },
+                          { id: 'brand_authority', label: 'Transmitir autoridade e status de luxo' },
+                          { id: 'speed_score95', label: 'Velocidade máxima no Google (Score 95+)' },
+                          { id: 'mobile_experience', label: 'Experiência impecável no celular' },
+                          { id: 'clarify_offer', label: 'Tornar os planos e preços claros' },
+                          { id: 'beat_competitors', label: 'Superar o site dos principais concorrentes' }
+                        ].map((goal) => {
+                          const isSelected = formData.redesignGoals.includes(goal.id);
+                          return (
+                            <button
+                              key={goal.id}
+                              type="button"
+                              onClick={() => toggleGoal(goal.id)}
+                              className={`p-2.5 rounded-xl text-left border text-xs font-bold transition-colors flex items-center gap-2 cursor-pointer ${
+                                isSelected
+                                  ? 'border-black dark:border-white bg-zinc-50 dark:bg-zinc-800 text-black dark:text-white'
+                                  : 'border-zinc-200 dark:border-zinc-800 text-zinc-500 bg-white dark:bg-zinc-900/40'
+                              }`}
+                            >
+                              <div className={`w-3.5 h-3.5 rounded flex items-center justify-center flex-shrink-0 ${
+                                isSelected ? 'bg-black dark:bg-white text-white dark:text-black' : 'border border-zinc-300 dark:border-zinc-700'
+                              }`}>
+                                {isSelected && <Check size={10} strokeWidth={3} />}
+                              </div>
+                              <span className="line-clamp-1">{goal.label}</span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Interactive Color Palette Selector */}
+                    <div>
+                      <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-2.5">
+                        Paleta de Cores e Estética Sugerida:
+                      </label>
+
+                      <div className="grid sm:grid-cols-2 gap-2.5">
+                        {colorPalettes.map((pal) => {
+                          const isCurrent = formData.colorPaletteChoice === pal.id;
+                          return (
+                            <button
+                              key={pal.id}
+                              type="button"
+                              onClick={() => setFormData({ ...formData, colorPaletteChoice: pal.id as any })}
+                              className={`p-3.5 rounded-2xl text-left border transition-colors flex flex-col justify-between cursor-pointer ${
+                                isCurrent
+                                  ? 'border-black dark:border-white bg-zinc-50 dark:bg-zinc-800'
+                                  : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40'
+                              }`}
+                            >
+                              <div className="flex items-center justify-between mb-1.5">
+                                <span className="font-bold text-xs text-black dark:text-white">{pal.name}</span>
+                                <div className="flex gap-1.5 items-center">
+                                  {pal.colors.map((c, i) => (
+                                    <span
+                                      key={i}
+                                      className="w-3.5 h-3.5 rounded-full border border-black/20"
+                                      style={{ backgroundColor: c }}
+                                    />
+                                  ))}
+                                </div>
+                              </div>
+                              <p className="text-[11px] text-zinc-500 dark:text-zinc-400">{pal.desc}</p>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Tone of Brand & Logo Status */}
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-xs font-bold text-zinc-600 dark:text-zinc-400 mb-1">
+                          Tom da Comunicação & Estilo
+                        </label>
+                        <select
+                          value={formData.brandTone}
+                          onChange={(e) => setFormData({ ...formData, brandTone: e.target.value })}
+                          className="w-full px-3 py-2 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                        >
+                          <option value="Moderno e Minimalista">Moderno, Minimalista e Tecnológico</option>
+                          <option value="Luxo e Alto Padrão">Luxo, Exclusivo e Alto Padrão</option>
+                          <option value="Corporativo e Formal">Corporativo, Sólido e Institucional</option>
+                          <option value="Acolhedor e Humano">Acolhedor, Empático e Humano</option>
+                          <option value="Direto e Agressivo para Vendas">Direto, Assertivo e Foco em Vendas</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-bold text-zinc-600 dark:text-zinc-400 mb-1">
+                          Situação do seu Logotipo
+                        </label>
+                        <select
+                          value={formData.hasLogo}
+                          onChange={(e) => setFormData({ ...formData, hasLogo: e.target.value as any })}
+                          className="w-full px-3 py-2 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                        >
+                          <option value="yes">Possuo o logotipo pronto em alta qualidade</option>
+                          <option value="needs_refresh">Possuo logotipo, mas gostaria de modernizá-lo</option>
+                          <option value="no">Não possuo logotipo (preciso de tipografia profissional)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* STEP 5: Seções e Módulos Estruturados */}
+                {currentStep === 5 && (
+                  <div className="space-y-6">
+                    <div>
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1">
+                        <span>Etapa 5 de 6</span> • <span>Módulos & Estrutura Estratégica</span>
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-black text-black dark:text-white">
+                        Quais seções farão parte do novo site?
+                      </h2>
+                      <p className="text-zinc-500 text-sm mt-1">
+                        Selecione as seções e recursos interativos desejados para o seu projeto.
+                      </p>
+                    </div>
+
+                    {/* Conversion & Authority Modules */}
+                    <div>
+                      <h4 className="text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-2.5 flex items-center gap-2">
+                        <CheckSquare size={15} />
+                        Seções de Alta Conversão & Autoridade
+                      </h4>
+                      <div className="grid sm:grid-cols-2 gap-2">
+                        {[
+                          'Hero de Alto Impacto e Conversão',
+                          'Comparativo de Transformação / Casos de Sucesso',
+                          'Matriz de Serviços Reestruturada',
+                          'Sobre Nós e Autoridade de Marca',
+                          'Mural de Depoimentos & Avaliações Verificadas',
+                          'Botão Flutuante Inteligente de WhatsApp',
+                          'Formulário VIP de Contato e Orçamento',
+                          'Perguntas Frequentes (Quebra de Objeções)',
+                          'Galeria / Portfólio de Trabalhos Realizados',
+                          'Tabela Comparativa de Planos e Preços',
+                          'Calculadora Interativa de Investimento',
+                          'Selos de Garantia e Certificações de Segurança'
+                        ].map((sec) => {
+                          const isSelected = formData.desiredSections.includes(sec);
+                          return (
+                            <button
+                              key={sec}
+                              type="button"
+                              onClick={() => toggleSection(sec)}
+                              className={`p-2.5 rounded-xl text-left border text-xs font-bold transition-colors flex items-center gap-2 cursor-pointer ${
+                                isSelected
+                                  ? 'border-black dark:border-white bg-zinc-50 dark:bg-zinc-800 text-black dark:text-white'
+                                  : 'border-zinc-200 dark:border-zinc-800 text-zinc-500 bg-white dark:bg-zinc-900/40'
+                              }`}
+                            >
+                              <div className={`w-3.5 h-3.5 rounded flex items-center justify-center flex-shrink-0 ${
+                                isSelected ? 'bg-black dark:bg-white text-white dark:text-black' : 'border border-zinc-300 dark:border-zinc-700'
+                              }`}>
+                                {isSelected && <Check size={10} strokeWidth={3} />}
+                              </div>
+                              <span className="line-clamp-1">{sec}</span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Special Integrations */}
+                    <div>
+                      <h4 className="text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-2.5 flex items-center gap-2">
+                        <Zap size={15} />
+                        Integrações e Ferramentas Especiais
+                      </h4>
+                      <div className="grid sm:grid-cols-3 gap-2">
+                        {[
+                          { id: 'whatsapp_floating', label: 'WhatsApp Flutuante Inteligente' },
+                          { id: 'google_analytics4', label: 'Google Analytics 4 & Tag Manager' },
+                          { id: 'meta_pixel', label: 'Pixel Meta (Instagram/Facebook)' },
+                          { id: 'calendly_booking', label: 'Agendamento Calendly / Cal.com' },
+                          { id: 'stripe_gateway', label: 'Checkout Stripe / Pagamentos' },
+                          { id: 'google_maps', label: 'Google Maps Interativo' }
+                        ].map((integ) => {
+                          const isSelected = formData.specialIntegrations.includes(integ.id);
+                          return (
+                            <button
+                              key={integ.id}
+                              type="button"
+                              onClick={() => toggleIntegration(integ.id)}
+                              className={`p-2.5 rounded-xl text-left border text-xs font-bold transition-colors flex items-center gap-2 cursor-pointer ${
+                                isSelected
+                                  ? 'border-black dark:border-white bg-zinc-50 dark:bg-zinc-800 text-black dark:text-white'
+                                  : 'border-zinc-200 dark:border-zinc-800 text-zinc-500 bg-white dark:bg-zinc-900/40'
+                              }`}
+                            >
+                              <div className={`w-3.5 h-3.5 rounded flex items-center justify-center flex-shrink-0 ${
+                                isSelected ? 'bg-black dark:bg-white text-white dark:text-black' : 'border border-zinc-300 dark:border-zinc-700'
+                              }`}>
+                                {isSelected && <Check size={10} strokeWidth={3} />}
+                              </div>
+                              <span className="line-clamp-1">{integ.label}</span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* STEP 6: Seleção do Plano, Add-ons & Checkout */}
+                {currentStep === 6 && (
+                  <div className="space-y-6">
+                    <div>
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1">
+                        <span>Etapa 6 de 6</span> • <span>Plano & Ativação Imediata</span>
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-black text-black dark:text-white">
+                        Confirmação do Plano & Início em 72h
+                      </h2>
+                      <p className="text-zinc-500 text-sm mt-1">
+                        Selecione seu plano oficial, complementos de migração e confirme sua vaga prioritária.
+                      </p>
+                    </div>
+
+                    {/* Plan Cards Selector */}
+                    <div>
+                      <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-2.5">
+                        Escolha o Plano de Redesign:
+                      </label>
+                      <div className="grid sm:grid-cols-3 gap-2.5">
+                        {[
+                          {
+                            id: 'essential',
+                            name: 'Redesign Essencial',
+                            price: '425€',
+                            desc: 'Modernização visual completa, versão mobile impecável e entrega em 72h.',
+                            badge: 'Rápido & Eficaz'
+                          },
+                          {
+                            id: 'professional',
+                            name: 'Reestruturação Pro',
+                            price: '785€',
+                            desc: 'Arquitetura de alta conversão, copywriting persuasivo, SEO Google e integração total.',
+                            badge: 'Mais Recomendado',
+                            featured: true
+                          },
+                          {
+                            id: 'elite',
+                            name: 'Redesign Elite',
+                            price: '1.450€',
+                            desc: 'Site completo multi-páginas, velocidade máxima e suporte prioritário VIP.',
+                            badge: 'Autoridade Máxima'
+                          }
+                        ].map((pl) => {
+                          const isSelected = formData.selectedPlan === pl.id;
+                          return (
+                            <button
+                              key={pl.id}
+                              type="button"
+                              onClick={() => setFormData({ ...formData, selectedPlan: pl.id as any })}
+                              className={`p-3.5 rounded-2xl text-left border transition-colors relative flex flex-col justify-between cursor-pointer ${
+                                isSelected
+                                  ? 'border-black dark:border-white bg-zinc-50 dark:bg-zinc-800 shadow-md'
+                                  : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 hover:border-zinc-300'
+                              }`}
+                            >
+                              <div>
+                                <span className={`text-[10px] font-black px-2 py-0.5 rounded-full inline-block mb-1.5 ${
+                                  pl.featured 
+                                    ? 'bg-black dark:bg-white text-white dark:text-black font-black' 
+                                    : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-200'
+                                }`}>
+                                  {pl.badge}
+                                </span>
+                                <h4 className="font-extrabold text-sm text-black dark:text-white leading-tight">{pl.name}</h4>
+                                <div className="text-lg font-black text-black dark:text-white my-1">{pl.price}</div>
+                                <p className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-relaxed">{pl.desc}</p>
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Specialized Migration & SEO Addons */}
+                    <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-2.5">
+                      <div className="flex items-center justify-between">
+                        <label className="text-xs font-black uppercase tracking-wider text-zinc-700 dark:text-zinc-300">
+                          Complementos Estratégicos & Migração:
+                        </label>
+                        <span className="text-[11px] text-zinc-400 font-bold">Opcionais</span>
+                      </div>
+
+                      <div className="space-y-1.5">
+                        {[
+                          {
+                            key: 'migrationSeoRedirects',
+                            name: 'Preservação de SEO & Redirecionamentos 301',
+                            desc: 'Mapeamento de todas as URLs antigas para não perder tráfego no Google.',
+                            price: '+65€'
+                          },
+                          {
+                            key: 'seoContentPackage',
+                            name: 'Copywriting Persuasivo & Otimização de Textos',
+                            desc: 'Reescrita estratégica de títulos e chamadas para ação com foco em vendas.',
+                            price: '+95€'
+                          },
+                          {
+                            key: 'speedOptimizationScore95',
+                            name: 'Otimização Extrema de Velocidade (Google Score 95+)',
+                            desc: 'Compressão WebP, minificação e carregamento em milissegundos.',
+                            price: '+75€'
+                          },
+                          {
+                            key: 'expressDelivery24h',
+                            name: 'Entrega Prioritária Flash em 24-48h',
+                            desc: 'Desenvolvimento em turno exclusivo de urgência máxima.',
+                            price: '+120€'
+                          }
+                        ].map((ad) => {
+                          const isChecked = (formData.addons as any)[ad.key];
+                          return (
+                            <button
+                              key={ad.key}
+                              type="button"
+                              onClick={() => {
+                                setFormData({
+                                  ...formData,
+                                  addons: {
+                                    ...formData.addons,
+                                    [ad.key]: !isChecked
+                                  }
+                                });
+                              }}
+                              className={`w-full p-2.5 rounded-xl border text-left flex items-center justify-between transition-colors cursor-pointer ${
+                                isChecked
+                                  ? 'border-black dark:border-white bg-white dark:bg-zinc-900 font-bold'
+                                  : 'border-zinc-200 dark:border-zinc-800 bg-transparent text-zinc-500'
+                              }`}
+                            >
+                              <div className="flex items-center gap-2.5">
+                                <div className={`w-3.5 h-3.5 rounded flex items-center justify-center flex-shrink-0 ${
+                                  isChecked ? 'bg-black dark:bg-white text-white dark:text-black' : 'border border-zinc-300 dark:border-zinc-700'
+                                }`}>
+                                  {isChecked && <Check size={10} strokeWidth={3} />}
+                                </div>
+                                <div>
+                                  <div className="text-xs text-black dark:text-white font-bold">{ad.name}</div>
+                                  <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-normal">{ad.desc}</div>
+                                </div>
+                              </div>
+                              <span className="text-xs font-black text-black dark:text-white ml-2 flex-shrink-0">
+                                {ad.price}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Coupon Input Form */}
+                    <form onSubmit={handleApplyCoupon} className="flex gap-2">
+                      <div className="relative flex-1">
+                        <Tag className="absolute left-3 top-3 text-zinc-400" size={15} />
+                        <input
+                          type="text"
+                          placeholder="Cupom de desconto (ex: VANGUARD50)"
+                          value={couponCode}
+                          onChange={(e) => setCouponCode(e.target.value)}
+                          className="w-full pl-9 pr-3 py-2 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-xs uppercase font-bold focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="px-4 py-2 rounded-xl bg-zinc-900 dark:bg-zinc-100 text-white dark:text-black text-xs font-bold hover:opacity-90 cursor-pointer"
+                      >
+                        Aplicar
+                      </button>
+                    </form>
+
+                    {couponSuccess && (
+                      <div className="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-bold flex items-center gap-2">
+                        <CheckCheck size={15} />
+                        <span>{couponSuccess}</span>
+                      </div>
+                    )}
+                    {couponError && (
+                      <div className="p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900 text-rose-800 dark:text-rose-300 text-xs font-bold flex items-center gap-2">
+                        <AlertCircle size={15} />
+                        <span>{couponError}</span>
+                      </div>
+                    )}
+
+                    {/* Payment Method Selector */}
+                    <div className="space-y-3 pt-1">
+                      <label className="block text-xs font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
+                        Forma de Pagamento Segura:
+                      </label>
+
+                      <div className="grid grid-cols-3 gap-2">
+                        {[
+                          { id: 'card', name: 'Cartão de Crédito', icon: <CreditCard size={15} /> },
+                          { id: 'bizum', name: 'Pix / Transferência', icon: <Zap size={15} /> },
+                          { id: 'paypal', name: 'PayPal Express', icon: <Shield size={15} /> }
+                        ].map((m) => (
+                          <button
+                            key={m.id}
+                            type="button"
+                            onClick={() => setFormData({ ...formData, paymentMethod: m.id as any })}
+                            className={`p-2.5 rounded-xl border text-xs font-bold flex flex-col sm:flex-row items-center justify-center gap-1.5 transition-colors cursor-pointer ${
+                              formData.paymentMethod === m.id
+                                ? 'border-black dark:border-white bg-black dark:bg-white text-white dark:text-black'
+                                : 'border-zinc-200 dark:border-zinc-800 text-zinc-500 bg-white dark:bg-zinc-900/40'
+                            }`}
+                          >
+                            {m.icon}
+                            <span>{m.name}</span>
                           </button>
                         ))}
                       </div>
 
-                      {/* Card Form */}
+                      {/* Card Details Inputs */}
                       {formData.paymentMethod === 'card' && (
-                        <form onSubmit={handleProcessPayment} className="space-y-4 pt-2">
+                        <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-3">
                           <div>
-                            <label className="block text-[11px] font-black uppercase tracking-wider text-zinc-500 mb-1.5">
-                              Número de Tarjeta
-                            </label>
-                            <div className="relative">
-                              <input 
-                                type="text"
-                                placeholder="4532 •••• •••• 8924"
-                                maxLength={19}
-                                value={formData.cardDetails.cardNumber}
-                                onChange={e => setFormData({
-                                  ...formData,
-                                  cardDetails: { ...formData.cardDetails, cardNumber: e.target.value }
-                                })}
-                                className="w-full px-5 py-3.5 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
-                                required
-                              />
-                              <Lock size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400" />
-                            </div>
+                            <label className="block text-[11px] font-bold text-zinc-500 mb-1">Número do Cartão</label>
+                            <input
+                              type="text"
+                              placeholder="0000 0000 0000 0000"
+                              value={formData.cardDetails.cardNumber}
+                              onChange={(e) => setFormData({
+                                ...formData,
+                                cardDetails: { ...formData.cardDetails, cardNumber: e.target.value }
+                              })}
+                              className="w-full px-3 py-2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-xs font-mono font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                            />
                           </div>
-
-                          <div className="grid grid-cols-2 gap-4">
-                            <div>
-                              <label className="block text-[11px] font-black uppercase tracking-wider text-zinc-500 mb-1.5">
-                                Titular de la Tarjeta
-                              </label>
-                              <input 
+                          <div className="grid grid-cols-3 gap-2">
+                            <div className="col-span-2">
+                              <label className="block text-[11px] font-bold text-zinc-500 mb-1">Nome no Cartão</label>
+                              <input
                                 type="text"
-                                placeholder="Nombre completo"
+                                placeholder="ex: CARLOS ALBUQUERQUE"
                                 value={formData.cardDetails.cardHolder}
-                                onChange={e => setFormData({
+                                onChange={(e) => setFormData({
                                   ...formData,
                                   cardDetails: { ...formData.cardDetails, cardHolder: e.target.value }
                                 })}
-                                className="w-full px-5 py-3.5 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
-                                required
+                                className="w-full px-3 py-2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
                               />
                             </div>
-
-                            <div className="grid grid-cols-2 gap-2">
-                              <div>
-                                <label className="block text-[11px] font-black uppercase tracking-wider text-zinc-500 mb-1.5">
-                                  Caducidad
-                                </label>
-                                <input 
-                                  type="text"
-                                  placeholder="MM/AA"
-                                  maxLength={5}
-                                  value={formData.cardDetails.expiryDate}
-                                  onChange={e => setFormData({
-                                    ...formData,
-                                    cardDetails: { ...formData.cardDetails, expiryDate: e.target.value }
-                                  })}
-                                  className="w-full px-3 py-3.5 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white text-sm font-medium text-center focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
-                                  required
-                                />
-                              </div>
-
-                              <div>
-                                <label className="block text-[11px] font-black uppercase tracking-wider text-zinc-500 mb-1.5">
-                                  CVC
-                                </label>
-                                <input 
-                                  type="password"
-                                  placeholder="123"
-                                  maxLength={4}
-                                  value={formData.cardDetails.cvv}
-                                  onChange={e => setFormData({
-                                    ...formData,
-                                    cardDetails: { ...formData.cardDetails, cvv: e.target.value }
-                                  })}
-                                  className="w-full px-3 py-3.5 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-black dark:text-white text-sm font-medium text-center focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
-                                  required
-                                />
-                              </div>
+                            <div>
+                              <label className="block text-[11px] font-bold text-zinc-500 mb-1">Validade / CVV</label>
+                              <input
+                                type="text"
+                                placeholder="MM/AA · CVV"
+                                value={formData.cardDetails.expiryDate}
+                                onChange={(e) => setFormData({
+                                  ...formData,
+                                  cardDetails: { ...formData.cardDetails, expiryDate: e.target.value }
+                                })}
+                                className="w-full px-3 py-2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-xs font-mono font-medium focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+                              />
                             </div>
                           </div>
-
-                          <div className="pt-2">
-                            <button
-                              type="submit"
-                              disabled={isProcessing}
-                              className="w-full py-5 rounded-2xl bg-black dark:bg-white text-white dark:text-black font-black text-lg flex items-center justify-center gap-3 shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-50 cursor-pointer"
-                            >
-                              {isProcessing ? (
-                                <span>Procesando pago seguro...</span>
-                              ) : (
-                                <>
-                                  <Lock size={18} />
-                                  <span>Pagar {calculateTotal()}€ & Comenzar Rediseño 72h</span>
-                                </>
-                              )}
-                            </button>
+                          <div className="flex items-center gap-1.5 text-[11px] text-zinc-400 pt-1">
+                            <Lock size={12} className="text-emerald-500" />
+                            <span>Criptografia SSL de 256 bits com processamento blindado.</span>
                           </div>
-                        </form>
-                      )}
-
-                      {/* Bizum */}
-                      {formData.paymentMethod === 'bizum' && (
-                        <div className="space-y-4 pt-2">
-                          <div className="p-5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 space-y-3">
-                            <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 font-black text-sm">
-                              <Zap size={18} />
-                              <span>Pago Instantáneo con Bizum / Transferencia Directa</span>
-                            </div>
-                            <p className="text-xs text-emerald-800 dark:text-emerald-200 leading-relaxed">
-                              Realiza el pago de <strong>{calculateTotal()}€</strong> mediante Bizum al número oficial de Vanguard Studio con el concepto <strong>{orderNumber}</strong>.
-                            </p>
-                            <div className="flex items-center justify-between p-3.5 bg-white dark:bg-zinc-900 rounded-xl border border-emerald-300 dark:border-emerald-800">
-                              <span className="font-mono font-bold text-sm text-black dark:text-white">+34 600 720 000</span>
-                              <button 
-                                type="button"
-                                onClick={() => {
-                                  navigator.clipboard.writeText('+34600720000');
-                                  setCopiedBizum(true);
-                                  setTimeout(() => setCopiedBizum(false), 2000);
-                                }}
-                                className="px-3 py-1 bg-emerald-600 text-white rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer"
-                              >
-                                {copiedBizum ? <Check size={12} /> : <Copy size={12} />}
-                                {copiedBizum ? 'Copiado' : 'Copiar'}
-                              </button>
-                            </div>
-                          </div>
-
-                          <button
-                            type="button"
-                            onClick={() => setIsSubmitted(true)}
-                            className="w-full py-5 rounded-2xl bg-black dark:bg-white text-white dark:text-black font-black text-lg flex items-center justify-center gap-3 shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer"
-                          >
-                            <CheckCircle2 size={18} />
-                            <span>Confirmar Pago & Enviar Briefing a los Diseñadores</span>
-                          </button>
-                        </div>
-                      )}
-
-                      {/* PayPal */}
-                      {formData.paymentMethod === 'paypal' && (
-                        <div className="space-y-4 pt-2">
-                          <p className="text-xs text-zinc-500 leading-relaxed">
-                            Serás redirigido de forma cifrada a PayPal para completar tu inversión de <strong>{calculateTotal()}€</strong> con protección al comprador.
-                          </p>
-                          <button
-                            type="button"
-                            onClick={() => setIsSubmitted(true)}
-                            className="w-full py-5 rounded-2xl bg-[#0070ba] text-white font-black text-lg flex items-center justify-center gap-3 shadow-xl hover:opacity-90 transition-all cursor-pointer"
-                          >
-                            <span>Pagar con PayPal ({calculateTotal()}€)</span>
-                            <ExternalLink size={18} />
-                          </button>
-                        </div>
-                      )}
-
-                      {/* WhatsApp Direct */}
-                      {formData.paymentMethod === 'whatsapp' && (
-                        <div className="space-y-4 pt-2">
-                          <div className="p-5 rounded-2xl bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 space-y-2">
-                            <h4 className="text-xs font-black text-black dark:text-white uppercase">
-                              Contacto Directo por WhatsApp con el Director Técnico
-                            </h4>
-                            <p className="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                              Te pondremos en contacto prioritario por WhatsApp con nuestro especialista técnico para enviar tu diagnóstico completo, emitir factura y dar comienzo al temporizador de 72h.
-                            </p>
-                          </div>
-                          <a
-                            href={`https://wa.me/5500000000000?text=${generateWhatsAppMessage()}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => setIsSubmitted(true)}
-                            className="w-full py-5 rounded-2xl bg-[#25D366] text-white font-black text-lg flex items-center justify-center gap-3 shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer"
-                          >
-                            <MessageSquare size={20} />
-                            <span>Enviar Briefing de Rediseño por WhatsApp</span>
-                          </a>
                         </div>
                       )}
                     </div>
-                  </motion.div>
+                  </div>
                 )}
 
-                {/* Bottom Navigation Buttons */}
-                {currentStep < 6 && (
-                  <div className="flex items-center justify-between pt-6 border-t border-zinc-100 dark:border-zinc-800">
-                    <button
-                      type="button"
-                      onClick={handlePrevStep}
-                      className="px-6 py-4 rounded-2xl border border-zinc-200 dark:border-zinc-800 text-xs font-bold text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-all flex items-center gap-2 cursor-pointer"
-                    >
-                      <ArrowLeft size={16} />
-                      <span>{currentStep === 1 ? 'Volver a la Web' : 'Paso Anterior'}</span>
-                    </button>
+                {/* Form Action Controls (Back / Continue Buttons) */}
+                <div className="pt-6 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between gap-4 mt-6">
+                  <button
+                    type="button"
+                    onClick={handlePrevStep}
+                    className="px-5 py-3 rounded-full border border-zinc-200 dark:border-zinc-800 text-xs sm:text-sm font-bold text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex items-center gap-2 cursor-pointer"
+                  >
+                    <ArrowLeft size={16} />
+                    <span>{currentStep === 1 ? 'Voltar ao Início' : 'Etapa Anterior'}</span>
+                  </button>
 
+                  {currentStep < totalSteps ? (
                     <button
                       type="button"
                       onClick={handleNextStep}
-                      className="px-8 py-4 rounded-2xl bg-black dark:bg-white text-white dark:text-black text-xs font-black uppercase tracking-wider flex items-center gap-2 shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                      className="px-7 py-3 rounded-full bg-black dark:bg-white text-white dark:text-black text-xs sm:text-sm font-black flex items-center gap-2 hover:opacity-90 transition-opacity cursor-pointer shadow-md"
                     >
-                      <span>Continuar al Paso {currentStep + 1}</span>
+                      <span>Avançar para Etapa {currentStep + 1}</span>
                       <ArrowRight size={16} />
                     </button>
-                  </div>
-                )}
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={handleProcessPayment}
+                      disabled={isProcessing}
+                      className="px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-black flex items-center gap-2 transition-colors cursor-pointer shadow-md disabled:opacity-50"
+                    >
+                      {isProcessing ? (
+                        <>
+                          <RefreshCw size={16} className="animate-spin" />
+                          <span>Processando Briefing...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Lock size={16} />
+                          <span>Confirmar Briefing & Ativar 72h ({calculateTotal()}€)</span>
+                        </>
+                      )}
+                    </button>
+                  )}
+                </div>
+
               </div>
 
-              {/* Sidebar: Live Simulated Mockup & Investment Summary (Right: 4 cols) */}
-              <div className="lg:col-span-4 space-y-6 sticky top-24">
+              {/* Right Column: Live Preview & Investment Summary Deck */}
+              <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
                 
-                {/* Live Simulated Mockup Card */}
-                <div className="p-6 rounded-[2.5rem] bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-xl space-y-4">
-                  <div className="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-3">
-                    <div className="flex items-center gap-2">
-                      <Eye size={15} className="text-zinc-400" />
-                      <span className="text-xs font-black uppercase tracking-wider text-black dark:text-white">
-                        Simulación de tu Nueva Web
+                {/* Dynamic Live Preview Deck */}
+                <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-5 shadow-xs overflow-hidden">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                      <span className="text-[11px] font-black uppercase tracking-wider text-zinc-500">
+                        Simulação Visual Direta
                       </span>
                     </div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-emerald-500 bg-emerald-50 dark:bg-emerald-950 px-2 py-0.5 rounded-full">
-                      En Vivo
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-500">
+                      Vanguard Engine
                     </span>
                   </div>
 
-                  {/* Dynamic mini viewport */}
-                  <div className={`p-4 rounded-2xl border border-zinc-700/30 transition-all duration-500 overflow-hidden ${currentPaletteObj.bgClass}`}>
-                    <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-2 h-2 rounded-full bg-red-500/80" />
-                        <div className="w-2 h-2 rounded-full bg-yellow-500/80" />
-                        <div className="w-2 h-2 rounded-full bg-green-500/80" />
+                  {/* Device Frame */}
+                  <div className="rounded-2xl border border-zinc-300 dark:border-zinc-700 bg-zinc-950 p-2">
+                    <div className="flex items-center gap-1.5 pb-2 px-1 border-b border-zinc-800">
+                      <div className="w-2 h-2 rounded-full bg-rose-500/80" />
+                      <div className="w-2 h-2 rounded-full bg-amber-500/80" />
+                      <div className="w-2 h-2 rounded-full bg-emerald-500/80" />
+                      <div className="flex-1 text-center">
+                        <span className="text-[9px] text-zinc-500 font-mono">
+                          {formData.companyName ? `${formData.companyName.toLowerCase().replace(/\s+/g, '')}.com.br` : 'suaempresa.com.br'}
+                        </span>
                       </div>
-                      <span className="text-[9px] font-mono opacity-60 truncate max-w-[140px]">
-                        {formData.companyName || 'tuempresa'}.com
+                    </div>
+
+                    {/* Preview Screen Content */}
+                    <div className={`p-4 rounded-xl mt-2 transition-colors duration-200 ${currentPaletteObj.bgClass}`}>
+                      <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                        <span className="font-extrabold text-[11px] tracking-tight">
+                          {formData.companyName || 'Sua Marca VIP'}
+                        </span>
+                        <span className="text-[9px] px-2 py-0.5 rounded-full bg-white/10 font-bold">
+                          Menu ☰
+                        </span>
+                      </div>
+
+                      <div className="py-4 text-center space-y-1.5">
+                        <span className="text-[8px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded-full bg-white/10 inline-block">
+                          {formData.industry}
+                        </span>
+                        <div className="text-xs font-black leading-tight tracking-tight">
+                          Excelência, Autoridade & Resultados Sob Medida
+                        </div>
+                        <p className="text-[9px] opacity-70 line-clamp-2 px-1">
+                          {formData.businessDescription || 'Apresentação profissional com design minimalista de elite e carregamento instantâneo.'}
+                        </p>
+                        <div className="pt-2 flex justify-center gap-1.5">
+                          <span className="text-[9px] font-bold px-3 py-1 rounded-md bg-white text-black">
+                            Falar no WhatsApp
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-1 text-center pt-2 border-t border-white/10 text-[9px]">
+                        <div>
+                          <span className="opacity-60 block text-[7px]">Google Score</span>
+                          <span className="font-black text-emerald-400">99 / 100</span>
+                        </div>
+                        <div>
+                          <span className="opacity-60 block text-[7px]">Carregamento</span>
+                          <span className="font-black text-emerald-400">0.3s</span>
+                        </div>
+                        <div>
+                          <span className="opacity-60 block text-[7px]">Mobile UX</span>
+                          <span className="font-black text-emerald-400">100%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-3 text-[11px] text-zinc-500 dark:text-zinc-400 text-center flex items-center justify-center gap-1.5 font-medium">
+                    <ShieldCheck size={13} className="text-emerald-500" />
+                    <span>Estilo: <strong>{currentPaletteObj.name}</strong></span>
+                  </div>
+                </div>
+
+                {/* Investment Breakdown Deck */}
+                <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 shadow-xs space-y-4">
+                  <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 pb-3">
+                    <h3 className="font-black text-sm text-black dark:text-white uppercase tracking-wider">
+                      Resumo do Investimento
+                    </h3>
+                    <span className="text-xs font-bold px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+                      Vaga 72h Reservada
+                    </span>
+                  </div>
+
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between font-bold text-black dark:text-white">
+                      <span>
+                        {formData.selectedPlan === 'essential' ? 'Plano Redesign Essencial' : formData.selectedPlan === 'professional' ? 'Plano Reestruturação Pro' : 'Plano Redesign Elite'}
                       </span>
-                    </div>
-
-                    <div className="space-y-2">
-                      <div className="inline-block px-2 py-0.5 rounded bg-white/10 text-[8px] font-black uppercase tracking-widest">
-                        {formData.industry}
-                      </div>
-                      <div className="text-sm font-black leading-tight text-white">
-                        {formData.companyName ? `${formData.companyName} | Élite` : 'Tu Marca Rediseñada'}
-                      </div>
-                      <p className="text-[9px] opacity-70 line-clamp-2 leading-relaxed text-zinc-300">
-                        {formData.businessDescription || 'Ecosistema web de alta conversión listo para multiplicar ventas y proyectar autoridad.'}
-                      </p>
-                      
-                      <div className="pt-2 flex items-center justify-between">
-                        <div 
-                          className="px-3 py-1 rounded text-[9px] font-black text-black"
-                          style={{ backgroundColor: currentPaletteObj.accentColor }}
-                        >
-                          Hablar por WhatsApp
-                        </div>
-                        <div className="text-[9px] opacity-60 font-mono">
-                          Score 99/100 ⚡
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Audit Score Meter */}
-                  <div className="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-xs">
-                    <div>
-                      <div className="text-[10px] font-black uppercase text-zinc-400">Score Proyectado</div>
-                      <div className="font-bold text-black dark:text-white">Google PageSpeed</div>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-black text-sm">
-                      <Gauge size={18} />
-                      <span>99 / 100</span>
-                    </div>
-                  </div>
-
-                  {/* Investment Breakdown */}
-                  <div className="space-y-2.5 pt-2 border-t border-zinc-200 dark:border-zinc-800 text-xs">
-                    <div className="flex justify-between text-zinc-600 dark:text-zinc-400">
-                      <span>Plan: {formData.selectedPlan === 'essential' ? 'Esencial (425€)' : formData.selectedPlan === 'professional' ? 'Reestructuración Pro (785€)' : 'Elite (1.450€)'}</span>
-                      <span className="font-bold text-black dark:text-white">{planPrices[formData.selectedPlan]}€</span>
+                      <span>{planPrices[formData.selectedPlan]}€</span>
                     </div>
 
                     {formData.addons.migrationSeoRedirects && (
-                      <div className="flex justify-between text-zinc-500 text-[11px]">
-                        <span>Migración Segura 301</span>
-                        <span>+65€</span>
+                      <div className="flex justify-between text-zinc-500">
+                        <span>Preservação de SEO & Redirecionamentos</span>
+                        <span>+{addonPrices.migrationSeoRedirects}€</span>
                       </div>
                     )}
                     {formData.addons.seoContentPackage && (
-                      <div className="flex justify-between text-zinc-500 text-[11px]">
-                        <span>Pack Copywriting Pro</span>
-                        <span>+95€</span>
+                      <div className="flex justify-between text-zinc-500">
+                        <span>Copywriting & Otimização de Textos</span>
+                        <span>+{addonPrices.seoContentPackage}€</span>
                       </div>
                     )}
                     {formData.addons.speedOptimizationScore95 && (
-                      <div className="flex justify-between text-zinc-500 text-[11px]">
-                        <span>Velocidad Score 95+</span>
-                        <span>+75€</span>
+                      <div className="flex justify-between text-zinc-500">
+                        <span>Score 95+ de Velocidade Extrema</span>
+                        <span>+{addonPrices.speedOptimizationScore95}€</span>
                       </div>
                     )}
                     {formData.addons.expressDelivery24h && (
-                      <div className="flex justify-between text-zinc-500 text-[11px]">
-                        <span>Entrega 24-48h</span>
-                        <span>+120€</span>
-                      </div>
-                    )}
-                    {formData.addons.monthlyMaintenance && (
-                      <div className="flex justify-between text-zinc-500 text-[11px]">
-                        <span>Mantenimiento VIP</span>
-                        <span>+45€/mes</span>
+                      <div className="flex justify-between text-zinc-500">
+                        <span>Entrega Expressa Flash (24-48h)</span>
+                        <span>+{addonPrices.expressDelivery24h}€</span>
                       </div>
                     )}
 
                     {appliedDiscount > 0 && (
-                      <div className="flex justify-between text-emerald-600 dark:text-emerald-400 font-bold text-xs">
-                        <span>Descuento de Cupón</span>
+                      <div className="flex justify-between text-emerald-600 font-bold pt-1">
+                        <span>Desconto Cupom Aplicado</span>
                         <span>-{appliedDiscount}€</span>
                       </div>
                     )}
+                  </div>
 
-                    <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800 flex items-baseline justify-between">
-                      <div>
-                        <div className="text-[10px] font-black uppercase tracking-wider text-zinc-400">Total a Invertir</div>
-                        <div className="text-[9px] text-zinc-400">IVA incluido</div>
-                      </div>
-                      <div className="text-2xl font-black text-black dark:text-white">
-                        {calculateTotal()}€
-                      </div>
+                  <div className="pt-3 border-t border-zinc-100 dark:border-zinc-800 flex items-baseline justify-between">
+                    <div>
+                      <span className="text-xs font-bold text-zinc-400 block">Total Final:</span>
+                      <span className="text-[10px] text-zinc-400">Sem custos ocultos</span>
+                    </div>
+                    <div className="text-2xl font-black text-black dark:text-white">
+                      {calculateTotal()}€
                     </div>
                   </div>
 
-                  {/* Coupon Form in Sidebar */}
-                  <form onSubmit={handleApplyCoupon} className="pt-2">
-                    <div className="flex gap-1.5">
-                      <input 
-                        type="text"
-                        placeholder="Cupón (ej: VANGUARD50)"
-                        value={couponCode}
-                        onChange={e => setCouponCode(e.target.value)}
-                        className="w-full px-3 py-2 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-xs text-black dark:text-white uppercase font-bold focus:outline-none"
-                      />
-                      <button
-                        type="submit"
-                        className="px-3 py-2 rounded-xl bg-black dark:bg-white text-white dark:text-black text-xs font-bold shrink-0 cursor-pointer"
-                      >
-                        Aplicar
-                      </button>
+                  <div className="pt-2 grid grid-cols-2 gap-2 text-[10px] text-zinc-500 font-medium">
+                    <div className="flex items-center gap-1">
+                      <Clock size={12} className="text-black dark:text-white" />
+                      <span>Entrega em 72h</span>
                     </div>
-                    {couponSuccess && <p className="text-[10px] text-emerald-600 font-bold mt-1">{couponSuccess}</p>}
-                    {couponError && <p className="text-[10px] text-red-500 font-bold mt-1">{couponError}</p>}
-                  </form>
-
-                  <div className="p-3 bg-zinc-100 dark:bg-zinc-800/60 rounded-xl space-y-1 text-[10px] text-zinc-500">
-                    <div className="flex items-center gap-1.5 font-bold text-black dark:text-white">
-                      <ShieldCheck size={13} className="text-emerald-500" />
-                      <span>Garantía de Satisfacción 100%</span>
+                    <div className="flex items-center gap-1">
+                      <Shield size={12} className="text-black dark:text-white" />
+                      <span>Garantia 100%</span>
                     </div>
-                    <p>Revisión y pulido incluido antes del lanzamiento definitivo.</p>
                   </div>
-
                 </div>
 
               </div>
 
             </div>
-
           </div>
         ) : (
-          /* Step 7: Confirmation & 72h Countdown Screen */
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-center py-8 space-y-8 max-w-2xl mx-auto"
-          >
-            <div className="w-24 h-24 bg-emerald-50 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto shadow-xl">
-              <CheckCircle2 size={48} strokeWidth={2.5} />
+          /* SUCCESS SCREEN AFTER SUBMISSION */
+          <div className="max-w-3xl mx-auto py-10 text-center space-y-6">
+            <div className="w-16 h-16 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto shadow-lg">
+              <CheckCircle2 size={36} strokeWidth={2.5} />
             </div>
 
-            <div className="space-y-3">
-              <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 text-xs font-black uppercase tracking-widest">
-                ¡Briefing de Rediseño Recibido con Éxito!
-              </div>
-              <h2 className="text-3xl sm:text-5xl font-black text-black dark:text-white tracking-tight">
-                La reestructuración de tu web está en marcha.
+            <div className="space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950 px-3 py-1 rounded-full border border-emerald-200 dark:border-emerald-800 inline-block">
+                Briefing Registrado • Ref: {orderNumber}
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-black dark:text-white tracking-tight">
+                Seu novo site já está em produção!
               </h2>
-              <p className="text-zinc-500 dark:text-zinc-400 text-sm sm:text-base leading-relaxed">
-                Referencia de Proyecto: <strong className="text-black dark:text-white font-mono">{orderNumber}</strong>. Nuestro equipo de ingenieros de software y diseñadores en <strong>Vanguard Studio</strong> ya está procesando las directrices de tu empresa ({formData.companyName || 'Proyecto de Rediseño'}).
+              <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base max-w-lg mx-auto">
+                Recebemos o diagnóstico da <strong>{formData.companyName || 'sua empresa'}</strong>. O cronômetro de 72 horas para a entrega da sua presença digital foi iniciado.
               </p>
             </div>
 
-            {/* Countdown Widget */}
-            <div className="p-6 bg-zinc-50 dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 space-y-3 shadow-lg">
-              <div className="flex items-center justify-center gap-2 text-xs font-black uppercase tracking-widest text-zinc-400">
-                <Clock size={16} className="text-black dark:text-white animate-spin" />
-                <span>Tiempo Máximo Garantizado</span>
+            {/* Next Steps Card */}
+            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 sm:p-8 text-left space-y-5 shadow-sm">
+              <h3 className="text-base font-black text-black dark:text-white flex items-center gap-2">
+                <Sparkles size={16} className="text-amber-500" />
+                Próximos Passos Imediatos:
+              </h3>
+
+              <div className="space-y-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300">
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">
+                    1
+                  </div>
+                  <div>
+                    <strong className="text-black dark:text-white block">Envio do Briefing para o WhatsApp da Equipe:</strong>
+                    Clique no botão abaixo para enviar o resumo detalhado para o gestor do seu projeto.
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">
+                    2
+                  </div>
+                  <div>
+                    <strong className="text-black dark:text-white block">Primeira Versão em até 48h:</strong>
+                    Enviaremos o link de visualização interativo para seus ajustes e validação.
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">
+                    3
+                  </div>
+                  <div>
+                    <strong className="text-black dark:text-white block">Publicação Oficial e Ativação do Domínio:</strong>
+                    Após sua validação, conectamos seu domínio e publicamos o site.
+                  </div>
+                </div>
               </div>
-              <div className="text-4xl sm:text-5xl font-black text-black dark:text-white font-mono tracking-tighter">
-                71:59:45
+
+              {/* Action Buttons */}
+              <div className="pt-3 flex flex-col sm:flex-row gap-3">
+                <a
+                  href={`https://wa.me/5500000000000?text=${generateWhatsAppMessage()}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-3.5 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                >
+                  <MessageSquare size={16} />
+                  <span>Enviar Briefing via WhatsApp</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={copyBriefingSummaryToClipboard}
+                  className="py-3.5 px-5 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
+                >
+                  {copiedSummary ? <Check size={16} className="text-emerald-500" /> : <Copy size={16} />}
+                  <span>{copiedSummary ? 'Copiado!' : 'Copiar Resumo Técnico'}</span>
+                </button>
               </div>
-              <p className="text-[11px] text-zinc-500">
-                Garantía Blindada: entrega de la web reestructurada lista para facturar en 72h.
-              </p>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a
-                href={`https://wa.me/5500000000000?text=${generateWhatsAppMessage()}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-5 rounded-2xl bg-[#25D366] text-white font-black text-sm sm:text-base flex items-center justify-center gap-3 shadow-xl hover:scale-105 transition-all cursor-pointer"
-              >
-                <MessageSquare size={20} />
-                <span>Enviar Copia por WhatsApp</span>
-              </a>
-
+            <div>
               <button
                 type="button"
-                onClick={copyBriefingSummaryToClipboard}
-                className="w-full sm:w-auto px-6 py-5 rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-black dark:text-white font-bold text-sm hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-all flex items-center justify-center gap-2 cursor-pointer"
-              >
-                {copiedSummary ? <Check size={18} className="text-emerald-500" /> : <Copy size={18} />}
-                <span>{copiedSummary ? '¡Copiado al Portapapeles!' : 'Copiar Resumen'}</span>
-              </button>
-
-              <button
                 onClick={onBackToHome}
-                className="w-full sm:w-auto px-6 py-5 rounded-2xl border border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white font-bold text-sm transition-all cursor-pointer"
+                className="text-xs font-bold text-zinc-500 hover:text-black dark:hover:text-white underline cursor-pointer"
               >
-                Volver al Inicio
+                Voltar para a página inicial da Vanguard Studio
               </button>
             </div>
-          </motion.div>
+          </div>
         )}
       </main>
     </div>
