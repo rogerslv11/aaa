@@ -7,7 +7,7 @@ interface ContactCTAProps {
 export default function ContactCTA({ onOpenBriefing }: ContactCTAProps) {
   return (
     <section className="py-20 lg:py-28 bg-zinc-950 text-white transition-colors duration-300 overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 relative z-10 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tighter leading-[0.95]">
             Ready to stop <br />
@@ -46,7 +46,7 @@ export default function ContactCTA({ onOpenBriefing }: ContactCTAProps) {
 
           <div className="mt-10 inline-block px-5 py-2 bg-zinc-900 border border-zinc-800 rounded-full">
             <span className="text-zinc-400 font-medium text-xs sm:text-sm">Plans starting at</span>
-            <span className="text-white font-bold text-xs sm:text-sm ml-2">€425</span>
+            <span className="text-white font-bold text-xs sm:text-sm ml-2">$425</span>
           </div>
         </div>
       </div>

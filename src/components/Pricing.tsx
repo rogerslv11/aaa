@@ -33,13 +33,13 @@ export default function Pricing({ onSelectPlan }: PricingProps) {
       badge: '🔥 88% of Clients Choose This • Best Seller',
       price: '785',
       originalPrice: '1,250',
-      economy: 'Save €465 + 3 Exclusive Bonuses Included',
+      economy: 'Save $465 + 3 Exclusive Bonuses Included',
       period: 'One-Time Payment • No Monthly Fees',
       description: 'The definitive high-converting sales machine. Bespoke design, persuasive sales copywriting, 0.28s speed, and inclusive perks.',
       bestFor: 'Best for: Medical clinics, real estate, B2B services & revenue-driven brands',
       features: [
         { text: 'Everything in the Essential Plan', highlight: false },
-        { text: '1 Year of Premium Cloud Hosting Included (Save €180)', highlight: true, isBonus: true },
+        { text: '1 Year of Premium Cloud Hosting Included (Save $180)', highlight: true, isBonus: true },
         { text: 'Persuasive Sales Psychology Copywriting & Triggers', highlight: true },
         { text: 'Bespoke Elite Design (100% Tailored, Zero Generic Templates)', highlight: true },
         { text: 'Google PageSpeed Score 99+ Guaranteed (0.28s Load Speed)', highlight: true },
@@ -85,7 +85,7 @@ export default function Pricing({ onSelectPlan }: PricingProps) {
       {/* Subtle Luxury Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-zinc-900/60 rounded-full blur-[160px] pointer-events-none -z-0" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
@@ -163,7 +163,7 @@ export default function Pricing({ onSelectPlan }: PricingProps) {
                   <div className="pt-4 border-t border-zinc-800">
                     {plan.originalPrice && (
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm text-zinc-500 line-through font-medium">Was €{plan.originalPrice}</span>
+                        <span className="text-sm text-zinc-500 line-through font-medium">Was ${plan.originalPrice}</span>
                         {plan.economy && (
                           <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800">
                             {plan.economy}
@@ -174,7 +174,7 @@ export default function Pricing({ onSelectPlan }: PricingProps) {
                     
                     <div className="flex items-baseline gap-1">
                       {plan.price !== 'Custom' && (
-                        <span className="text-2xl font-bold text-white">€</span>
+                        <span className="text-2xl font-bold text-white">$</span>
                       )}
                       <span className={`text-4xl sm:text-5xl font-black tracking-tight ${plan.highlight ? 'text-white' : 'text-zinc-100'}`}>
                         {plan.price}
@@ -257,13 +257,13 @@ export default function Pricing({ onSelectPlan }: PricingProps) {
           <div className="md:col-span-2 space-y-2">
             <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-emerald-400">
               <Flame size={15} />
-              <span>Why is the Professional Plan (€785) the top choice?</span>
+              <span>Why is the Professional Plan ($785) the top choice?</span>
             </div>
             <h4 className="text-lg sm:text-xl font-black text-white">
               The investment pays for itself with just 1 or 2 new acquired clients.
             </h4>
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-              Unlike generic templates, the Professional Plan includes 1 year of ultra-fast cloud hosting (€180 value), persuasive sales copywriting, and advanced SEO optimization to rank your business at the top of Google searches.
+              Unlike generic templates, the Professional Plan includes 1 year of ultra-fast cloud hosting ($180 value), persuasive sales copywriting, and advanced SEO optimization to rank your business at the top of Google searches.
             </p>
           </div>
           <div className="flex md:justify-end">

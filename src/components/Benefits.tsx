@@ -41,7 +41,7 @@ export default function Benefits() {
       {/* Subtle Background Glow */}
       <div className="absolute top-1/3 right-1/4 w-[700px] h-[700px] bg-zinc-900/50 rounded-full blur-[140px] pointer-events-none -z-0" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 relative z-10">
         
         {/* Section Header */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-end mb-16 lg:mb-20 pb-10 border-b border-zinc-800">

@@ -24,7 +24,7 @@ export default function Process() {
 
   return (
     <section id="process" className="py-24 lg:py-32 bg-zinc-950 text-white transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
           
           {/* Header Column */}

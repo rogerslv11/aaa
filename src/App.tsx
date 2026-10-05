@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Statistics from './components/Statistics';
@@ -20,72 +20,32 @@ import Guarantee from './components/Guarantee';
 import FAQ from './components/FAQ';
 import ContactCTA from './components/ContactCTA';
 import Footer from './components/Footer';
-import BriefingCheckoutPage from './components/BriefingCheckoutPage';
 import { MessageCircle } from 'lucide-react';
 
-export default function App() {
-  const [view, setView] = useState<'home' | 'briefing'>(() => {
-    return window.location.hash === '#/briefing' ? 'briefing' : 'home';
-  });
-  const [selectedPlan, setSelectedPlan] = useState<'essential' | 'professional' | 'elite'>('professional');
+const WHATSAPP_URL = 'https://wa.me/5500000000000?text=Hi!%20I%20want%20to%20launch%20my%20website%20in%2072h.';
 
+export default function App() {
   // Enforce permanent sleek dark theme
   useEffect(() => {
     document.documentElement.classList.add('dark');
   }, []);
 
-  useEffect(() => {
-    const handleHashChange = () => {
-      if (window.location.hash === '#/briefing') {
-        setView('briefing');
-      } else if (!window.location.hash || window.location.hash.startsWith('#')) {
-        if (window.location.hash !== '#/briefing') {
-          setView('home');
-        }
-      }
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  const handleOpenBriefing = (plan?: 'essential' | 'professional' | 'elite') => {
-    if (plan) setSelectedPlan(plan);
-    setView('briefing');
-    window.location.hash = '#/briefing';
+  const openWhatsApp = () => {
+    window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer');
   };
-
-  const handleBackToHome = () => {
-    setView('home');
-    window.location.hash = '';
-  };
-
-  if (view === 'briefing') {
-    return (
-      <div className="min-h-screen bg-zinc-950 text-white selection:bg-white selection:text-black">
-        <div className="grain" />
-        <BriefingCheckoutPage 
-          initialPlan={selectedPlan}
-          onBackToHome={handleBackToHome}
-        />
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white selection:bg-white selection:text-black">
       <div className="grain" />
-      <Navbar 
-        onOpenBriefing={() => handleOpenBriefing()}
-      />
-      
+      <Navbar onOpenBriefing={openWhatsApp} />
+
       <main className="relative z-10">
-        <Hero onOpenBriefing={() => handleOpenBriefing()} />
+        <Hero onOpenBriefing={openWhatsApp} />
         <Statistics />
         <Benefits />
         <ServicesBreakdown />
         <Process />
-        <Pricing onSelectPlan={(plan) => handleOpenBriefing(plan)} />
+        <Pricing onSelectPlan={openWhatsApp} />
         <Portfolio />
         <TechStack />
         <TargetAudience />
@@ -93,16 +53,16 @@ export default function App() {
         <Testimonials />
         <Guarantee />
         <FAQ />
-        <ContactCTA onOpenBriefing={() => handleOpenBriefing()} />
+        <ContactCTA onOpenBriefing={openWhatsApp} />
       </main>
 
       <Footer />
 
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-sm md:hidden">
-        <button 
+        <button
           type="button"
-          onClick={() => handleOpenBriefing('professional')}
+          onClick={openWhatsApp}
           className="w-full bg-white text-black px-6 py-4 rounded-full font-black flex items-center justify-center gap-3 shadow-2xl cursor-pointer hover:opacity-90 active:scale-[0.98] transition-all"
         >
           <MessageCircle size={20} />

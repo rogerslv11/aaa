@@ -31,7 +31,7 @@ export default function Navbar({ onOpenBriefing }: NavbarProps) {
         : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 h-full">
         <div className="flex justify-between items-center h-full">
           <a href="#" className="flex items-center gap-2.5">
             <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-white text-black font-black text-lg shadow-sm">
