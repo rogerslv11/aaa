@@ -5,7 +5,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-zinc-950 text-white pt-20 pb-12 border-t border-zinc-800 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-6">
@@ -18,7 +18,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-zinc-400 mb-8 max-w-xs leading-relaxed text-sm">
-              We design and code ultra-fast, high-converting bespoke websites to accelerate revenue and brand authority in record time.
+              Criamos e programamos sites ultrarrápidos e de alta conversão sob medida para acelerar seu faturamento e autoridade de marca em tempo recorde.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="w-10 h-10 bg-zinc-900 rounded-full flex items-center justify-center text-zinc-400 hover:bg-white hover:text-black transition-colors" aria-label="Instagram">
@@ -34,42 +34,42 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Services</h4>
+            <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Especialidades</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#especialidades" className="text-zinc-400 hover:text-white transition-colors">Bespoke Websites & Redesign</a></li>
-              <li><a href="#especialidades" className="text-zinc-400 hover:text-white transition-colors">High-Converting Landing Pages</a></li>
-              <li><a href="#especialidades" className="text-zinc-400 hover:text-white transition-colors">Fast E-commerce & Storefronts</a></li>
-              <li><a href="#especialidades" className="text-zinc-400 hover:text-white transition-colors">Structural SEO & PageSpeed 99+</a></li>
+              <li><a href="#especialidades" className="text-zinc-400 hover:text-white transition-colors">Sites Sob Medida & Redesign</a></li>
+              <li><a href="#especialidades" className="text-zinc-400 hover:text-white transition-colors">Landing Pages de Alta Conversão</a></li>
+              <li><a href="#especialidades" className="text-zinc-400 hover:text-white transition-colors">Catálogos & E-commerce Ágil</a></li>
+              <li><a href="#especialidades" className="text-zinc-400 hover:text-white transition-colors">SEO Estrutural & Google Score 99+</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Company</h4>
+            <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Navegação</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#benefits" className="text-zinc-400 hover:text-white transition-colors">Why Choose Us</a></li>
-              <li><a href="#process" className="text-zinc-400 hover:text-white transition-colors">How It Works</a></li>
-              <li><a href="#pricing" className="text-zinc-400 hover:text-white transition-colors">Plans & Pricing</a></li>
-              <li><a href="#portfolio" className="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+              <li><a href="#benefits" className="text-zinc-400 hover:text-white transition-colors">Por que nós?</a></li>
+              <li><a href="#process" className="text-zinc-400 hover:text-white transition-colors">Como Funciona</a></li>
+              <li><a href="#pricing" className="text-zinc-400 hover:text-white transition-colors">Planos & Preços</a></li>
+              <li><a href="#portfolio" className="text-zinc-400 hover:text-white transition-colors">Casos de Sucesso</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Contact</h4>
+            <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Atendimento</h4>
             <ul className="space-y-3 text-sm">
-              <li className="text-zinc-400">contact@sitepro72h.com</li>
-              <li className="text-zinc-400">+34 900 720 800</li>
-              <li className="text-zinc-400">Direct 24/7 Client Desk</li>
+              <li className="text-zinc-400">contato@sitepro72h.com.br</li>
+              <li className="text-zinc-400">Atendimento VIP via WhatsApp</li>
+              <li className="text-zinc-400">Suporte Técnico Dedicado</li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
           <p className="text-zinc-400">
-            © {currentYear} SitePro 72h. All rights reserved.
+            © {currentYear} SitePro 72h. Todos os direitos reservados.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-zinc-400 hover:text-white">Privacy Policy</a>
-            <a href="#" className="text-zinc-400 hover:text-white">Terms of Service</a>
+            <a href="#" className="text-zinc-400 hover:text-white">Política de Privacidade</a>
+            <a href="#" className="text-zinc-400 hover:text-white">Termos de Serviço</a>
           </div>
         </div>
       </div>

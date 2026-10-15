@@ -1,14 +1,14 @@
 export default function Statistics() {
   const stats = [
-    { value: '250+', label: 'Delivered Projects', sublabel: 'Within the 72h Deadline' },
-    { value: '72h', label: 'Maximum Turnaround', sublabel: 'Contractually Guaranteed' },
-    { value: '99%', label: 'Client Satisfaction', sublabel: '5-Star Verified Ratings' },
-    { value: '24/7', label: 'Automated Sales', sublabel: 'Continuous Lead Capture' },
+    { value: '250+', label: 'Sites Entregues', sublabel: 'No Prazo Exato de 72h' },
+    { value: '72h', label: 'Prazo Máximo', sublabel: 'Garantido em Contrato' },
+    { value: '99%', label: 'Satisfação Total', sublabel: 'Avaliação 5 Estrelas' },
+    { value: '24/7', label: 'Máquina de Vendas', sublabel: 'Captação Ininterrupta' },
   ];
 
   return (
     <section className="py-12 sm:py-16 bg-zinc-950 text-white border-y border-zinc-800/80 transition-colors duration-300 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {stats.map((stat, i) => (
             <div 

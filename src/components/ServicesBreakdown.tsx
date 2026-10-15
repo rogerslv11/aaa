@@ -6,28 +6,28 @@ export default function ServicesBreakdown() {
       {/* Background Decorative Glow */}
       <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-zinc-900/40 rounded-full blur-[140px] pointer-events-none -z-0" />
 
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 lg:mb-16 gap-6 sm:gap-8 pb-8 sm:pb-10 border-b border-zinc-800">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4 shadow-xs">
               <Sparkles size={12} className="text-amber-400" />
-              Specialties & Sales Engineering
+              Nossas Especialidades • Foco em Conversão
             </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-[0.95] tracking-tight">
-              Digital specialties that <br className="hidden sm:inline" />
-              <span className="text-zinc-500">turn website clicks into signed contracts.</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+              Soluções digitais sob medida, <br className="hidden sm:inline" />
+              <span className="text-zinc-500">feitas para transformar visitantes em clientes.</span>
             </h2>
           </div>
 
           <div className="lg:max-w-sm space-y-3">
             <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-              We design digital ecosystems where every visual asset communicates supreme authority and every line of code is optimized for instant speed.
+              Desenvolvemos ecossistemas digitais onde cada elemento visual comunica autoridade e cada linha de código é otimizada para velocidade instantânea.
             </p>
             <div className="flex items-center gap-2 text-xs font-bold text-emerald-400">
               <CheckCircle2 size={15} />
-              <span>Guaranteed 72-hour delivery backed by contract</span>
+              <span>Entrega garantida em 72 horas com respaldo em contrato</span>
             </div>
           </div>
         </div>
@@ -45,28 +45,28 @@ export default function ServicesBreakdown() {
                   <Rocket size={26} />
                 </div>
                 <span className="text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-950/60 text-emerald-300 border border-emerald-800">
-                  +240% Average Conversion
+                  +240% Conversão Média
                 </span>
               </div>
 
               <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 block mb-1">
-                Engineered for Paid Ads & Product Launches
+                Foco em Tráfego Pago & Lançamentos de Alta Performance
               </span>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4 tracking-tight">
-                High-Converting Landing Pages
+                Landing Pages de Alta Conversão
               </h3>
               <p className="text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed mb-6 sm:mb-8">
-                Pages built with behavioral purchase psychology, high-urgency triggers, and luxury aesthetic polish. We deliver real financial ROI on your advertising spend, not just visual appeal.
+                Páginas criadas com psicologia de compra, gatilhos de decisão rápida e design de luxo. Entregamos retorno real sobre o seu investimento em anúncios, não apenas apelo visual.
               </p>
 
               {/* Tag Pills */}
               <div className="flex flex-wrap gap-2 pt-2">
                 {[
-                  'Conversion Psychology',
-                  'Direct WhatsApp Funnel',
+                  'Psicologia de Vendas',
+                  'Funil Direto no WhatsApp',
                   'Google PageSpeed 100',
-                  'Fluid Mobile-First UX',
-                  '72h Delivery Guarantee'
+                  'Design Fluido Mobile-First',
+                  'Garantia de 72h'
                 ].map((tag) => (
                   <span
                     key={tag}
@@ -81,7 +81,7 @@ export default function ServicesBreakdown() {
             {/* Bottom Card Action */}
             <div className="pt-6 sm:pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-6">
               <span className="text-xs font-bold text-zinc-400">
-                Ideal for: Paid media traffic, high-ticket services & flagship product launches
+                Ideal para: Tráfego pago, serviços de alto valor e lançamentos estratégicos
               </span>
               <a 
                 href="#pricing"
@@ -101,14 +101,14 @@ export default function ServicesBreakdown() {
                   <Globe size={20} />
                 </div>
                 <span className="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">
-                  Maximum Authority
+                  Autoridade Máxima
                 </span>
               </div>
 
               <div>
-                <h3 className="text-lg sm:text-xl font-black text-white mb-2 tracking-tight">Corporate Websites</h3>
+                <h3 className="text-lg sm:text-xl font-black text-white mb-2 tracking-tight">Sites Institucionais</h3>
                 <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                  Imposing brand positioning for enterprise businesses, medical clinics, and elite law practices.
+                  Posicionamento imponente para empresas, clínicas e escritórios que exigem respeito imediato.
                 </p>
               </div>
             </div>
@@ -120,14 +120,14 @@ export default function ServicesBreakdown() {
                   <ShoppingCart size={20} />
                 </div>
                 <span className="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">
-                  Frictionless Checkout
+                  Checkout Ágil
                 </span>
               </div>
 
               <div>
-                <h3 className="text-lg sm:text-xl font-black text-white mb-2 tracking-tight">E-commerce & Catalogs</h3>
+                <h3 className="text-lg sm:text-xl font-black text-white mb-2 tracking-tight">Catálogos & E-commerce</h3>
                 <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                  Fast, modern product displays with 4K imagery and frictionless checkout for high conversions.
+                  Vitrines modernas com fotos em 4K e fluxo direto de compra sem abandono de carrinho.
                 </p>
               </div>
             </div>
@@ -139,16 +139,16 @@ export default function ServicesBreakdown() {
               <div className="w-9 h-9 rounded-lg bg-amber-950/60 text-amber-400 flex items-center justify-center mb-3">
                 <Zap size={18} />
               </div>
-              <h4 className="text-base font-black text-white mb-1">Structural SEO</h4>
-              <p className="text-xs text-zinc-400 leading-relaxed">Schema.org metadata and semantic markup to dominate Google search results.</p>
+              <h4 className="text-base font-black text-white mb-1">SEO Estrutural</h4>
+              <p className="text-xs text-zinc-400 leading-relaxed">Metadados Schema.org e semântica pura para liderar o ranking do Google.</p>
             </div>
 
             <div className="flex flex-col justify-center sm:pl-4 pt-4 sm:pt-0 border-t sm:border-t-0 border-zinc-800">
               <div className="w-9 h-9 rounded-lg bg-blue-950/60 text-blue-400 flex items-center justify-center mb-3">
                 <Cpu size={18} />
               </div>
-              <h4 className="text-base font-black text-white mb-1">Extreme Performance</h4>
-              <p className="text-xs text-zinc-400 leading-relaxed">Sub-0.28s loading speed without the weight of slow third-party plugins.</p>
+              <h4 className="text-base font-black text-white mb-1">Performance Extrema</h4>
+              <p className="text-xs text-zinc-400 leading-relaxed">Carregamento em 0.28s sem o peso de plugins lentos de terceiros.</p>
             </div>
           </div>
 
@@ -160,11 +160,11 @@ export default function ServicesBreakdown() {
             <div className="max-w-sm space-y-1">
               <div className="text-[10px] font-black uppercase tracking-widest text-emerald-400 flex items-center gap-1">
                 <ShieldCheck size={12} />
-                <span>Custom Engineering</span>
+                <span>Engenharia Sob Medida</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-black text-white tracking-tight">Tailored Architecture</h3>
+              <h3 className="text-lg sm:text-xl font-black text-white tracking-tight">Projetos Customizados</h3>
               <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                Have specific integrations or custom requirements? We architect custom solutions in 72 hours.
+                Possui integrações específicas ou regras exclusivas? Arquitetamos a solução ideal em até 72h.
               </p>
             </div>
             

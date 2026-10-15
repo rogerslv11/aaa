@@ -11,83 +11,83 @@ export default function TargetAudience() {
   const niches = [
     {
       id: 'health',
-      name: 'Clinics, Doctors & Healthcare',
+      name: 'Clínicas, Médicos & Saúde',
       category: 'health',
       icon: <Stethoscope size={24} className="text-emerald-400" />,
-      tag: 'High Private Demand',
-      metric: '+185% Private Bookings',
-      focus: 'Direct WhatsApp booking funnels, elegant treatment showcases, and indisputable medical authority.',
-      features: ['Procedure Catalog', 'Google Verified Reviews Wall', 'Direct WhatsApp Scheduling']
+      tag: 'Alta Procura Particular',
+      metric: '+185% Consultas no WhatsApp',
+      focus: 'Funis diretos de agendamento, vitrine de especialidades médicas e autoridade clínica inquestionável.',
+      features: ['Catálogo de Procedimentos', 'Mural de Avaliações Google', 'Agendamento Direto no WhatsApp']
     },
     {
       id: 'real_estate',
-      name: 'Real Estate & Brokers',
+      name: 'Imobiliárias & Corretores',
       category: 'real_estate',
       icon: <Home size={24} className="text-amber-400" />,
-      tag: 'Luxury Portfolio',
-      metric: '+240% Property Inquiries',
-      focus: 'Immersive property showcases with 4K photography, instant filters, and investor lead capture.',
-      features: ['Price & Region Filters', '4K Media Galleries', 'Direct Listing WhatsApp CTA']
+      tag: 'Portfólio de Luxo',
+      metric: '+240% Contatos por Imóvel',
+      focus: 'Apresentação imersiva com fotos em 4K, filtros dinâmicos de busca e captação de compradores qualificados.',
+      features: ['Filtros por Bairro e Valor', 'Galeria de Mídia em Alta Resolução', 'Botão de Contato Direto por Imóvel']
     },
     {
       id: 'legal',
-      name: 'Law Firms & Legal Advisors',
+      name: 'Advogados & Escritórios Jurídicos',
       category: 'b2b',
       icon: <Gavel size={24} className="text-blue-400" />,
-      tag: 'Prestige & Trust',
-      metric: '+190% VIP Consultations',
-      focus: 'Distinguished institutional positioning that conveys immediate discretion and legal expertise.',
-      features: ['Practice Areas Breakdown', 'GDPR & Bank-Grade SSL', 'Confidential Inquiry Form']
+      tag: 'Prestígio & Solidez',
+      metric: '+190% Consultas VIP',
+      focus: 'Posicionamento institucional imponente que transmite discrição, segurança jurídica e excelência técnica.',
+      features: ['Áreas de Atuação Detalhadas', 'Criptografia e SSL Bancário', 'Canal Reservado de Contato']
     },
     {
       id: 'b2b',
-      name: 'B2B Services & Consultancies',
+      name: 'Consultorias & Serviços B2B',
       category: 'b2b',
       icon: <Briefcase size={24} className="text-purple-400" />,
-      tag: 'Enterprise Contracts',
-      metric: '3x Executive Meetings',
-      focus: 'Case study showcases, calendar appointment booking, and executive corporate proposals.',
-      features: ['Calendly / Cal.com Integration', 'Data-Driven Case Studies', 'Institutional Portfolio']
+      tag: 'Contratos Corporativos',
+      metric: '3x Mais Reuniões Fechadas',
+      focus: 'Apresentação de cases de sucesso, agendamento de reuniões executivas e propostas comerciais sob medida.',
+      features: ['Integração Calendly / Cal.com', 'Estudos de Caso com Métricas', 'Estrutura Institucional de Prestígio']
     },
     {
       id: 'restaurants',
-      name: 'Hospitality & Dining',
+      name: 'Gastronomia & Restaurantes',
       category: 'commerce',
       icon: <Utensils size={24} className="text-rose-400" />,
-      tag: 'Digital Menus & Bookings',
-      metric: '+210% Direct Reservations',
-      focus: 'Ultra-fast interactive digital menus, integrated Google Maps directions, and table reservations.',
-      features: ['Instant Mobile Menu', 'Interactive Google Maps', '1-Click Reservation Funnel']
+      tag: 'Cardápio Digital & Reservas',
+      metric: '+210% Reservas Diretas',
+      focus: 'Cardápios digitais interativos ultrarrápidos, localização no Google Maps e reserva de mesas sem comissões.',
+      features: ['Cardápio Mobile Ultrarrápido', 'Integração Google Maps', 'Funil Direto de Reservas']
     },
     {
       id: 'education',
-      name: 'Courses & Infoproducts',
+      name: 'Cursos & Infoprodutos',
       category: 'education',
       icon: <GraduationCap size={24} className="text-indigo-400" />,
-      tag: 'Product Launches',
-      metric: '+320% Checkout Conversions',
-      focus: 'High-ticket sales landing pages, conversion video players, countdown timers, and payment gateways.',
-      features: ['Instant Video Loading', 'Stripe / PayPal Checkout', 'High-Urgency Timers']
+      tag: 'Lançamentos de Sucesso',
+      metric: '+320% Conversão de Checkout',
+      focus: 'Landing pages de vendas para infoprodutos e mentorias com alta persuasão, vídeos rápidos e checkout direto.',
+      features: ['Carregamento de Vídeo Flash', 'Integração Checkout Direto', 'Gatilhos de Decisão Imediata']
     },
     {
       id: 'photography',
-      name: 'Architects & Creatives',
+      name: 'Arquitetos & Estúdios Criativos',
       category: 'commerce',
       icon: <Camera size={24} className="text-cyan-400" />,
-      tag: 'Visual Portfolio',
-      metric: '+175% Project Quotes',
-      focus: 'Refined editorial galleries that highlight project craftsmanship and artistic distinction.',
-      features: ['Full-Screen Lightbox', 'High-Res Image Compression', 'Direct Proposal Requests']
+      tag: 'Portfólio Visual',
+      metric: '+175% Solicitações de Projeto',
+      focus: 'Galerias editoriais refinadas que valorizam o acabamento dos projetos e o olhar autoral do escritório.',
+      features: ['Visualizador em Tela Cheia', 'Compressão Sem Perda de Nitidez', 'Solicitação Direta de Orçamento']
     },
     {
       id: 'stores',
-      name: 'Boutiques & Specialty Retail',
+      name: 'Lojas & Boutiques Exclusivas',
       category: 'commerce',
       icon: <ShoppingBag size={24} className="text-teal-400" />,
-      tag: 'Fast E-commerce',
-      metric: '+150% Repeat Purchases',
-      focus: 'Modern storefront catalogs with instant cart loading and frictionless payment processing.',
-      features: ['Fast Product Grid', '1-Click Direct Ordering', 'Automated Stock Status']
+      tag: 'E-commerce Veloz',
+      metric: '+150% Vendas Recorrentes',
+      focus: 'Vitrines modernas de produtos com carregamento instantâneo e checkout ágil sem fricção.',
+      features: ['Grade de Produtos Rápida', 'Pedido Direto com 1 Clique', 'Disponibilidade Atualizada']
     }
   ];
 
@@ -96,28 +96,28 @@ export default function TargetAudience() {
     : niches.filter(n => n.category === activeCategory);
 
   return (
-    <section id="segmentos" className="py-24 lg:py-32 bg-zinc-950 text-white transition-colors duration-300 relative overflow-hidden">
+    <section id="segmentos" className="py-20 lg:py-32 bg-zinc-950 text-white transition-colors duration-300 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-zinc-900/40 rounded-full blur-[140px] pointer-events-none -z-0" />
 
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 lg:mb-16 gap-8 pb-8 border-b border-zinc-800">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 lg:mb-16 gap-6 sm:gap-8 pb-8 sm:pb-10 border-b border-zinc-800">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4 shadow-xs">
               <Sparkles size={12} className="text-amber-400" />
-              Specialized Industry Solutions
+              Soluções Especializadas por Setor
             </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-              Tailored architecture for <br className="hidden sm:inline" />
-              <span className="text-zinc-500">your specific industry.</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+              Arquitetura sob medida para <br className="hidden sm:inline" />
+              <span className="text-zinc-500">o seu segmento de atuação.</span>
             </h2>
           </div>
 
-          <div className="lg:max-w-sm">
+          <div className="lg:max-w-sm space-y-3">
             <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-              We deeply understand the unique customer buying journeys of each sector to craft websites that captivate and convert.
+              Compreendemos a fundo a jornada de decisão do cliente em cada setor para criar páginas que atraem, convencem e convertem.
             </p>
           </div>
         </div>
@@ -125,12 +125,12 @@ export default function TargetAudience() {
         {/* Category Filter Pills */}
         <div className="flex flex-nowrap overflow-x-auto pb-3 mb-10 gap-2 no-scrollbar">
           {[
-            { id: 'all', label: 'All Industries' },
-            { id: 'health', label: 'Healthcare & Clinics' },
-            { id: 'real_estate', label: 'Real Estate & Luxury' },
-            { id: 'b2b', label: 'B2B & Enterprise' },
-            { id: 'commerce', label: 'Retail & Hospitality' },
-            { id: 'education', label: 'Education & Courses' }
+            { id: 'all', label: 'Todos os Setores' },
+            { id: 'health', label: 'Saúde & Clínicas' },
+            { id: 'real_estate', label: 'Imobiliárias & Luxo' },
+            { id: 'b2b', label: 'B2B & Corporativo' },
+            { id: 'commerce', label: 'Comércio & Gastronomia' },
+            { id: 'education', label: 'Educação & Cursos' }
           ].map((cat) => (
             <button
               key={cat.id}
@@ -139,7 +139,7 @@ export default function TargetAudience() {
               className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                 activeCategory === cat.id
                   ? 'bg-white text-black shadow-md'
-                  : 'bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800'
+                  : 'bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-700'
               }`}
             >
               {cat.label}
@@ -147,16 +147,16 @@ export default function TargetAudience() {
           ))}
         </div>
 
-        {/* Niches Grid */}
+        {/* 8 Niches Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredNiches.map((niche) => (
             <div
               key={niche.id}
-              className="p-7 rounded-3xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900/70 transition-all flex flex-col justify-between group shadow-sm hover:shadow-xl"
+              className="p-6 sm:p-7 rounded-3xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all flex flex-col justify-between group shadow-sm hover:shadow-xl"
             >
               <div>
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center group-hover:scale-105 transition-transform shadow-inner">
+                  <div className="w-12 h-12 rounded-2xl bg-zinc-800/90 border border-zinc-700/80 flex items-center justify-center group-hover:scale-105 transition-transform shadow-inner">
                     {niche.icon}
                   </div>
                   <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300">
@@ -164,8 +164,7 @@ export default function TargetAudience() {
                   </span>
                 </div>
 
-                <div className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400 mb-1 flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <div className="text-[10px] font-black uppercase tracking-widest text-emerald-400 mb-1">
                   {niche.metric}
                 </div>
 
@@ -173,14 +172,14 @@ export default function TargetAudience() {
                   {niche.name}
                 </h3>
 
-                <p className="text-xs text-zinc-400 leading-relaxed mb-6">
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-5">
                   {niche.focus}
                 </p>
 
                 {/* Features */}
                 <div className="space-y-2 pt-4 border-t border-zinc-800/80">
-                  {niche.features.map((feat) => (
-                    <div key={feat} className="flex items-center gap-2 text-xs text-zinc-300 font-medium">
+                  {niche.features.map((feat, i) => (
+                    <div key={i} className="flex items-center gap-2 text-xs text-zinc-300 font-medium">
                       <CheckCircle2 size={13} className="text-emerald-400 flex-shrink-0" />
                       <span>{feat}</span>
                     </div>
@@ -188,35 +187,17 @@ export default function TargetAudience() {
                 </div>
               </div>
 
-              {/* Action */}
-              <div className="mt-6 pt-4 border-t border-zinc-800/80">
-                <a
-                  href="#/briefing"
-                  className="w-full py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-white hover:text-black text-zinc-300 font-bold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
+              <div className="mt-6 pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs font-bold text-white">
+                <a 
+                  href="#pricing"
+                  className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors"
                 >
-                  <span>Build For My Niche</span>
+                  <span>Ver Planos para este Nicho</span>
                   <ArrowRight size={13} />
                 </a>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Custom Niche Banner */}
-        <div className="mt-12 p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-zinc-400">
-          <div className="flex items-center gap-2 text-center sm:text-left">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span>Don't see your specific industry listed? We create tailored architectures for any specialized sector.</span>
-          </div>
-          <a
-            href="https://wa.me/5500000000000"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-emerald-400 font-bold whitespace-nowrap flex items-center gap-1 transition-colors"
-          >
-            <span>Consult Our Specialists</span>
-            <ArrowRight size={12} />
-          </a>
         </div>
 
       </div>

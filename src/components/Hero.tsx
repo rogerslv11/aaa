@@ -7,10 +7,10 @@ interface HeroProps {
 
 export default function Hero({ onOpenBriefing }: HeroProps) {
   const trustIndicators = [
-    { label: '72-Hour Delivery', highlight: 'Guaranteed' },
-    { label: 'Bespoke Elite Design', highlight: 'Zero Templates' },
-    { label: 'Google Score 99+', highlight: '0.28s Load Speed' },
-    { label: 'Dedicated VIP Support', highlight: '1-on-1 Direct' }
+    { label: 'Entrega em 72 Horas', highlight: 'Garantido em Contrato' },
+    { label: 'Design de Alto Padrão', highlight: 'Sem Templates Prontos' },
+    { label: 'Google Score 99+', highlight: '0.28s de Velocidade' },
+    { label: 'Suporte VIP Humano', highlight: 'Direto no WhatsApp' }
   ];
 
   return (
@@ -19,7 +19,7 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-zinc-900/50 rounded-full blur-[140px] -z-10 pointer-events-none opacity-70" />
       <div className="absolute top-10 right-10 w-72 h-72 bg-emerald-500/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Content Column */}
@@ -31,20 +31,20 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
               </span>
-              <span>Immediate Availability • 02/05 Project Slots Remaining This Week</span>
+              <span>Disponibilidade Imediata • 02/05 Vagas Esta Semana</span>
             </div>
             
             {/* Headline */}
             <div className="space-y-3">
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight text-white leading-[0.95] break-words">
-                Command authority. <br />
-                Sell more in{' '}
+                Gere autoridade. <br />
+                Venda mais em{' '}
                 <span className="italic font-serif font-light text-zinc-500">
-                  72 hours
+                  72 horas
                 </span>.
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed max-w-2xl font-normal pt-2">
-                Slow, outdated websites cost your business valuable clients every day. We build high-impact digital experiences with conversion psychology, dominant Google SEO, and instant 0.28s loading speed.
+                Sites lentos e desatualizados custam clientes valiosos ao seu negócio todos os dias. Desenvolvemos presenças digitais de prestígio com psicologia de vendas, SEO dominante no Google e carregamento instantâneo em 0.28s.
               </p>
             </div>
 
@@ -61,7 +61,7 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
                 }}
                 className="group px-9 py-5 rounded-2xl bg-white text-black font-black text-base sm:text-lg flex items-center justify-center gap-3 shadow-xl hover:bg-zinc-200 active:scale-[0.98] transition-all cursor-pointer"
               >
-                <span>Launch My Website in 72h</span>
+                <span>Quero Meu Site em 72h</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
               
@@ -69,8 +69,8 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
                 href="#portfolio"
                 className="px-8 py-5 rounded-2xl border border-zinc-800 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-zinc-900 transition-colors"
               >
-                <span>View Case Studies</span>
-                <span className="text-xs text-zinc-500 font-normal">(250+ Delivered)</span>
+                <span>Ver Casos de Sucesso</span>
+                <span className="text-xs text-zinc-500 font-normal">(250+ Entregues)</span>
               </a>
             </div>
 
@@ -80,9 +80,9 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
                 {/* Review Rating Snippet */}
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
-                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://i.pravatar.cc/100?u=doc1" alt="Client" />
-                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://i.pravatar.cc/100?u=exec2" alt="Client" />
-                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://i.pravatar.cc/100?u=law3" alt="Client" />
+                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://i.pravatar.cc/100?u=doc1" alt="Cliente" />
+                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://i.pravatar.cc/100?u=exec2" alt="Cliente" />
+                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-zinc-900 object-cover" src="https://i.pravatar.cc/100?u=law3" alt="Cliente" />
                   </div>
                   <div>
                     <div className="flex items-center gap-1">
@@ -91,7 +91,7 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
                       ))}
                       <span className="text-xs font-black text-white ml-1">4.98/5</span>
                     </div>
-                    <span className="text-[10px] text-zinc-400 font-semibold">+250 businesses transformed</span>
+                    <span className="text-[10px] text-zinc-400 font-semibold">+250 empresas transformadas</span>
                   </div>
                 </div>
 
@@ -100,7 +100,7 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
                 {/* Guarantee Pill */}
                 <div className="flex items-center gap-2 text-xs font-bold text-emerald-400">
                   <ShieldCheck size={16} />
-                  <span>72-Hour Delivery or 100% Full Refund Guarantee</span>
+                  <span>Garantia de 72h ou 100% de Reembolso em Contrato</span>
                 </div>
               </div>
 
@@ -133,7 +133,7 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
                 </div>
                 <div className="px-3 py-0.5 rounded-md bg-zinc-900 text-zinc-400 text-[10px] flex items-center gap-1">
-                  <span>🔒 sitepro72h.com/preview</span>
+                  <span>🔒 sitepro72h.com.br/preview</span>
                 </div>
                 <div className="flex items-center gap-1 text-emerald-400 font-bold text-[9px]">
                   <Zap size={11} />
@@ -145,7 +145,7 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
               <div className="relative overflow-hidden rounded-xl">
                 <img 
                   src={heroMockup} 
-                  alt="High converting professional website mockup SitePro 72h"
+                  alt="Mockup de site profissional de alta conversão SitePro 72h"
                   className="w-full h-auto object-cover rounded-xl grayscale-0 contrast-110 hover:scale-[1.02] transition-transform duration-500"
                   loading="eager"
                   referrerPolicy="no-referrer"
@@ -159,8 +159,8 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
                 <TrendingUp size={20} />
               </div>
               <div>
-                <div className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Lead Conversion</div>
-                <div className="text-lg font-black text-white">+240% Direct Inquiries</div>
+                <div className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Conversão de Leads</div>
+                <div className="text-lg font-black text-white">+240% Contatos Diretos</div>
               </div>
             </div>
 
@@ -178,7 +178,7 @@ export default function Hero({ onOpenBriefing }: HeroProps) {
             {/* Floating Right SLA Badge */}
             <div className="absolute top-1/2 -right-6 z-20 bg-zinc-900 px-3.5 py-2 rounded-xl shadow-xl border border-zinc-800 hidden lg:flex items-center gap-2">
               <Clock size={16} className="text-amber-500" />
-              <span className="text-[11px] font-black uppercase tracking-wider text-white">72h SLA Delivery</span>
+              <span className="text-[11px] font-black uppercase tracking-wider text-white">Entrega em 72h</span>
             </div>
 
           </div>

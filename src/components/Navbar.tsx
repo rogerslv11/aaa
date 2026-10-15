@@ -16,11 +16,11 @@ export default function Navbar({ onOpenBriefing }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { name: 'Why Us?', href: '#benefits' },
-    { name: 'How It Works', href: '#process' },
-    { name: 'Plans & Pricing', href: '#pricing' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Por que nós?', href: '#benefits' },
+    { name: 'Como funciona', href: '#process' },
+    { name: 'Planos & Preços', href: '#pricing' },
+    { name: 'Portfólio', href: '#portfolio' },
+    { name: 'Dúvidas', href: '#faq' },
   ];
 
   return (
@@ -31,7 +31,7 @@ export default function Navbar({ onOpenBriefing }: NavbarProps) {
         : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 h-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           <a href="#" className="flex items-center gap-2.5">
             <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-white text-black font-black text-lg shadow-sm">
@@ -70,7 +70,7 @@ export default function Navbar({ onOpenBriefing }: NavbarProps) {
               }}
               className="px-6 py-2.5 rounded-full text-sm font-bold bg-white text-black transition-opacity hover:opacity-90 cursor-pointer shadow-md"
             >
-              Get Started Now
+              Começar Agora
             </button>
           </div>
 
@@ -80,7 +80,7 @@ export default function Navbar({ onOpenBriefing }: NavbarProps) {
               type="button"
               onClick={() => setIsOpen(!isOpen)} 
               className="p-2 text-white"
-              aria-label="Open menu"
+              aria-label="Abrir menu"
             >
               {isOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
@@ -101,7 +101,7 @@ export default function Navbar({ onOpenBriefing }: NavbarProps) {
                 <span className="text-xs font-black px-1.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">72h</span>
               </div>
             </div>
-            <button type="button" onClick={() => setIsOpen(false)} className="p-2" aria-label="Close menu">
+            <button type="button" onClick={() => setIsOpen(false)} className="p-2" aria-label="Fechar menu">
               <X size={28} />
             </button>
           </div>
@@ -132,10 +132,10 @@ export default function Navbar({ onOpenBriefing }: NavbarProps) {
               }}
               className="w-full py-5 rounded-2xl text-center font-black text-xl shadow-lg cursor-pointer bg-white text-black"
             >
-              Get Started Now
+              Começar Agora
             </button>
             <p className="text-center mt-4 text-zinc-500 text-xs font-medium uppercase tracking-widest">
-              Your website ready in up to 72 hours
+              Seu site pronto em até 72 horas
             </p>
           </div>
         </div>

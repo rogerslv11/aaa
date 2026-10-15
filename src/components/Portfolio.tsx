@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import { 
-  ArrowUpRight, Zap, TrendingUp, CheckCircle2, 
-  X, Sparkles, Clock, ArrowRight, Eye
+  ArrowRight, Sparkles, Clock, CheckCircle2, 
+  Eye, X, MessageCircle
 } from 'lucide-react';
 
-import corporateImg from '../assets/images/portfolio_site_corporate_1786988085665.jpg';
-import creativeImg from '../assets/images/portfolio_site_creative_1786988096673.jpg';
-import medicalImg from '../assets/images/portfolio_site_medical_1786988107523.jpg';
 import realEstateImg from '../assets/images/portfolio_real_estate_1791204403300.jpg';
+import medicalImg from '../assets/images/portfolio_site_medical_1786988107523.jpg';
+import corporateImg from '../assets/images/portfolio_site_corporate_1786988085665.jpg';
 import ecommerceImg from '../assets/images/portfolio_ecommerce_1791204416889.jpg';
+import creativeImg from '../assets/images/portfolio_site_creative_1786988096673.jpg';
 import heroImg from '../assets/images/hero_mockup_modern_web_design_1786988074777.jpg';
 
 interface Project {
   id: number;
   title: string;
   category: string;
-  categorySlug: 'redesign' | 'health' | 'b2b' | 'real_estate' | 'ecommerce' | 'landing_page';
+  categorySlug: string;
   badge: string;
   imageUrl: string;
   description: string;
@@ -37,204 +37,204 @@ interface Project {
 }
 
 export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [activeCategory, setActiveCategory] = useState<string>('Todos');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const categories = [
-    'All',
-    '360° Redesign',
-    'Clinics & Healthcare',
-    'B2B & Enterprise',
-    'Real Estate & Luxury',
-    'E-commerce & Stores',
+    'Todos',
+    'Redesign 360°',
+    'Clínicas & Saúde',
+    'B2B & Corporativo',
+    'Imobiliárias & Luxo',
+    'E-commerce & Lojas',
     'Landing Pages'
   ];
 
   const projects: Project[] = [
     {
       id: 1,
-      title: 'Aura Prime Luxury Real Estate',
-      category: 'Real Estate & Luxury',
+      title: 'Aura Prime Imóveis de Alto Padrão',
+      category: 'Imobiliárias & Luxo',
       categorySlug: 'real_estate',
-      badge: '360° Redesign • 72h',
+      badge: 'Redesign 360° • 72h',
       imageUrl: realEstateImg,
-      description: 'Complete digital restructuring of a luxury property catalog for high-net-worth buyers with instant filtering and 4K media.',
+      description: 'Reestruturação completa de catálogo imobiliário para público AAA com filtros rápidos e fotos em altíssima definição.',
       results: {
-        conversion: '+240% Direct Inquiries',
-        speed: '0.28s Load Speed',
+        conversion: '+240% Contatos no WhatsApp',
+        speed: '0.28s Carregamento',
         googleScore: '99 / 100'
       },
-      tags: ['Fast Filters', 'Minimalist Design', '4K Gallery', 'Local SEO'],
+      tags: ['Filtros Rápidos', 'Design Minimalista', 'Galeria 4K', 'SEO Local'],
       caseStudy: {
         client: 'Aura Prime Real Estate',
-        industry: 'Luxury Properties & Penthouses',
-        before: 'Outdated WordPress site took 4.5s to load on mobile, with unoptimized media and high abandonment from high-end clients.',
-        after: 'Tailored React architecture featuring instant-loading high-resolution photography and direct WhatsApp inquiry buttons on every listing.',
-        deliverables: ['Interactive Property Catalog', 'CRM WhatsApp Funnel', '301 SEO Redirections', 'Mobile-First Optimization'],
-        testimonialQuote: 'The new website completely transformed how prospective buyers perceive our development portfolio.',
-        testimonialAuthor: 'Henrique Valente • Commercial Director'
+        industry: 'Imóveis de Luxo e Coberturas',
+        before: 'Site antigo no WordPress demorava 4.5s para abrir no celular, com imagens pesadas e perda constante de clientes qualificados.',
+        after: 'Arquitetura sob medida em React com fotos de alta definição com carregamento instantâneo e botão de WhatsApp direto por imóvel.',
+        deliverables: ['Catálogo Interativo', 'Integração WhatsApp CRM', 'Redirecionamentos 301 SEO', 'Otimização Mobile-First'],
+        testimonialQuote: 'O novo site mudou completamente a percepção de valor dos nossos empreendimentos. O retorno foi imediato.',
+        testimonialAuthor: 'Henrique Valente • Diretor Comercial'
       }
     },
     {
       id: 2,
-      title: 'BioPelle Dermatology Institute',
-      category: 'Clinics & Healthcare',
+      title: 'Instituto Dermatológico BioPelle',
+      category: 'Clínicas & Saúde',
       categorySlug: 'health',
-      badge: 'Appointment Funnel Restructure',
+      badge: 'Funil de Agendamentos VIP',
       imageUrl: medicalImg,
-      description: 'Prestigious digital presence engineered to convert prospective clinic patients into immediate booked private consultations.',
+      description: 'Presença digital de prestígio focada em transformar visitantes em agendamentos particulares imediatos.',
       results: {
-        conversion: '+185% Private Bookings',
-        speed: '0.32s Load Speed',
+        conversion: '+185% Consultas Particulares',
+        speed: '0.32s Carregamento',
         googleScore: '100 / 100'
       },
-      tags: ['Direct Booking Funnel', 'Specialties Wall', 'Social Proof', 'Hardened SSL'],
+      tags: ['Agendamento WhatsApp', 'Mural de Especialidades', 'Prova Social', 'SSL Blindado'],
       caseStudy: {
-        client: 'BioPelle Medical Dermatology Clinic',
-        industry: 'Healthcare, Medical Aesthetics & Dermatology',
-        before: 'Dense legacy webpage with confusing copy and a long form that few mobile users bothered to fill out.',
-        after: 'Sleek single-page conversion funnel showcasing medical treatments, trust certifications, and direct receptionist scheduling.',
-        deliverables: ['Treatment Showcase', 'Google Verified Reviews Wall', 'Local Search SEO', 'Editorial Brand Design'],
-        testimonialQuote: 'Within 48 hours of launch, we were receiving a consistent stream of qualified patient inquiries.',
-        testimonialAuthor: 'Dr. Mariana Costa • Chief Dermatologist'
+        client: 'Clínica BioPelle Dermatologia',
+        industry: 'Saúde, Estética Médica & Dermatologia',
+        before: 'Página antiga sem foco comercial, com textos confusos e formulário longo que quase nenhum paciente preenchia no smartphone.',
+        after: 'Funil elegante de 1 página com apresentação dos tratamentos, quebra de objeções e agendamento direto com a recepção.',
+        deliverables: ['Apresentação de Tratamentos', 'Mural de Avaliações Google', 'SEO para Busca Local', 'Design Editorial'],
+        testimonialQuote: 'Em menos de 48 horas após a entrega, já estávamos recebendo novos contatos particulares sem parar.',
+        testimonialAuthor: 'Dra. Mariana Costa • Médica Titular'
       }
     },
     {
       id: 3,
-      title: 'Vanguard Capital & M&A Advisory',
-      category: 'B2B & Enterprise',
+      title: 'Vanguard Capital & Consultoria M&A',
+      category: 'B2B & Corporativo',
       categorySlug: 'b2b',
-      badge: 'Institutional Authority',
+      badge: 'Autoridade Institucional',
       imageUrl: corporateImg,
-      description: 'High-tier corporate portal designed to attract institutional investment funds and enterprise executive clients.',
+      description: 'Portal corporativo de alto escalão para atração de fundos de investimento e empresas B2B.',
       results: {
-        conversion: '+310% Qualified Meetings',
-        speed: '0.25s Load Speed',
+        conversion: '+310% Reuniões Qualificadas',
+        speed: '0.25s Carregamento',
         googleScore: '98 / 100'
       },
-      tags: ['Dark Luxury Layout', 'Calendly Integration', 'Enterprise Security', 'Multi-Language'],
+      tags: ['Design Dark Luxury', 'Integração Calendly', 'Segurança Bancária', 'Multi-idioma'],
       caseStudy: {
         client: 'Vanguard M&A Advisory',
-        industry: 'Corporate Finance, Mergers & Acquisitions',
-        before: 'Generic corporate template that failed to convey the gravitas and security demanded by CFOs and enterprise decision-makers.',
-        after: 'Distinguished typography, showcase of closed transactions, institutional security badges, and 1-click meeting scheduling.',
-        deliverables: ['Deals Portfolio Showcase', 'Cal.com Calendar Integration', 'Executive Copywriting', 'Core Web Vitals Perfection'],
-        testimonialQuote: 'The new site positioned us alongside top-tier global investment banking boutiques.',
-        testimonialAuthor: 'Ricardo Silveira • Managing Partner'
+        industry: 'Fusões, Aquisições & Consultoria Financeira',
+        before: 'Layout institucional genérico que não transmitia a sofisticação e segurança exigidas por diretores financeiros.',
+        after: 'Identidade visual sóbria, tipografia de prestígio, cases de transações e agendamento de reuniões com 1 clique.',
+        deliverables: ['Apresentação de Transações', 'Integração de Agenda Cal.com', 'Copywriting Executivo', 'Otimização Core Web Vitals'],
+        testimonialQuote: 'O projeto nos posicionou no mesmo nível visual das maiores bancas globais de investimento.',
+        testimonialAuthor: 'Ricardo Silveira • Sócio-Fundador'
       }
     },
     {
       id: 4,
-      title: 'Maison Noir • Luxury Cosmetics',
-      category: 'E-commerce & Stores',
+      title: 'Maison Noir • Cosméticos & Luxo',
+      category: 'E-commerce & Lojas',
       categorySlug: 'ecommerce',
-      badge: 'Ultra-Fast Storefront',
+      badge: 'Loja Ultrarrápida',
       imageUrl: ecommerceImg,
-      description: 'Minimalist boutique storefront showcasing exclusive fragrances with frictionless checkout and zero cart drop-off.',
+      description: 'Vitrine minimalista de produtos exclusivos com checkout otimizado e zero fricção de compra.',
       results: {
-        conversion: '+165% Checkout Rate',
-        speed: '0.35s Load Speed',
+        conversion: '+165% Taxa de Checkout',
+        speed: '0.35s Carregamento',
         googleScore: '99 / 100'
       },
-      tags: ['Fast Catalog', 'Stripe Checkout', 'Dynamic Filters', 'Mobile First'],
+      tags: ['Catálogo Rápido', 'Stripe Checkout', 'Filtros Dinâmicos', 'Mobile First'],
       caseStudy: {
         client: 'Maison Noir Parfums',
-        industry: 'Niche Fragrances & Luxury Cosmetics',
-        before: 'Legacy store suffered severe cart abandonment due to sluggish load times and a cumbersome 4-step mobile checkout.',
-        after: 'Clean visual hierarchy, instant image zoom, streamlined 2-step checkout, and automated payment gateway integration.',
-        deliverables: ['Product Showcase Catalog', 'Frictionless Checkout', 'WebP Image Compression', 'Simplified Admin Panel'],
-        testimonialQuote: 'Our mobile revenue doubled in the very first week after deploying the new storefront.',
-        testimonialAuthor: 'Camila Peixoto • Head of E-commerce'
+        industry: 'Perfumaria de Nicho & Cosméticos',
+        before: 'Loja anterior sofria com abandono de carrinho devido a lentidão excessiva e checkout complexo no celular.',
+        after: 'Design limpo, fotos com zoom instantâneo, cálculo de frete rápido e checkout simplificado em 2 etapas.',
+        deliverables: ['Catálogo de Produtos', 'Checkout Sem Fricção', 'Otimização de Imagens WebP', 'Painel Simplificado'],
+        testimonialQuote: 'Nossas vendas mobile dobraram na primeira semana de lançamento da nova loja.',
+        testimonialAuthor: 'Camila Peixoto • Head de E-commerce'
       }
     },
     {
       id: 5,
-      title: 'Nexus Growth • Tech & Creative Agency',
-      category: '360° Redesign',
+      title: 'Nexus Growth • Agência Criativa & Tech',
+      category: 'Redesign 360°',
       categorySlug: 'redesign',
-      badge: 'WordPress → React Migration',
+      badge: 'Migração WordPress → React',
       imageUrl: creativeImg,
-      description: 'Complete digital transformation from legacy CMS to cutting-edge web architecture with fluid micro-interactions.',
+      description: 'Transformação completa de portal institucional para framework ultra moderno com micro-interações fluidas.',
       results: {
-        conversion: '+195% Quote Inquiries',
-        speed: '0.22s Load Speed',
+        conversion: '+195% Solicitações de Orçamento',
+        speed: '0.22s Carregamento',
         googleScore: '100 / 100'
       },
-      tags: ['React 19 & Vite', 'Micro-Interactions', 'Interactive ROI Tool', 'Google Dominance'],
+      tags: ['React 19 & Vite', 'Micro-Interações', 'Calculadora de ROI', 'SEO Dominante'],
       caseStudy: {
         client: 'Nexus Digital Studio',
-        industry: 'Technology & Digital Growth',
-        before: 'Plagued by plugin conflicts, security alerts, and a 5-second mobile load time.',
-        after: 'Zero bloat, pure modern React architecture, futuristic minimalist aesthetic, and VIP quote estimator form.',
-        deliverables: ['Pure Custom Code', 'Interactive ROI Estimator', 'Full SEO URL Preservation', 'Delivered in 72h'],
-        testimonialQuote: 'The speed of execution was incredible. The website is blazing fast and clients compliment it daily.',
-        testimonialAuthor: 'Andre Ruiz • CEO'
+        industry: 'Tecnologia & Marketing Digital',
+        before: 'Site antigo sofria com erros de plugins e demora de mais de 5 segundos no carregamento.',
+        after: 'Código limpo, arquitetura moderna em React, design futurista minimalista e formulário VIP de orçamento.',
+        deliverables: ['Código 100% Puro', 'Calculadora Interativa', 'Preservação de Todas as URLs', 'Entrega em 72h'],
+        testimonialQuote: 'Impressionante a agilidade da equipe da SitePro. O site voa e nossos clientes elogiam diariamente.',
+        testimonialAuthor: 'André Ruiz • CEO'
       }
     },
     {
       id: 6,
-      title: 'Summit Horizon • Flagship Real Estate Launch',
+      title: 'Summit Horizon • Lançamento Imobiliário',
       category: 'Landing Pages',
       categorySlug: 'landing_page',
-      badge: 'High-Converting Landing Page',
+      badge: 'Landing Page de Alta Conversão',
       imageUrl: heroImg,
-      description: 'Strategic paid media landing page engineered for maximum lead capture during a multi-million-dollar property launch.',
+      description: 'Página de aterrissagem estratégica para campanhas de tráfego pago com foco em captação maciça de leads qualificados.',
       results: {
-        conversion: '+275% Campaign Leads',
-        speed: '0.26s Load Speed',
+        conversion: '+275% Leads de Campanhas',
+        speed: '0.26s Carregamento',
         googleScore: '99 / 100'
       },
-      tags: ['Conversion Copy', 'Meta/Google Pixel', 'Direct WhatsApp', 'Fast Video'],
+      tags: ['Psicologia de Vendas', 'Pixel Meta / Google', 'WhatsApp Flutuante', 'Vídeo Otimizado'],
       caseStudy: {
-        client: 'Horizon Developments',
-        industry: 'Real Estate Development & Construction',
-        before: 'High cost per lead on Google and Meta ads due to high bounce rates on an unoptimized landing page.',
-        after: 'High-impact conversion page with interactive floor plans, smooth video playback, and 1-click visit booking.',
-        deliverables: ['Sales Psychology Copy', 'Tracking Pixel Setup', 'Instant Load Speed', '72h Delivery Guarantee'],
-        testimonialQuote: 'We cut our customer acquisition cost in half over the very first weekend of the ad campaign.',
-        testimonialAuthor: 'Felipe Rocha • Head of Performance Marketing'
+        client: 'Horizon Empreendimentos',
+        industry: 'Construção Civil & Lançamentos',
+        before: 'O custo por lead em anúncios no Google e Meta estava muito alto por conta da taxa de rejeição da página antiga.',
+        after: 'Landing Page de impacto imediato, com planta interativa, vídeo sem travamento e botão de agendamento de visita.',
+        deliverables: ['Copywriting Persuasivo', 'Configuração de Tags & Pixels', 'Carregamento Instantâneo', 'Garantia 72h'],
+        testimonialQuote: 'Reduzimos nosso custo por lead pela metade já no primeiro final de semana de campanha.',
+        testimonialAuthor: 'Felipe Rocha • Diretor de Tráfego'
       }
     }
   ];
 
-  const filteredProjects = activeCategory === 'All'
+  const filteredProjects = activeCategory === 'Todos'
     ? projects
     : projects.filter(p => {
-        if (activeCategory === '360° Redesign') return p.category === '360° Redesign' || p.categorySlug === 'redesign';
-        if (activeCategory === 'Clinics & Healthcare') return p.category === 'Clinics & Healthcare' || p.categorySlug === 'health';
-        if (activeCategory === 'B2B & Enterprise') return p.category === 'B2B & Enterprise' || p.categorySlug === 'b2b';
-        if (activeCategory === 'Real Estate & Luxury') return p.category === 'Real Estate & Luxury' || p.categorySlug === 'real_estate';
-        if (activeCategory === 'E-commerce & Stores') return p.category === 'E-commerce & Stores' || p.categorySlug === 'ecommerce';
+        if (activeCategory === 'Redesign 360°') return p.category === 'Redesign 360°' || p.categorySlug === 'redesign';
+        if (activeCategory === 'Clínicas & Saúde') return p.category === 'Clínicas & Saúde' || p.categorySlug === 'health';
+        if (activeCategory === 'B2B & Corporativo') return p.category === 'B2B & Corporativo' || p.categorySlug === 'b2b';
+        if (activeCategory === 'Imobiliárias & Luxo') return p.category === 'Imobiliárias & Luxo' || p.categorySlug === 'real_estate';
+        if (activeCategory === 'E-commerce & Lojas') return p.category === 'E-commerce & Lojas' || p.categorySlug === 'ecommerce';
         if (activeCategory === 'Landing Pages') return p.category === 'Landing Pages' || p.categorySlug === 'landing_page';
         return p.category === activeCategory;
       });
 
   return (
     <section id="portfolio" className="py-24 lg:py-32 bg-zinc-950 text-white transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 lg:mb-16 gap-8 pb-8 border-b border-zinc-800">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 lg:mb-16 gap-6 sm:gap-8 pb-8 border-b border-zinc-800">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4 shadow-xs">
               <Sparkles size={12} className="text-amber-400" />
-              Case Studies & Proven Results
+              Portfólio & Cases de Sucesso
             </div>
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[0.95]">
-              Projects that <br />
-              <span className="text-zinc-500 italic font-serif font-light text-3xl sm:text-5xl lg:text-6xl">
-                set the industry standard.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+              Projetos reais entregues em 72h. <br />
+              <span className="text-zinc-500">
+                Resultados que superam o mercado.
               </span>
             </h2>
           </div>
 
           <div className="lg:max-w-sm">
             <p className="text-sm sm:text-base text-zinc-400 leading-relaxed mb-3">
-              We don't build generic websites. We engineer high-speed digital assets designed to command instant authority and generate quantifiable commercial ROI.
+              Não entregamos apenas sites bonitos. Entregamos plataformas ultrarrápidas desenhadas para gerar autoridade imediata e retorno financeiro comprovado.
             </p>
             <div className="flex items-center gap-3 text-xs font-bold text-white">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span>All projects delivered within our 72-hour turnaround</span>
+              <span>Todos os projetos entregues no prazo de 72 horas</span>
             </div>
           </div>
         </div>
@@ -273,7 +273,7 @@ export default function Portfolio() {
                   <div className="absolute top-3 right-3 z-10 px-2 py-0.5 rounded-md bg-zinc-900/90 backdrop-blur-md border border-zinc-800 text-[10px] font-mono text-zinc-400 flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                     <span className="text-[9px] truncate max-w-[140px] opacity-60">
-                      {project.title.toLowerCase().replace(/[^a-z0-9]/g, '')}.com
+                      {project.title.toLowerCase().replace(/[^a-z0-9]/g, '')}.com.br
                     </span>
                     <span className="text-[8px] font-bold text-emerald-400">0.3s</span>
                   </div>
@@ -315,7 +315,7 @@ export default function Portfolio() {
                   {/* Metric Chips */}
                   <div className="grid grid-cols-2 gap-2 pt-2 border-t border-zinc-800">
                     <div className="p-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-center">
-                      <div className="text-[9px] font-bold uppercase tracking-wider text-zinc-500">Result</div>
+                      <div className="text-[9px] font-bold uppercase tracking-wider text-zinc-500">Resultado</div>
                       <div className="text-xs sm:text-sm font-black text-emerald-400 truncate">
                         {project.results.conversion}
                       </div>
@@ -350,7 +350,7 @@ export default function Portfolio() {
                   className="w-full py-3 px-4 rounded-xl bg-white text-black font-bold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-zinc-200 active:scale-[0.99] transition-all cursor-pointer shadow-xs"
                 >
                   <Eye size={15} />
-                  <span>View Full Case Study</span>
+                  <span>Ver Estudo de Caso Completo</span>
                   <ArrowRight size={15} />
                 </button>
               </div>
@@ -362,17 +362,19 @@ export default function Portfolio() {
         <div className="mt-16 p-8 sm:p-10 rounded-3xl bg-zinc-900/60 border border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="space-y-1">
             <h4 className="text-xl sm:text-2xl font-black text-white">
-              Inspired by these results? Your business can be our next success story.
+              Gostou dos resultados? O próximo case de sucesso pode ser o da sua empresa.
             </h4>
             <p className="text-xs sm:text-sm text-zinc-400">
-              Start your free website diagnostic today and launch your high-converting digital presence in 72 hours.
+              Inicie o diagnóstico do seu site hoje e tenha seu novo posicionamento de mercado entregue em até 72 horas.
             </p>
           </div>
           <a
-            href="#/briefing"
+            href="https://wa.me/5500000000000"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-4 rounded-full bg-white text-black font-bold text-sm whitespace-nowrap hover:bg-zinc-200 transition-colors shadow-md flex-shrink-0"
           >
-            Start My Redesign Project
+            Começar Meu Redesign Agora
           </a>
         </div>
 
@@ -387,7 +389,7 @@ export default function Portfolio() {
             <div className="sticky top-0 z-20 bg-zinc-900/95 backdrop-blur-md px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
               <div>
                 <span className="text-[10px] font-black uppercase tracking-wider text-emerald-400">
-                  Case Study • 72-Hour Delivery
+                  Estudo de Caso • Entrega em 72h
                 </span>
                 <h3 className="text-lg sm:text-xl font-black text-white leading-tight">
                   {selectedProject.title}
@@ -397,7 +399,7 @@ export default function Portfolio() {
                 type="button"
                 onClick={() => setSelectedProject(null)}
                 className="w-9 h-9 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-300 hover:bg-white hover:text-black transition-colors cursor-pointer"
-                aria-label="Close modal"
+                aria-label="Fechar modal"
               >
                 <X size={18} />
               </button>
@@ -418,13 +420,13 @@ export default function Portfolio() {
               {/* Metrics Highlight */}
               <div className="grid grid-cols-3 gap-3">
                 <div className="p-4 rounded-2xl bg-zinc-950 border border-zinc-800 text-center">
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 mb-1">Conversion</div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 mb-1">Conversão</div>
                   <div className="text-sm sm:text-base font-black text-emerald-400">
                     {selectedProject.results.conversion}
                   </div>
                 </div>
                 <div className="p-4 rounded-2xl bg-zinc-950 border border-zinc-800 text-center">
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 mb-1">Speed</div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 mb-1">Velocidade</div>
                   <div className="text-sm sm:text-base font-black text-white">
                     {selectedProject.results.speed}
                   </div>
@@ -442,7 +444,7 @@ export default function Portfolio() {
                 <div className="p-4 sm:p-5 rounded-2xl bg-rose-950/20 border border-rose-900/60 space-y-2">
                   <div className="text-xs font-black uppercase tracking-wider text-rose-400 flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-rose-500" />
-                    Previous Legacy Website (Before):
+                    Como era o site antigo (Antes):
                   </div>
                   <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
                     {selectedProject.caseStudy.before}
@@ -452,7 +454,7 @@ export default function Portfolio() {
                 <div className="p-4 sm:p-5 rounded-2xl bg-emerald-950/20 border border-emerald-900/60 space-y-2">
                   <div className="text-xs font-black uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                    SitePro 72h Transformation (After):
+                    Transformação SitePro 72h (Depois):
                   </div>
                   <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
                     {selectedProject.caseStudy.after}
@@ -463,7 +465,7 @@ export default function Portfolio() {
               {/* Deliverables */}
               <div>
                 <h4 className="text-xs font-black uppercase tracking-wider text-zinc-400 mb-3">
-                  Scope Delivered in 72 Hours:
+                  Entregas Realizadas em 72 Horas:
                 </h4>
                 <div className="grid sm:grid-cols-2 gap-2">
                   {selectedProject.caseStudy.deliverables.map((item) => (
@@ -491,20 +493,22 @@ export default function Portfolio() {
               {/* Modal CTA */}
               <div className="pt-4 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="#/briefing"
-                  onClick={() => setSelectedProject(null)}
+                  href="https://wa.me/5500000000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 py-4 rounded-xl bg-white text-black font-black text-sm text-center flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors shadow-md"
                 >
                   <Sparkles size={16} />
-                  <span>Get a Website Built to This Standard in 72h</span>
+                  <span>Quero um Site com esse Padrão em 72h</span>
                 </a>
                 <a
                   href="https://wa.me/5500000000000"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-4 px-6 rounded-xl border border-zinc-800 text-zinc-300 font-bold text-sm text-center hover:bg-zinc-800 transition-colors"
+                  className="py-4 px-6 rounded-xl border border-zinc-800 text-zinc-300 font-bold text-sm text-center hover:bg-zinc-800 transition-colors flex items-center justify-center gap-2"
                 >
-                  Chat on WhatsApp
+                  <MessageCircle size={16} />
+                  <span>Falar no WhatsApp</span>
                 </a>
               </div>
 

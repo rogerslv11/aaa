@@ -6,50 +6,50 @@ import {
 export default function Guarantee() {
   const points = [
     {
-      title: '72h Turnaround or 100% Free',
-      badge: 'Contractual SLA',
-      description: 'Our 72-hour turnaround is non-negotiable. If we fail to deliver on time after receiving your initial information, you receive a full 100% refund immediately.',
+      title: 'Entrega em 72h ou 100% Grátis',
+      badge: 'SLA Contratual',
+      description: 'Nosso prazo de 72 horas é inegociável. Se não entregarmos no prazo após o recebimento das suas informações, você recebe reembolso integral de 100% imediatamente.',
       icon: <Clock size={26} className="text-amber-400" />
     },
     {
-      title: 'Unlimited Revisions Guarantee',
-      badge: 'Zero Risk',
-      description: 'We present the initial version and refine layouts, color grading, and copy until the final build meets your exact standard of excellence.',
+      title: 'Garantia de Revisões Ilimitadas',
+      badge: 'Risco Zero',
+      description: 'Apresentamos a versão inicial e refinamos layout, fotos e textos até que o resultado final atenda com perfeição ao seu padrão de excelência.',
       icon: <ThumbsUp size={26} className="text-emerald-400" />
     },
     {
-      title: 'Dedicated 1-on-1 VIP WhatsApp Support',
-      badge: 'Direct Engineers',
-      description: 'Zero automated chatbots or long ticketing queues. You communicate directly on WhatsApp with the dedicated engineers building your digital presence.',
+      title: 'Suporte VIP Direto no WhatsApp',
+      badge: 'Desenvolvedor Direto',
+      description: 'Zero robôs ou filas de chamados demoradas. Você fala diretamente no WhatsApp com os engenheiros que estão desenvolvendo seu site.',
       icon: <Headphones size={26} className="text-blue-400" />
     },
     {
-      title: '100% Outright Ownership',
-      badge: 'Zero Monthly Lock-In',
-      description: 'The code, assets, and design belong entirely to you. We do not charge mandatory ongoing hosting fees or hold your domain hostage.',
+      title: 'Patrimônio 100% da sua Empresa',
+      badge: 'Sem Mensalidades',
+      description: 'O código, arquivos e domínio pertencem 100% a você. Não cobramos mensalidades obrigatórias de manutenção nem retemos seus ativos.',
       icon: <Lock size={26} className="text-purple-400" />
     }
   ];
 
   return (
-    <section id="garantia" className="py-24 lg:py-32 bg-zinc-950 text-white transition-colors duration-300 relative overflow-hidden">
+    <section id="garantia" className="py-20 lg:py-32 bg-zinc-950 text-white transition-colors duration-300 relative overflow-hidden">
       {/* Subtle Background Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-zinc-900/40 rounded-full blur-[150px] pointer-events-none -z-0" />
 
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 text-[10px] font-black uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 text-[10px] font-black uppercase tracking-widest mb-4 shadow-xs">
             <ShieldCheck size={14} className="text-emerald-400" />
-            Complete Peace of Mind & Delivery SLA
+            Tranquilidade Total & Garantia em Contrato
           </div>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-4">
-            Our formal commitment to <br className="hidden sm:inline" />
-            <span className="text-zinc-500">your commercial success.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-4">
+            Nosso compromisso formal com <br className="hidden sm:inline" />
+            <span className="text-zinc-500">o seu retorno financeiro.</span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-xl mx-auto">
-            We eliminate all financial risk from your investment. You hire with legal security and an explicit contractual satisfaction guarantee.
+            Eliminamos todo o risco financeiro do seu investimento. Você contrata com segurança jurídica e garantia formal de satisfação.
           </p>
         </div>
 
@@ -58,7 +58,7 @@ export default function Guarantee() {
           {points.map((point) => (
             <div
               key={point.title}
-              className="p-7 rounded-3xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900/70 transition-all flex flex-col justify-between group shadow-sm hover:shadow-xl"
+              className="p-6 sm:p-7 rounded-3xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900/70 transition-all flex flex-col justify-between group shadow-sm hover:shadow-xl"
             >
               <div>
                 <div className="flex items-center justify-between mb-5">
@@ -81,28 +81,30 @@ export default function Guarantee() {
 
               <div className="mt-6 pt-4 border-t border-zinc-800 flex items-center gap-1.5 text-[11px] text-emerald-400 font-bold">
                 <CheckCircle2 size={13} />
-                <span>Active Contractual Guarantee</span>
+                <span>Garantia Contratual Ativa</span>
               </div>
             </div>
           ))}
         </div>
 
         {/* Central Trust SLA Banner */}
-        <div className="mt-14 p-8 sm:p-10 rounded-3xl bg-zinc-900/80 border border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-12 sm:mt-14 p-6 sm:p-10 rounded-3xl bg-zinc-900/80 border border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="flex items-center gap-4 text-center md:text-left">
             <div className="w-12 h-12 rounded-2xl bg-white text-black flex items-center justify-center font-black text-xl flex-shrink-0">
               <Award size={24} />
             </div>
             <div>
-              <h4 className="text-lg sm:text-xl font-black text-white">Ready to launch your high-converting website in 72 hours?</h4>
-              <p className="text-xs sm:text-sm text-zinc-400">Get started today with zero risk, full legal backing, and priority support.</p>
+              <h4 className="text-lg sm:text-xl font-black text-white">Pronto para lançar seu site profissional em até 72 horas?</h4>
+              <p className="text-xs sm:text-sm text-zinc-400">Comece hoje com risco zero, respaldo jurídico e suporte VIP prioritário.</p>
             </div>
           </div>
           <a
-            href="#/briefing"
-            className="px-8 py-4 rounded-full bg-white text-black font-bold text-sm hover:bg-zinc-200 transition-colors whitespace-nowrap flex items-center gap-2 shadow-lg flex-shrink-0"
+            href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20para%20o%20site%20em%2072h."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 rounded-full bg-white text-black font-black text-xs sm:text-sm hover:bg-zinc-200 transition-colors whitespace-nowrap flex items-center justify-center gap-2 shadow-lg flex-shrink-0"
           >
-            <span>Claim My 72h Project Slot</span>
+            <span>Garantir Minha Vaga de 72h</span>
             <ArrowRight size={15} />
           </a>
         </div>

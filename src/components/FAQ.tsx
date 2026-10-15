@@ -14,51 +14,51 @@ export default function FAQ() {
   const faqs = [
     {
       category: 'process',
-      categoryLabel: 'Process & 72h SLA',
-      question: 'Will my website really be ready and live in up to 72 hours?',
-      answer: 'Yes, 100% guaranteed in our signed contract! Our production workflow and modular technology stack are engineered specifically for extreme speed. The 72-hour turnaround begins as soon as you submit the simple onboarding diagnostic form.'
+      categoryLabel: 'Processo & Prazo de 72h',
+      question: 'Meu site realmente ficará pronto e no ar em até 72 horas?',
+      answer: 'Sim, garantido 100% em contrato formal! Nosso fluxo ágil e arquitetura modular foram desenhados especificamente para entrega em velocidade recorde. O prazo de 72 horas começa a contar assim que você nos envia as informações básicas do seu negócio.'
     },
     {
       category: 'process',
-      categoryLabel: 'Process & 72h SLA',
-      question: 'What information or materials do I need to provide to start?',
-      answer: 'We only need your logo (if you have one), a brief summary of your core services or offerings, photos you want to display, and your preferred contact details (WhatsApp, social media, address). Our team handles copywriting, technical architecture, and aesthetic layout.'
+      categoryLabel: 'Processo & Prazo de 72h',
+      question: 'Quais informações eu preciso fornecer para começar?',
+      answer: 'Apenas o essencial: seu logotipo (caso possua), um resumo dos seus serviços ou produtos principais, fotos que queira exibir e seus dados de contato (WhatsApp, redes sociais e endereço). Nossa equipe cuida da redação persuasiva (copywriting), design de luxo e código de alta velocidade.'
     },
     {
       category: 'tech',
-      categoryLabel: 'Technical Details',
-      question: 'Are custom domains and cloud hosting included in the package?',
-      answer: 'The Professional Plan includes 1 full year of ultra-fast cloud CDN hosting. For your custom domain (e.g., yourcompany.com), our engineers handle all DNS records, SSL security certificates, and corporate email connections at zero extra cost.'
+      categoryLabel: 'Tecnologia & Hospedagem',
+      question: 'O domínio próprio e a hospedagem já estão inclusos?',
+      answer: 'O Plano Profissional (R$ 1.200) inclui 1 ano inteiro de hospedagem cloud CDN de altíssima velocidade. Para o seu domínio próprio (.com.br ou .com), nossos engenheiros realizam toda a configuração de DNS, certificado de segurança SSL e conexão de e-mails corporativos sem nenhum custo adicional.'
     },
     {
       category: 'tech',
-      categoryLabel: 'Technical Details',
-      question: 'Is the website optimized for top Google search rankings (SEO)?',
-      answer: 'Yes! We implement full structural SEO: OpenGraph metadata, Schema.org rich snippets, pure semantic tags, and a 99+ Google PageSpeed rating so your brand ranks favorably in search results.'
+      categoryLabel: 'Tecnologia & Hospedagem',
+      question: 'O site é otimizado para aparecer nas buscas do Google (SEO)?',
+      answer: 'Sim! Desenvolvemos com SEO estrutural completo: meta tags OpenGraph, dados estruturados Schema.org, semântica pura e nota 99+ no Google PageSpeed para que sua marca tenha máxima prioridade no ranking orgânico.'
     },
     {
       category: 'support',
-      categoryLabel: 'Support & Guarantees',
-      question: 'Can I request edits or revisions after the initial delivery?',
-      answer: 'Absolutely! You receive inclusive revision rounds after reviewing the initial version to refine text, imagery, or visual components until you are 100% formally satisfied.'
+      categoryLabel: 'Suporte & Garantias',
+      question: 'Posso solicitar alterações e ajustes após a entrega inicial?',
+      answer: 'Com certeza! Você tem rodadas de revisão ilimitadas após a apresentação da versão inicial para ajustar fotos, textos e componentes visuais até que o site atenda 100% ao seu padrão de qualidade.'
     },
     {
       category: 'support',
-      categoryLabel: 'Support & Guarantees',
-      question: 'How does ongoing technical support work post-launch?',
-      answer: 'You have direct 1-on-1 human support on WhatsApp to answer questions, guide updates, and ensure your site operates with maximum stability 24/7.'
+      categoryLabel: 'Suporte & Garantias',
+      question: 'Como funciona o suporte técnico após o site ser lançado?',
+      answer: 'Você conta com suporte humano VIP individual diretamente pelo WhatsApp para tirar dúvidas, receber orientações e manter seu site com total estabilidade e performance.'
     },
     {
       category: 'pricing',
-      categoryLabel: 'Pricing & Billing',
-      question: 'Are there any hidden monthly fees or recurring lock-in costs?',
-      answer: 'No! The project investment is transparent and one-time. You own the code and digital assets outright, with no recurring hostage maintenance charges.'
+      categoryLabel: 'Planos & Pagamentos',
+      question: 'Existem mensalidades ocultas ou taxas recorrentes obrigatórias?',
+      answer: 'Não! O investimento é único e transparente (Plano Essencial por R$ 600 ou Plano Profissional por R$ 1.200). Você se torna o único proprietário do código e de todos os arquivos, sem custos recorrentes obrigatórios.'
     },
     {
       category: 'pricing',
-      categoryLabel: 'Pricing & Billing',
-      question: 'What payment methods do you accept?',
-      answer: 'We accept all major Credit Cards (up to 12 installments), Bank Wire/Transfer, and PayPal with encrypted processing, automated receipting, and formal business invoices.'
+      categoryLabel: 'Planos & Pagamentos',
+      question: 'Quais são as formas de pagamento disponíveis?',
+      answer: 'Aceitamos Cartão de Crédito em até 12x, Pix à vista com desconto e Transferência Bancária, com processamento seguro criptografado e emissão imediata de Nota Fiscal e contrato formal.'
     }
   ];
 
@@ -70,26 +70,26 @@ export default function FAQ() {
   });
 
   return (
-    <section id="faq" className="py-24 lg:py-32 bg-zinc-950 text-white transition-colors duration-300 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 relative z-10">
+    <section id="faq" className="py-20 lg:py-32 bg-zinc-950 text-white transition-colors duration-300 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           
           {/* Left Column: Heading & Live WhatsApp Support Card */}
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28 space-y-6">
               <div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4 shadow-xs">
                   <HelpCircle size={13} className="text-amber-400" />
-                  Frequently Asked Questions
+                  Perguntas Frequentes
                 </div>
-                <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-4">
-                  Direct & <br />
-                  <span className="text-zinc-500">Transparent Answers.</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-4">
+                  Respostas diretas & <br />
+                  <span className="text-zinc-500">totalmente transparentes.</span>
                 </h2>
                 <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-                  Everything you need to know about our 72-hour design, development, and launch process.
+                  Tudo o que você precisa saber sobre o nosso processo de design, desenvolvimento e entrega em até 72 horas.
                 </p>
               </div>
 
@@ -100,22 +100,22 @@ export default function FAQ() {
                     <MessageSquare size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-black text-white">Have a specific question?</h4>
-                    <p className="text-xs text-zinc-400">Human support online now</p>
+                    <h4 className="text-sm font-black text-white">Tem alguma dúvida específica?</h4>
+                    <p className="text-xs text-zinc-400">Atendimento humano online agora</p>
                   </div>
                 </div>
 
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  Connect with our senior engineering team to discuss custom requirements or receive a tailored quotation.
+                  Fale diretamente com os desenvolvedores responsáveis pelo projeto para tirar dúvidas ou solicitar uma proposta sob medida.
                 </p>
 
                 <a 
-                  href="https://wa.me/5500000000000?text=Hi!%20I%20have%20a%20question%20about%20the%2072h%20website%20redesign%20service."
+                  href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20desenvolvimento%20do%20site%20em%2072h."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 px-4 rounded-xl bg-white text-black font-bold text-xs flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors text-center shadow-xs"
                 >
-                  <span>Chat on WhatsApp</span>
+                  <span>Conversar no WhatsApp</span>
                   <ArrowUpRight size={14} />
                 </a>
               </div>
@@ -130,7 +130,7 @@ export default function FAQ() {
               <Search className="absolute left-4 top-3.5 text-zinc-400" size={18} />
               <input
                 type="text"
-                placeholder="Search questions (e.g., turnaround, hosting, payment options...)"
+                placeholder="Pesquisar dúvidas (ex: prazo, hospedagem, formas de pagamento...)"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-11 pr-4 py-3 rounded-2xl bg-zinc-900 border border-zinc-800 text-white text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white transition-all shadow-xs placeholder:text-zinc-500"
@@ -150,7 +150,7 @@ export default function FAQ() {
                 ))
               ) : (
                 <div className="p-8 rounded-2xl bg-zinc-900 border border-zinc-800 text-center text-sm text-zinc-400">
-                  No questions found matching "<strong>{searchQuery}</strong>". Chat with us on WhatsApp for instant assistance.
+                  Nenhuma pergunta encontrada para "<strong>{searchQuery}</strong>". Fale conosco no WhatsApp para esclarecimento imediato.
                 </div>
               )}
             </div>

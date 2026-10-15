@@ -3,36 +3,36 @@ import { Shield, TrendingUp, Zap, Globe, ArrowRight, Sparkles, CheckCircle2, Bar
 export default function Benefits() {
   const benefits = [
     {
-      title: 'Market Dominance',
-      badge: 'AAA Positioning',
-      description: "Don't settle for being just another Google result. Build a commanding digital presence that sets you apart from competitors and attracts high-ticket clients.",
+      title: 'Domínio de Mercado',
+      badge: 'Posicionamento AAA',
+      description: "Não seja apenas mais uma opção no Google. Construa uma presença digital imponente que se destaque da concorrência e atraia clientes de alto ticket.",
       icon: <Shield size={24} className="text-amber-400" />,
       stat: '94%',
-      statDesc: 'Of customers judge business credibility by web design'
+      statDesc: 'Dos clientes julgam a credibilidade pelo design'
     },
     {
-      title: '24/7 Sales Engine',
-      badge: 'Automated Funnel',
-      description: 'Your website works tirelessly around the clock. Engineered to qualify incoming visitors and convert them directly into scheduled calls and closed deals.',
+      title: 'Máquina de Vendas 24/7',
+      badge: 'Funil Automatizado',
+      description: 'Seu site capta e qualifica oportunidades ininterruptamente. Estrutura desenhada para direcionar contatos prontos para fechar no WhatsApp.',
       icon: <Globe size={24} className="text-emerald-400" />,
       stat: '100%',
-      statDesc: 'Uninterrupted commercial digital availability'
+      statDesc: 'Presença comercial ininterrupta'
     },
     {
-      title: 'Instant Authority',
-      badge: 'Psychological Impact',
-      description: 'Go from overlooked to the undisputed benchmark. Elite aesthetic design communicates prestige, reliability, and substance before a single word is read.',
+      title: 'Autoridade Instantânea',
+      badge: 'Impacto Psicológico',
+      description: 'Passe de desconhecido a referência do seu nicho. O design de alto padrão comunica prestígio, solidez e valor antes mesmo da leitura da primeira linha.',
       icon: <Zap size={24} className="text-blue-400" />,
       stat: '0.05s',
-      statDesc: 'For a visitor to decide whether they trust your brand'
+      statDesc: 'Para o visitante decidir se confia na sua marca'
     },
     {
-      title: 'Accelerated ROI',
-      badge: 'Lead Multiplier',
-      description: 'Lightning-fast 0.28s loading speed and surgically crafted conversion architecture lower your ad acquisition costs and dramatically boost closing rates.',
+      title: 'Retorno Acelerado (ROI)',
+      badge: 'Multiplicador de Leads',
+      description: 'Velocidade extrema em 0.28s e arquitetura cirúrgica que reduzem o custo por clique dos seus anúncios e multiplicam as conversões em vendas.',
       icon: <TrendingUp size={24} className="text-purple-400" />,
       stat: '3x',
-      statDesc: 'Higher probability of closing high-value contracts'
+      statDesc: 'Mais chances de fechar contratos de alto valor'
     }
   ];
 
@@ -41,28 +41,28 @@ export default function Benefits() {
       {/* Subtle Background Glow */}
       <div className="absolute top-1/3 right-1/4 w-[700px] h-[700px] bg-zinc-900/50 rounded-full blur-[140px] pointer-events-none -z-0" />
 
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-end mb-16 lg:mb-20 pb-10 border-b border-zinc-800">
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4 border border-zinc-800 shadow-xs">
               <Sparkles size={12} className="text-amber-400" />
-              High-Impact Competitive Advantage
+              Vantagem Competitiva • Autoridade Digital
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
-              Why your business <br className="hidden sm:inline" />
-              <span className="text-zinc-500">needs the SitePro 72h standard.</span>
+              Design de alto padrão que <br className="hidden sm:inline" />
+              <span className="text-zinc-500">multiplica suas vendas e credibilidade.</span>
             </h2>
           </div>
 
           <div className="lg:col-span-5 space-y-4">
             <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
-              In today's digital market, slow and generic websites are practically invisible. We ensure your brand becomes the obvious, preferred choice in your industry.
+              No mercado atual, sites lentos e genéricos são praticamente invisíveis. Garantimos que sua empresa seja a escolha óbvia e mais respeitada do seu setor.
             </p>
             <div className="flex items-center gap-2 text-xs font-bold text-emerald-400">
               <CheckCircle2 size={16} />
-              <span>Engineered for proven financial return & higher conversion</span>
+              <span>Engenharia focada em retorno financeiro comprovado</span>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function Benefits() {
               <div className="pt-5 border-t border-zinc-800 space-y-1">
                 <div className="text-3xl sm:text-4xl font-black text-white tracking-tight flex items-baseline gap-1">
                   <span>{benefit.stat}</span>
-                  <span className="text-xs text-emerald-400 font-bold uppercase tracking-wider">Impact</span>
+                  <span className="text-xs text-emerald-400 font-bold uppercase tracking-wider">Impacto</span>
                 </div>
                 <div className="text-[11px] font-medium text-zinc-400 leading-snug">
                   {benefit.statDesc}
@@ -114,10 +114,10 @@ export default function Benefits() {
             </div>
             <div>
               <h4 className="text-base font-black text-white">
-                Businesses with ultra-fast web architecture generate up to 240% more revenue from the same traffic.
+                Empresas com sites ultrarrápidos faturam até 240% mais com o mesmo tráfego.
               </h4>
               <p className="text-xs text-zinc-400">
-                End-to-end design & optimization delivered within our strict 72-hour turnaround.
+                Otimização completa de ponta a ponta entregue no prazo inegociável de 72 horas.
               </p>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function Benefits() {
             href="#/briefing"
             className="px-6 py-3.5 rounded-xl bg-white text-black font-bold text-xs whitespace-nowrap hover:bg-zinc-200 transition-colors shadow-sm flex items-center gap-2"
           >
-            <span>Start Free Website Diagnostic</span>
+            <span>Iniciar Diagnóstico Gratuito</span>
             <ArrowRight size={14} />
           </a>
         </div>

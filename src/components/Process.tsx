@@ -2,43 +2,43 @@ export default function Process() {
   const steps = [
     {
       number: '01',
-      title: 'Conversion Architecture',
-      description: "We analyze your target market's purchasing triggers to establish the shortest, most persuasive route to closed deals."
+      title: 'Engenharia de Conversão',
+      description: "Analisamos o comportamento do seu público-alvo para traçar a rota mais direta e persuasiva até o fechamento de vendas e contratos."
     },
     {
       number: '02',
-      title: 'Bespoke Design & Copywriting',
-      description: 'We craft an imposing visual layout accompanied by sales psychology copy that radiates prestige in every single pixel.'
+      title: 'Design de Elite & Copywriting',
+      description: 'Criamos uma interface visual imponente acompanhada por textos de vendas que comunicam prestígio e autoridade em cada pixel.'
     },
     {
       number: '03',
-      title: 'Extreme Performance Engineering',
-      description: 'We code with cutting-edge React/Vite frameworks to guarantee sub-second load times and flawless Google PageSpeed scores.'
+      title: 'Performance Extrema & Código Puro',
+      description: 'Desenvolvemos em arquitetura moderna com React e Vite para garantir carregamento instantâneo em 0.28s e nota 99+ no Google.'
     },
     {
       number: '04',
-      title: 'Launch & Market Dominance in 72h',
-      description: 'In just 72 hours, your new site goes live, ready to capture qualified leads, schedule consultations, and outperform competitors.'
+      title: 'Lançamento & Domínio em 72h',
+      description: 'Em apenas 72 horas seu novo site vai ao ar, pronto para captar leads qualificados, agendar consultas e superar seus concorrentes.'
     }
   ];
 
   return (
     <section id="process" className="py-24 lg:py-32 bg-zinc-950 text-white transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
           
           {/* Header Column */}
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-32">
               <div className="inline-block px-4 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-6">
-                Execution Methodology
+                Metodologia Ágil • Passo a Passo
               </div>
               <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tighter leading-none">
-                How We <br />
-                <span className="text-zinc-500">Deliver in 72h.</span>
+                Do briefing ao ar <br />
+                <span className="text-zinc-500">em até 72 horas.</span>
               </h2>
               <p className="text-lg sm:text-xl text-zinc-400 max-w-sm leading-relaxed">
-                A surgical, battle-tested workflow designed to eliminate friction and deliver digital authority in record time.
+                Um fluxo cirúrgico sem reuniões desnecessárias. Economizamos o seu tempo para entregar máxima autoridade digital.
               </p>
             </div>
           </div>

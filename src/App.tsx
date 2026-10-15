@@ -22,7 +22,7 @@ import ContactCTA from './components/ContactCTA';
 import Footer from './components/Footer';
 import { MessageCircle } from 'lucide-react';
 
-const WHATSAPP_URL = 'https://wa.me/5500000000000?text=Hi!%20I%20want%20to%20launch%20my%20website%20in%2072h.';
+const WHATSAPP_URL = 'https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20lan%C3%A7ar%20meu%20site%20em%2072h.';
 
 export default function App() {
   // Enforce permanent sleek dark theme
@@ -66,7 +66,7 @@ export default function App() {
           className="w-full bg-white text-black px-6 py-4 rounded-full font-black flex items-center justify-center gap-3 shadow-2xl cursor-pointer hover:opacity-90 active:scale-[0.98] transition-all"
         >
           <MessageCircle size={20} />
-          Launch My Website in 72h
+          Iniciar Meu Site em 72h
         </button>
       </div>
     </div>
